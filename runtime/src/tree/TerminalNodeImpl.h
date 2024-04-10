@@ -18,8 +18,9 @@ namespace tree {
 
     virtual Token* getSymbol() const override;
     virtual void setParent(RuleContext *parent) override;
+    //virtual ParseTree* getParent();  // ? 
     virtual misc::Interval getSourceInterval() override;
-
+    
     virtual std::any accept(ParseTreeVisitor *visitor) override;
 
     virtual std::string getText() override;

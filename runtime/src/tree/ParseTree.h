@@ -58,6 +58,8 @@ namespace tree {
     /// comments if they are sent to parser on hidden channel.
     virtual std::string getText() = 0;
 
+    virtual ParseTree* getParent();
+
     /**
      * Return an {@link Interval} indicating the index in the
      * {@link TokenStream} of the first and last token associated with this
