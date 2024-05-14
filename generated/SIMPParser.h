@@ -15,11 +15,11 @@ public:
   enum {
     KeywordMain = 1, KeywordBreak = 2, KeywordDo = 3, KeywordElse = 4, KeywordEnd = 5, 
     KeywordFor = 6, KeywordFunction = 7, KeywordIf = 8, KeywordIn = 9, KeywordLet = 10, 
-    KeywordOf = 11, KeywordThen = 12, KeywordTo = 13, KeywordType = 14, 
-    KeywordVar = 15, KeywordWhile = 16, KeywordEndif = 17, KeywordBegin = 18, 
-    KeywordEnddo = 19, KeywordReturn = 20, KeywordInt = 21, KeywordFloat = 22, 
-    BinOpPlus = 23, BinOpMinus = 24, BinOpTimes = 25, BinOpDivide = 26, 
-    BinOpPower = 27, BinOpEq = 28, BinOpNeq = 29, BinOpLt = 30, BinOpGt = 31, 
+    KeywordOf = 11, KeywordThen = 12, KeywordTo = 13, KeywordDownto = 14, 
+    KeywordType = 15, KeywordVar = 16, KeywordWhile = 17, KeywordEndif = 18, 
+    KeywordBegin = 19, KeywordEnddo = 20, KeywordReturn = 21, KeywordInt = 22, 
+    KeywordFloat = 23, BinOpPlus = 24, BinOpMinus = 25, BinOpTimes = 26, 
+    BinOpDivide = 27, BinOpEq = 28, BinOpNeq = 29, BinOpLt = 30, BinOpGt = 31, 
     BinOpLeq = 32, BinOpGeq = 33, BinOpAnd = 34, BinOpOr = 35, OpAssign = 36, 
     Equals = 37, Colon = 38, Semicolon = 39, Comma = 40, LParen = 41, RParen = 42, 
     LBracket = 43, RBracket = 44, ID = 45, IntLit = 46, FloatLit = 47, Comment = 48, 
@@ -27,18 +27,16 @@ public:
   };
 
   enum {
-    RuleSimpProgram = 0, RuleDeclSegment = 1, RuleTypeDeclList = 2, RuleVarDeclList = 3, 
-    RuleFuncDeclList = 4, RuleTypeDecl = 5, RuleType = 6, RuleTypeId = 7, 
-    RuleVarDecl = 8, RuleIdList = 9, RuleOptionalInit = 10, RuleFuncDecl = 11, 
-    RuleParamList = 12, RuleRetType = 13, RuleParam = 14, RuleStmtList = 15, 
-    RuleStmt = 16, RuleLetStmt = 17, RuleReturnStmt = 18, RuleBreakStmt = 19, 
-    RuleForStmt = 20, RuleWhileStmt = 21, RuleAssignStmt = 22, RuleRValue = 23, 
-    RuleRcallStmt = 24, RuleCallStmt = 25, RuleIfStmt = 26, RuleIfStmtTail = 27, 
-    RuleExpr = 28, RuleOrTerm = 29, RuleAndTerm = 30, RuleLeTerm = 31, RuleGeTerm = 32, 
-    RuleLtTerm = 33, RuleGtTerm = 34, RuleNeTerm = 35, RuleEqTerm = 36, 
-    RuleSubTerm = 37, RuleAddTerm = 38, RuleDivTerm = 39, RuleMulTerm = 40, 
-    RulePowTerm = 41, RuleParnTerm = 42, RuleConstant = 43, RuleExprList = 44, 
-    RuleLvalue = 45
+    RuleSimpProgram = 0, RuleDeclSegment = 1, RuleVarDeclList = 2, RuleFuncDeclList = 3, 
+    RuleType = 4, RuleTypeId = 5, RuleVarDecl = 6, RuleIdList = 7, RuleOptionalInit = 8, 
+    RuleFuncDecl = 9, RuleParamList = 10, RuleRetType = 11, RuleParam = 12, 
+    RuleStmtList = 13, RuleStmt = 14, RuleLetStmt = 15, RuleReturnStmt = 16, 
+    RuleBreakStmt = 17, RuleForStmt = 18, RuleWhileStmt = 19, RuleAssignStmt = 20, 
+    RuleRValue = 21, RuleRcallStmt = 22, RuleCallStmt = 23, RuleIfStmt = 24, 
+    RuleIfStmtTail = 25, RuleExpr = 26, RuleLeTerm = 27, RuleGeTerm = 28, 
+    RuleLtTerm = 29, RuleGtTerm = 30, RuleNeTerm = 31, RuleEqTerm = 32, 
+    RuleSubTerm = 33, RuleAddTerm = 34, RuleDivTerm = 35, RuleMulTerm = 36, 
+    RuleParnTerm = 37, RuleConstant = 38, RuleExprList = 39, RuleLvalue = 40
   };
 
   explicit SIMPParser(antlr4::TokenStream *input);
@@ -60,10 +58,8 @@ public:
 
   class SimpProgramContext;
   class DeclSegmentContext;
-  class TypeDeclListContext;
   class VarDeclListContext;
   class FuncDeclListContext;
-  class TypeDeclContext;
   class TypeContext;
   class TypeIdContext;
   class VarDeclContext;
@@ -87,8 +83,6 @@ public:
   class IfStmtContext;
   class IfStmtTailContext;
   class ExprContext;
-  class OrTermContext;
-  class AndTermContext;
   class LeTermContext;
   class GeTermContext;
   class LtTermContext;
@@ -99,7 +93,6 @@ public:
   class AddTermContext;
   class DivTermContext;
   class MulTermContext;
-  class PowTermContext;
   class ParnTermContext;
   class ConstantContext;
   class ExprListContext;
@@ -130,7 +123,6 @@ public:
   public:
     DeclSegmentContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    TypeDeclListContext *typeDeclList();
     VarDeclListContext *varDeclList();
     FuncDeclListContext *funcDeclList();
 
@@ -142,22 +134,6 @@ public:
   };
 
   DeclSegmentContext* declSegment();
-
-  class  TypeDeclListContext : public antlr4::ParserRuleContext {
-  public:
-    TypeDeclListContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    std::vector<TypeDeclContext *> typeDecl();
-    TypeDeclContext* typeDecl(size_t i);
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  TypeDeclListContext* typeDeclList();
 
   class  VarDeclListContext : public antlr4::ParserRuleContext {
   public:
@@ -190,25 +166,6 @@ public:
   };
 
   FuncDeclListContext* funcDeclList();
-
-  class  TypeDeclContext : public antlr4::ParserRuleContext {
-  public:
-    TypeDeclContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *KeywordType();
-    antlr4::tree::TerminalNode *ID();
-    antlr4::tree::TerminalNode *Equals();
-    TypeContext *type();
-    antlr4::tree::TerminalNode *Semicolon();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  TypeDeclContext* typeDecl();
 
   class  TypeContext : public antlr4::ParserRuleContext {
   public:
@@ -477,6 +434,7 @@ public:
     StmtListContext *stmtList();
     antlr4::tree::TerminalNode *KeywordEnddo();
     antlr4::tree::TerminalNode *Semicolon();
+    antlr4::tree::TerminalNode *KeywordDownto();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -621,7 +579,7 @@ public:
   public:
     ExprContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    OrTermContext *orTerm();
+    LeTermContext *leTerm();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -631,42 +589,6 @@ public:
   };
 
   ExprContext* expr();
-
-  class  OrTermContext : public antlr4::ParserRuleContext {
-  public:
-    OrTermContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    std::vector<AndTermContext *> andTerm();
-    AndTermContext* andTerm(size_t i);
-    std::vector<antlr4::tree::TerminalNode *> BinOpOr();
-    antlr4::tree::TerminalNode* BinOpOr(size_t i);
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  OrTermContext* orTerm();
-
-  class  AndTermContext : public antlr4::ParserRuleContext {
-  public:
-    AndTermContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    std::vector<LeTermContext *> leTerm();
-    LeTermContext* leTerm(size_t i);
-    std::vector<antlr4::tree::TerminalNode *> BinOpAnd();
-    antlr4::tree::TerminalNode* BinOpAnd(size_t i);
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  AndTermContext* andTerm();
 
   class  LeTermContext : public antlr4::ParserRuleContext {
   public:
@@ -834,8 +756,8 @@ public:
   public:
     MulTermContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<PowTermContext *> powTerm();
-    PowTermContext* powTerm(size_t i);
+    std::vector<ParnTermContext *> parnTerm();
+    ParnTermContext* parnTerm(size_t i);
     std::vector<antlr4::tree::TerminalNode *> BinOpTimes();
     antlr4::tree::TerminalNode* BinOpTimes(size_t i);
 
@@ -847,24 +769,6 @@ public:
   };
 
   MulTermContext* mulTerm();
-
-  class  PowTermContext : public antlr4::ParserRuleContext {
-  public:
-    PowTermContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    std::vector<ParnTermContext *> parnTerm();
-    ParnTermContext* parnTerm(size_t i);
-    std::vector<antlr4::tree::TerminalNode *> BinOpPower();
-    antlr4::tree::TerminalNode* BinOpPower(size_t i);
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  PowTermContext* powTerm();
 
   class  ParnTermContext : public antlr4::ParserRuleContext {
   public:

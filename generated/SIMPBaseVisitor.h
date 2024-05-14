@@ -25,19 +25,11 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitTypeDeclList(SIMPParser::TypeDeclListContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitVarDeclList(SIMPParser::VarDeclListContext *ctx) override {
     return visitChildren(ctx);
   }
 
   virtual std::any visitFuncDeclList(SIMPParser::FuncDeclListContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual std::any visitTypeDecl(SIMPParser::TypeDeclContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -133,14 +125,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitOrTerm(SIMPParser::OrTermContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual std::any visitAndTerm(SIMPParser::AndTermContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitLeTerm(SIMPParser::LeTermContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -178,10 +162,6 @@ public:
   }
 
   virtual std::any visitMulTerm(SIMPParser::MulTermContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual std::any visitPowTerm(SIMPParser::PowTermContext *ctx) override {
     return visitChildren(ctx);
   }
 

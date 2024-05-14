@@ -24,13 +24,9 @@ public:
 
     virtual std::any visitDeclSegment(SIMPParser::DeclSegmentContext *context) = 0;
 
-    virtual std::any visitTypeDeclList(SIMPParser::TypeDeclListContext *context) = 0;
-
     virtual std::any visitVarDeclList(SIMPParser::VarDeclListContext *context) = 0;
 
     virtual std::any visitFuncDeclList(SIMPParser::FuncDeclListContext *context) = 0;
-
-    virtual std::any visitTypeDecl(SIMPParser::TypeDeclContext *context) = 0;
 
     virtual std::any visitType(SIMPParser::TypeContext *context) = 0;
 
@@ -78,10 +74,6 @@ public:
 
     virtual std::any visitExpr(SIMPParser::ExprContext *context) = 0;
 
-    virtual std::any visitOrTerm(SIMPParser::OrTermContext *context) = 0;
-
-    virtual std::any visitAndTerm(SIMPParser::AndTermContext *context) = 0;
-
     virtual std::any visitLeTerm(SIMPParser::LeTermContext *context) = 0;
 
     virtual std::any visitGeTerm(SIMPParser::GeTermContext *context) = 0;
@@ -101,8 +93,6 @@ public:
     virtual std::any visitDivTerm(SIMPParser::DivTermContext *context) = 0;
 
     virtual std::any visitMulTerm(SIMPParser::MulTermContext *context) = 0;
-
-    virtual std::any visitPowTerm(SIMPParser::PowTermContext *context) = 0;
 
     virtual std::any visitParnTerm(SIMPParser::ParnTermContext *context) = 0;
 

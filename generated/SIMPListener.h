@@ -22,17 +22,11 @@ public:
   virtual void enterDeclSegment(SIMPParser::DeclSegmentContext *ctx) = 0;
   virtual void exitDeclSegment(SIMPParser::DeclSegmentContext *ctx) = 0;
 
-  virtual void enterTypeDeclList(SIMPParser::TypeDeclListContext *ctx) = 0;
-  virtual void exitTypeDeclList(SIMPParser::TypeDeclListContext *ctx) = 0;
-
   virtual void enterVarDeclList(SIMPParser::VarDeclListContext *ctx) = 0;
   virtual void exitVarDeclList(SIMPParser::VarDeclListContext *ctx) = 0;
 
   virtual void enterFuncDeclList(SIMPParser::FuncDeclListContext *ctx) = 0;
   virtual void exitFuncDeclList(SIMPParser::FuncDeclListContext *ctx) = 0;
-
-  virtual void enterTypeDecl(SIMPParser::TypeDeclContext *ctx) = 0;
-  virtual void exitTypeDecl(SIMPParser::TypeDeclContext *ctx) = 0;
 
   virtual void enterType(SIMPParser::TypeContext *ctx) = 0;
   virtual void exitType(SIMPParser::TypeContext *ctx) = 0;
@@ -103,12 +97,6 @@ public:
   virtual void enterExpr(SIMPParser::ExprContext *ctx) = 0;
   virtual void exitExpr(SIMPParser::ExprContext *ctx) = 0;
 
-  virtual void enterOrTerm(SIMPParser::OrTermContext *ctx) = 0;
-  virtual void exitOrTerm(SIMPParser::OrTermContext *ctx) = 0;
-
-  virtual void enterAndTerm(SIMPParser::AndTermContext *ctx) = 0;
-  virtual void exitAndTerm(SIMPParser::AndTermContext *ctx) = 0;
-
   virtual void enterLeTerm(SIMPParser::LeTermContext *ctx) = 0;
   virtual void exitLeTerm(SIMPParser::LeTermContext *ctx) = 0;
 
@@ -138,9 +126,6 @@ public:
 
   virtual void enterMulTerm(SIMPParser::MulTermContext *ctx) = 0;
   virtual void exitMulTerm(SIMPParser::MulTermContext *ctx) = 0;
-
-  virtual void enterPowTerm(SIMPParser::PowTermContext *ctx) = 0;
-  virtual void exitPowTerm(SIMPParser::PowTermContext *ctx) = 0;
 
   virtual void enterParnTerm(SIMPParser::ParnTermContext *ctx) = 0;
   virtual void exitParnTerm(SIMPParser::ParnTermContext *ctx) = 0;

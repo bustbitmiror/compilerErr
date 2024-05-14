@@ -24,17 +24,11 @@ public:
   virtual void enterDeclSegment(SIMPParser::DeclSegmentContext * /*ctx*/) override { }
   virtual void exitDeclSegment(SIMPParser::DeclSegmentContext * /*ctx*/) override { }
 
-  virtual void enterTypeDeclList(SIMPParser::TypeDeclListContext * /*ctx*/) override { }
-  virtual void exitTypeDeclList(SIMPParser::TypeDeclListContext * /*ctx*/) override { }
-
   virtual void enterVarDeclList(SIMPParser::VarDeclListContext * /*ctx*/) override { }
   virtual void exitVarDeclList(SIMPParser::VarDeclListContext * /*ctx*/) override { }
 
   virtual void enterFuncDeclList(SIMPParser::FuncDeclListContext * /*ctx*/) override { }
   virtual void exitFuncDeclList(SIMPParser::FuncDeclListContext * /*ctx*/) override { }
-
-  virtual void enterTypeDecl(SIMPParser::TypeDeclContext * /*ctx*/) override { }
-  virtual void exitTypeDecl(SIMPParser::TypeDeclContext * /*ctx*/) override { }
 
   virtual void enterType(SIMPParser::TypeContext * /*ctx*/) override { }
   virtual void exitType(SIMPParser::TypeContext * /*ctx*/) override { }
@@ -105,12 +99,6 @@ public:
   virtual void enterExpr(SIMPParser::ExprContext * /*ctx*/) override { }
   virtual void exitExpr(SIMPParser::ExprContext * /*ctx*/) override { }
 
-  virtual void enterOrTerm(SIMPParser::OrTermContext * /*ctx*/) override { }
-  virtual void exitOrTerm(SIMPParser::OrTermContext * /*ctx*/) override { }
-
-  virtual void enterAndTerm(SIMPParser::AndTermContext * /*ctx*/) override { }
-  virtual void exitAndTerm(SIMPParser::AndTermContext * /*ctx*/) override { }
-
   virtual void enterLeTerm(SIMPParser::LeTermContext * /*ctx*/) override { }
   virtual void exitLeTerm(SIMPParser::LeTermContext * /*ctx*/) override { }
 
@@ -140,9 +128,6 @@ public:
 
   virtual void enterMulTerm(SIMPParser::MulTermContext * /*ctx*/) override { }
   virtual void exitMulTerm(SIMPParser::MulTermContext * /*ctx*/) override { }
-
-  virtual void enterPowTerm(SIMPParser::PowTermContext * /*ctx*/) override { }
-  virtual void exitPowTerm(SIMPParser::PowTermContext * /*ctx*/) override { }
 
   virtual void enterParnTerm(SIMPParser::ParnTermContext * /*ctx*/) override { }
   virtual void exitParnTerm(SIMPParser::ParnTermContext * /*ctx*/) override { }

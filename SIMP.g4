@@ -1,19 +1,18 @@
 grammar SIMP;
 
 
-simpProgram : KeywordMain KeywordLet declSegment KeywordIn KeywordBegin stmtList KeywordEnd;
+simpProgram: KeywordMain KeywordLet declSegment KeywordIn KeywordBegin stmtList KeywordEnd;
 
-declSegment: typeDeclList varDeclList funcDeclList;
+declSegment: varDeclList funcDeclList;
 
-typeDeclList: typeDecl*;
+//typeDeclList: typeDecl*;
 
 varDeclList: varDecl*;
 
 funcDeclList: funcDecl*;
 
-typeDecl: KeywordType ID Equals type Semicolon;
+//typeDecl: KeywordType ID Equals type Semicolon;
 type: typeId
-//    | KeywordArray LBracket IntLit RBracket KeywordOf typeId
     | ID;
 typeId: KeywordInt | KeywordFloat;
 
@@ -41,7 +40,8 @@ stmt: ifStmt
 letStmt: KeywordLet declSegment KeywordIn stmtList KeywordEnd Semicolon;
 returnStmt: KeywordReturn expr Semicolon;
 breakStmt: KeywordBreak Semicolon;
-forStmt: KeywordFor ID OpAssign expr KeywordTo expr KeywordDo stmtList KeywordEnddo Semicolon;
+forStmt: KeywordFor ID OpAssign expr KeywordTo expr KeywordDo stmtList KeywordEnddo Semicolon 
+    | KeywordFor ID OpAssign expr KeywordDownto expr KeywordDo stmtList KeywordEnddo Semicolon;
 whileStmt: KeywordWhile expr KeywordDo stmtList KeywordEnddo Semicolon;
 assignStmt: lvalue OpAssign rValue;
 rValue: expr Semicolon;
@@ -52,10 +52,11 @@ ifStmt: KeywordIf expr KeywordThen stmtList ifStmtTail;
 ifStmtTail: KeywordEndif Semicolon
     | KeywordElse stmtList KeywordEndif Semicolon;
 
-expr: orTerm;
+//expr: orTerm;
+expr: leTerm;
 
-orTerm: andTerm (BinOpOr andTerm)*;
-andTerm: leTerm (BinOpAnd leTerm)*;
+//orTerm: andTerm (BinOpOr andTerm)*;
+//andTerm: leTerm (BinOpAnd leTerm)*;
 leTerm: geTerm (BinOpLeq geTerm)*;
 geTerm: ltTerm (BinOpGeq ltTerm)*;
 ltTerm: gtTerm (BinOpLt gtTerm)*;
@@ -65,19 +66,11 @@ eqTerm: subTerm (BinOpEq subTerm)*;
 subTerm: addTerm (BinOpMinus addTerm)*;
 addTerm: divTerm(BinOpPlus divTerm)*;
 divTerm: mulTerm (BinOpDivide mulTerm)*;
-mulTerm: powTerm (BinOpTimes powTerm)*;
-powTerm: parnTerm (BinOpPower parnTerm)*;
+mulTerm: parnTerm (BinOpTimes parnTerm)*;
+//powTerm: parnTerm (BinOpPower parnTerm)*;
+
 
 parnTerm: (LParen expr RParen) | lvalue | constant;
-
-//expr: constant exprTail
-//    | lvalue exprTail
-//    | LParen expr RParen exprTail;
-//exprTail: BinOpPlus highExpr | highExpr;
-//
-//highExpr: BinOpPower expr | expr ;
-
-//exprTail: | binaryOperator expr;
 
 constant: IntLit | FloatLit;
 
@@ -86,8 +79,6 @@ exprList: | expr (Comma expr)*;
 lvalue: ID (LBracket expr RBracket)?;
 
 KeywordMain : 'main' ;
-//KeywordArray : 'array' ;
-//KeywordRecord : 'record' ;
 KeywordBreak : 'break' ;
 KeywordDo : 'do' ;
 KeywordElse : 'else' ;
@@ -100,6 +91,7 @@ KeywordLet : 'let' ;
 KeywordOf : 'of' ;
 KeywordThen : 'then' ;
 KeywordTo : 'to' ;
+KeywordDownto : 'downto';
 KeywordType : 'type' ;
 KeywordVar : 'var' ;
 KeywordWhile : 'while' ;
@@ -114,7 +106,7 @@ BinOpPlus : '+';
 BinOpMinus : '-';
 BinOpTimes : '*';
 BinOpDivide : '/';
-BinOpPower : '**';
+//BinOpPower : '**';
 BinOpEq : '==';
 BinOpNeq : '!=';
 BinOpLt : '<';

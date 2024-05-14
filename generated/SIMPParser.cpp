@@ -54,163 +54,151 @@ void simpParserInitialize() {
 #endif
   auto staticData = std::make_unique<SIMPParserStaticData>(
     std::vector<std::string>{
-      "simpProgram", "declSegment", "typeDeclList", "varDeclList", "funcDeclList", 
-      "typeDecl", "type", "typeId", "varDecl", "idList", "optionalInit", 
-      "funcDecl", "paramList", "retType", "param", "stmtList", "stmt", "letStmt", 
-      "returnStmt", "breakStmt", "forStmt", "whileStmt", "assignStmt", "rValue", 
-      "rcallStmt", "callStmt", "ifStmt", "ifStmtTail", "expr", "orTerm", 
-      "andTerm", "leTerm", "geTerm", "ltTerm", "gtTerm", "neTerm", "eqTerm", 
-      "subTerm", "addTerm", "divTerm", "mulTerm", "powTerm", "parnTerm", 
+      "simpProgram", "declSegment", "varDeclList", "funcDeclList", "type", 
+      "typeId", "varDecl", "idList", "optionalInit", "funcDecl", "paramList", 
+      "retType", "param", "stmtList", "stmt", "letStmt", "returnStmt", "breakStmt", 
+      "forStmt", "whileStmt", "assignStmt", "rValue", "rcallStmt", "callStmt", 
+      "ifStmt", "ifStmtTail", "expr", "leTerm", "geTerm", "ltTerm", "gtTerm", 
+      "neTerm", "eqTerm", "subTerm", "addTerm", "divTerm", "mulTerm", "parnTerm", 
       "constant", "exprList", "lvalue"
     },
     std::vector<std::string>{
       "", "'main'", "'break'", "'do'", "'else'", "'end'", "'for'", "'function'", 
-      "'if'", "'in'", "'let'", "'of'", "'then'", "'to'", "'type'", "'var'", 
-      "'while'", "'endif'", "'begin'", "'enddo'", "'return'", "'int'", "'float'", 
-      "'+'", "'-'", "'*'", "'/'", "'**'", "'=='", "'!='", "'<'", "'>'", 
+      "'if'", "'in'", "'let'", "'of'", "'then'", "'to'", "'downto'", "'type'", 
+      "'var'", "'while'", "'endif'", "'begin'", "'enddo'", "'return'", "'int'", 
+      "'float'", "'+'", "'-'", "'*'", "'/'", "'=='", "'!='", "'<'", "'>'", 
       "'<='", "'>='", "'&'", "'|'", "':='", "'='", "':'", "';'", "','", 
       "'('", "')'", "'['", "']'"
     },
     std::vector<std::string>{
       "", "KeywordMain", "KeywordBreak", "KeywordDo", "KeywordElse", "KeywordEnd", 
       "KeywordFor", "KeywordFunction", "KeywordIf", "KeywordIn", "KeywordLet", 
-      "KeywordOf", "KeywordThen", "KeywordTo", "KeywordType", "KeywordVar", 
-      "KeywordWhile", "KeywordEndif", "KeywordBegin", "KeywordEnddo", "KeywordReturn", 
-      "KeywordInt", "KeywordFloat", "BinOpPlus", "BinOpMinus", "BinOpTimes", 
-      "BinOpDivide", "BinOpPower", "BinOpEq", "BinOpNeq", "BinOpLt", "BinOpGt", 
+      "KeywordOf", "KeywordThen", "KeywordTo", "KeywordDownto", "KeywordType", 
+      "KeywordVar", "KeywordWhile", "KeywordEndif", "KeywordBegin", "KeywordEnddo", 
+      "KeywordReturn", "KeywordInt", "KeywordFloat", "BinOpPlus", "BinOpMinus", 
+      "BinOpTimes", "BinOpDivide", "BinOpEq", "BinOpNeq", "BinOpLt", "BinOpGt", 
       "BinOpLeq", "BinOpGeq", "BinOpAnd", "BinOpOr", "OpAssign", "Equals", 
       "Colon", "Semicolon", "Comma", "LParen", "RParen", "LBracket", "RBracket", 
       "ID", "IntLit", "FloatLit", "Comment", "Whitespace"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,49,404,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	4,1,49,370,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
   	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,
   	14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,7,20,2,21,7,
   	21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,2,27,7,27,2,28,7,
   	28,2,29,7,29,2,30,7,30,2,31,7,31,2,32,7,32,2,33,7,33,2,34,7,34,2,35,7,
-  	35,2,36,7,36,2,37,7,37,2,38,7,38,2,39,7,39,2,40,7,40,2,41,7,41,2,42,7,
-  	42,2,43,7,43,2,44,7,44,2,45,7,45,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,1,
-  	1,1,1,1,1,1,1,2,5,2,106,8,2,10,2,12,2,109,9,2,1,3,5,3,112,8,3,10,3,12,
-  	3,115,9,3,1,4,5,4,118,8,4,10,4,12,4,121,9,4,1,5,1,5,1,5,1,5,1,5,1,5,1,
-  	6,1,6,3,6,131,8,6,1,7,1,7,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,9,1,9,1,9,5,9,
-  	145,8,9,10,9,12,9,148,9,9,1,10,1,10,1,10,3,10,153,8,10,1,11,1,11,1,11,
-  	1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,12,1,12,1,12,1,12,5,12,170,
-  	8,12,10,12,12,12,173,9,12,3,12,175,8,12,1,13,1,13,1,13,1,14,1,14,1,14,
-  	1,14,1,15,1,15,5,15,186,8,15,10,15,12,15,189,9,15,1,16,1,16,1,16,1,16,
-  	1,16,1,16,1,16,1,16,1,16,3,16,200,8,16,1,17,1,17,1,17,1,17,1,17,1,17,
-  	1,17,1,18,1,18,1,18,1,18,1,19,1,19,1,19,1,20,1,20,1,20,1,20,1,20,1,20,
-  	1,20,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,21,1,21,1,21,1,21,1,22,1,22,
-  	1,22,1,22,1,23,1,23,1,23,1,24,1,24,1,24,1,24,1,24,1,24,1,24,1,24,1,25,
-  	1,25,1,25,1,25,1,25,1,25,1,26,1,26,1,26,1,26,1,26,1,26,1,27,1,27,1,27,
-  	1,27,1,27,1,27,1,27,3,27,268,8,27,1,28,1,28,1,29,1,29,1,29,5,29,275,8,
-  	29,10,29,12,29,278,9,29,1,30,1,30,1,30,5,30,283,8,30,10,30,12,30,286,
-  	9,30,1,31,1,31,1,31,5,31,291,8,31,10,31,12,31,294,9,31,1,32,1,32,1,32,
-  	5,32,299,8,32,10,32,12,32,302,9,32,1,33,1,33,1,33,5,33,307,8,33,10,33,
-  	12,33,310,9,33,1,34,1,34,1,34,5,34,315,8,34,10,34,12,34,318,9,34,1,35,
-  	1,35,1,35,5,35,323,8,35,10,35,12,35,326,9,35,1,36,1,36,1,36,5,36,331,
-  	8,36,10,36,12,36,334,9,36,1,37,1,37,1,37,5,37,339,8,37,10,37,12,37,342,
-  	9,37,1,38,1,38,1,38,5,38,347,8,38,10,38,12,38,350,9,38,1,39,1,39,1,39,
-  	5,39,355,8,39,10,39,12,39,358,9,39,1,40,1,40,1,40,5,40,363,8,40,10,40,
-  	12,40,366,9,40,1,41,1,41,1,41,5,41,371,8,41,10,41,12,41,374,9,41,1,42,
-  	1,42,1,42,1,42,1,42,1,42,3,42,382,8,42,1,43,1,43,1,44,1,44,1,44,1,44,
-  	5,44,390,8,44,10,44,12,44,393,9,44,3,44,395,8,44,1,45,1,45,1,45,1,45,
-  	1,45,3,45,402,8,45,1,45,0,0,46,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,
+  	35,2,36,7,36,2,37,7,37,2,38,7,38,2,39,7,39,2,40,7,40,1,0,1,0,1,0,1,0,
+  	1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,2,5,2,95,8,2,10,2,12,2,98,9,2,1,3,5,3,101,
+  	8,3,10,3,12,3,104,9,3,1,4,1,4,3,4,108,8,4,1,5,1,5,1,6,1,6,1,6,1,6,1,6,
+  	1,6,1,6,1,7,1,7,1,7,5,7,122,8,7,10,7,12,7,125,9,7,1,8,1,8,1,8,3,8,130,
+  	8,8,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,10,1,10,1,10,1,10,5,
+  	10,147,8,10,10,10,12,10,150,9,10,3,10,152,8,10,1,11,1,11,1,11,1,12,1,
+  	12,1,12,1,12,1,13,1,13,5,13,163,8,13,10,13,12,13,166,9,13,1,14,1,14,1,
+  	14,1,14,1,14,1,14,1,14,1,14,1,14,3,14,177,8,14,1,15,1,15,1,15,1,15,1,
+  	15,1,15,1,15,1,16,1,16,1,16,1,16,1,17,1,17,1,17,1,18,1,18,1,18,1,18,1,
+  	18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,
+  	18,1,18,1,18,1,18,3,18,215,8,18,1,19,1,19,1,19,1,19,1,19,1,19,1,19,1,
+  	20,1,20,1,20,1,20,1,21,1,21,1,21,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,
+  	22,1,23,1,23,1,23,1,23,1,23,1,23,1,24,1,24,1,24,1,24,1,24,1,24,1,25,1,
+  	25,1,25,1,25,1,25,1,25,1,25,3,25,258,8,25,1,26,1,26,1,27,1,27,1,27,5,
+  	27,265,8,27,10,27,12,27,268,9,27,1,28,1,28,1,28,5,28,273,8,28,10,28,12,
+  	28,276,9,28,1,29,1,29,1,29,5,29,281,8,29,10,29,12,29,284,9,29,1,30,1,
+  	30,1,30,5,30,289,8,30,10,30,12,30,292,9,30,1,31,1,31,1,31,5,31,297,8,
+  	31,10,31,12,31,300,9,31,1,32,1,32,1,32,5,32,305,8,32,10,32,12,32,308,
+  	9,32,1,33,1,33,1,33,5,33,313,8,33,10,33,12,33,316,9,33,1,34,1,34,1,34,
+  	5,34,321,8,34,10,34,12,34,324,9,34,1,35,1,35,1,35,5,35,329,8,35,10,35,
+  	12,35,332,9,35,1,36,1,36,1,36,5,36,337,8,36,10,36,12,36,340,9,36,1,37,
+  	1,37,1,37,1,37,1,37,1,37,3,37,348,8,37,1,38,1,38,1,39,1,39,1,39,1,39,
+  	5,39,356,8,39,10,39,12,39,359,9,39,3,39,361,8,39,1,40,1,40,1,40,1,40,
+  	1,40,3,40,368,8,40,1,40,0,0,41,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,
   	30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,
-  	76,78,80,82,84,86,88,90,0,2,1,0,21,22,1,0,46,47,393,0,92,1,0,0,0,2,100,
-  	1,0,0,0,4,107,1,0,0,0,6,113,1,0,0,0,8,119,1,0,0,0,10,122,1,0,0,0,12,130,
-  	1,0,0,0,14,132,1,0,0,0,16,134,1,0,0,0,18,141,1,0,0,0,20,152,1,0,0,0,22,
-  	154,1,0,0,0,24,174,1,0,0,0,26,176,1,0,0,0,28,179,1,0,0,0,30,183,1,0,0,
-  	0,32,199,1,0,0,0,34,201,1,0,0,0,36,208,1,0,0,0,38,212,1,0,0,0,40,215,
-  	1,0,0,0,42,226,1,0,0,0,44,233,1,0,0,0,46,237,1,0,0,0,48,240,1,0,0,0,50,
-  	248,1,0,0,0,52,254,1,0,0,0,54,267,1,0,0,0,56,269,1,0,0,0,58,271,1,0,0,
-  	0,60,279,1,0,0,0,62,287,1,0,0,0,64,295,1,0,0,0,66,303,1,0,0,0,68,311,
-  	1,0,0,0,70,319,1,0,0,0,72,327,1,0,0,0,74,335,1,0,0,0,76,343,1,0,0,0,78,
-  	351,1,0,0,0,80,359,1,0,0,0,82,367,1,0,0,0,84,381,1,0,0,0,86,383,1,0,0,
-  	0,88,394,1,0,0,0,90,396,1,0,0,0,92,93,5,1,0,0,93,94,5,10,0,0,94,95,3,
-  	2,1,0,95,96,5,9,0,0,96,97,5,18,0,0,97,98,3,30,15,0,98,99,5,5,0,0,99,1,
-  	1,0,0,0,100,101,3,4,2,0,101,102,3,6,3,0,102,103,3,8,4,0,103,3,1,0,0,0,
-  	104,106,3,10,5,0,105,104,1,0,0,0,106,109,1,0,0,0,107,105,1,0,0,0,107,
-  	108,1,0,0,0,108,5,1,0,0,0,109,107,1,0,0,0,110,112,3,16,8,0,111,110,1,
-  	0,0,0,112,115,1,0,0,0,113,111,1,0,0,0,113,114,1,0,0,0,114,7,1,0,0,0,115,
-  	113,1,0,0,0,116,118,3,22,11,0,117,116,1,0,0,0,118,121,1,0,0,0,119,117,
-  	1,0,0,0,119,120,1,0,0,0,120,9,1,0,0,0,121,119,1,0,0,0,122,123,5,14,0,
-  	0,123,124,5,45,0,0,124,125,5,37,0,0,125,126,3,12,6,0,126,127,5,39,0,0,
-  	127,11,1,0,0,0,128,131,3,14,7,0,129,131,5,45,0,0,130,128,1,0,0,0,130,
-  	129,1,0,0,0,131,13,1,0,0,0,132,133,7,0,0,0,133,15,1,0,0,0,134,135,5,15,
-  	0,0,135,136,3,18,9,0,136,137,5,38,0,0,137,138,3,12,6,0,138,139,3,20,10,
-  	0,139,140,5,39,0,0,140,17,1,0,0,0,141,146,5,45,0,0,142,143,5,40,0,0,143,
-  	145,5,45,0,0,144,142,1,0,0,0,145,148,1,0,0,0,146,144,1,0,0,0,146,147,
-  	1,0,0,0,147,19,1,0,0,0,148,146,1,0,0,0,149,153,1,0,0,0,150,151,5,36,0,
-  	0,151,153,3,86,43,0,152,149,1,0,0,0,152,150,1,0,0,0,153,21,1,0,0,0,154,
-  	155,5,7,0,0,155,156,5,45,0,0,156,157,5,41,0,0,157,158,3,24,12,0,158,159,
-  	5,42,0,0,159,160,3,26,13,0,160,161,5,18,0,0,161,162,3,30,15,0,162,163,
-  	5,5,0,0,163,164,5,39,0,0,164,23,1,0,0,0,165,175,1,0,0,0,166,171,3,28,
-  	14,0,167,168,5,40,0,0,168,170,3,28,14,0,169,167,1,0,0,0,170,173,1,0,0,
-  	0,171,169,1,0,0,0,171,172,1,0,0,0,172,175,1,0,0,0,173,171,1,0,0,0,174,
-  	165,1,0,0,0,174,166,1,0,0,0,175,25,1,0,0,0,176,177,5,38,0,0,177,178,3,
-  	12,6,0,178,27,1,0,0,0,179,180,5,45,0,0,180,181,5,38,0,0,181,182,3,12,
-  	6,0,182,29,1,0,0,0,183,187,3,32,16,0,184,186,3,32,16,0,185,184,1,0,0,
-  	0,186,189,1,0,0,0,187,185,1,0,0,0,187,188,1,0,0,0,188,31,1,0,0,0,189,
-  	187,1,0,0,0,190,200,3,52,26,0,191,200,3,44,22,0,192,200,3,48,24,0,193,
-  	200,3,50,25,0,194,200,3,42,21,0,195,200,3,40,20,0,196,200,3,38,19,0,197,
-  	200,3,36,18,0,198,200,3,34,17,0,199,190,1,0,0,0,199,191,1,0,0,0,199,192,
-  	1,0,0,0,199,193,1,0,0,0,199,194,1,0,0,0,199,195,1,0,0,0,199,196,1,0,0,
-  	0,199,197,1,0,0,0,199,198,1,0,0,0,200,33,1,0,0,0,201,202,5,10,0,0,202,
-  	203,3,2,1,0,203,204,5,9,0,0,204,205,3,30,15,0,205,206,5,5,0,0,206,207,
-  	5,39,0,0,207,35,1,0,0,0,208,209,5,20,0,0,209,210,3,56,28,0,210,211,5,
-  	39,0,0,211,37,1,0,0,0,212,213,5,2,0,0,213,214,5,39,0,0,214,39,1,0,0,0,
-  	215,216,5,6,0,0,216,217,5,45,0,0,217,218,5,36,0,0,218,219,3,56,28,0,219,
-  	220,5,13,0,0,220,221,3,56,28,0,221,222,5,3,0,0,222,223,3,30,15,0,223,
-  	224,5,19,0,0,224,225,5,39,0,0,225,41,1,0,0,0,226,227,5,16,0,0,227,228,
-  	3,56,28,0,228,229,5,3,0,0,229,230,3,30,15,0,230,231,5,19,0,0,231,232,
-  	5,39,0,0,232,43,1,0,0,0,233,234,3,90,45,0,234,235,5,36,0,0,235,236,3,
-  	46,23,0,236,45,1,0,0,0,237,238,3,56,28,0,238,239,5,39,0,0,239,47,1,0,
-  	0,0,240,241,5,45,0,0,241,242,5,36,0,0,242,243,5,45,0,0,243,244,5,41,0,
-  	0,244,245,3,88,44,0,245,246,5,42,0,0,246,247,5,39,0,0,247,49,1,0,0,0,
-  	248,249,5,45,0,0,249,250,5,41,0,0,250,251,3,88,44,0,251,252,5,42,0,0,
-  	252,253,5,39,0,0,253,51,1,0,0,0,254,255,5,8,0,0,255,256,3,56,28,0,256,
-  	257,5,12,0,0,257,258,3,30,15,0,258,259,3,54,27,0,259,53,1,0,0,0,260,261,
-  	5,17,0,0,261,268,5,39,0,0,262,263,5,4,0,0,263,264,3,30,15,0,264,265,5,
-  	17,0,0,265,266,5,39,0,0,266,268,1,0,0,0,267,260,1,0,0,0,267,262,1,0,0,
-  	0,268,55,1,0,0,0,269,270,3,58,29,0,270,57,1,0,0,0,271,276,3,60,30,0,272,
-  	273,5,35,0,0,273,275,3,60,30,0,274,272,1,0,0,0,275,278,1,0,0,0,276,274,
-  	1,0,0,0,276,277,1,0,0,0,277,59,1,0,0,0,278,276,1,0,0,0,279,284,3,62,31,
-  	0,280,281,5,34,0,0,281,283,3,62,31,0,282,280,1,0,0,0,283,286,1,0,0,0,
-  	284,282,1,0,0,0,284,285,1,0,0,0,285,61,1,0,0,0,286,284,1,0,0,0,287,292,
-  	3,64,32,0,288,289,5,32,0,0,289,291,3,64,32,0,290,288,1,0,0,0,291,294,
-  	1,0,0,0,292,290,1,0,0,0,292,293,1,0,0,0,293,63,1,0,0,0,294,292,1,0,0,
-  	0,295,300,3,66,33,0,296,297,5,33,0,0,297,299,3,66,33,0,298,296,1,0,0,
-  	0,299,302,1,0,0,0,300,298,1,0,0,0,300,301,1,0,0,0,301,65,1,0,0,0,302,
-  	300,1,0,0,0,303,308,3,68,34,0,304,305,5,30,0,0,305,307,3,68,34,0,306,
-  	304,1,0,0,0,307,310,1,0,0,0,308,306,1,0,0,0,308,309,1,0,0,0,309,67,1,
-  	0,0,0,310,308,1,0,0,0,311,316,3,70,35,0,312,313,5,31,0,0,313,315,3,70,
-  	35,0,314,312,1,0,0,0,315,318,1,0,0,0,316,314,1,0,0,0,316,317,1,0,0,0,
-  	317,69,1,0,0,0,318,316,1,0,0,0,319,324,3,72,36,0,320,321,5,29,0,0,321,
-  	323,3,72,36,0,322,320,1,0,0,0,323,326,1,0,0,0,324,322,1,0,0,0,324,325,
-  	1,0,0,0,325,71,1,0,0,0,326,324,1,0,0,0,327,332,3,74,37,0,328,329,5,28,
-  	0,0,329,331,3,74,37,0,330,328,1,0,0,0,331,334,1,0,0,0,332,330,1,0,0,0,
-  	332,333,1,0,0,0,333,73,1,0,0,0,334,332,1,0,0,0,335,340,3,76,38,0,336,
-  	337,5,24,0,0,337,339,3,76,38,0,338,336,1,0,0,0,339,342,1,0,0,0,340,338,
-  	1,0,0,0,340,341,1,0,0,0,341,75,1,0,0,0,342,340,1,0,0,0,343,348,3,78,39,
-  	0,344,345,5,23,0,0,345,347,3,78,39,0,346,344,1,0,0,0,347,350,1,0,0,0,
-  	348,346,1,0,0,0,348,349,1,0,0,0,349,77,1,0,0,0,350,348,1,0,0,0,351,356,
-  	3,80,40,0,352,353,5,26,0,0,353,355,3,80,40,0,354,352,1,0,0,0,355,358,
-  	1,0,0,0,356,354,1,0,0,0,356,357,1,0,0,0,357,79,1,0,0,0,358,356,1,0,0,
-  	0,359,364,3,82,41,0,360,361,5,25,0,0,361,363,3,82,41,0,362,360,1,0,0,
-  	0,363,366,1,0,0,0,364,362,1,0,0,0,364,365,1,0,0,0,365,81,1,0,0,0,366,
-  	364,1,0,0,0,367,372,3,84,42,0,368,369,5,27,0,0,369,371,3,84,42,0,370,
-  	368,1,0,0,0,371,374,1,0,0,0,372,370,1,0,0,0,372,373,1,0,0,0,373,83,1,
-  	0,0,0,374,372,1,0,0,0,375,376,5,41,0,0,376,377,3,56,28,0,377,378,5,42,
-  	0,0,378,382,1,0,0,0,379,382,3,90,45,0,380,382,3,86,43,0,381,375,1,0,0,
-  	0,381,379,1,0,0,0,381,380,1,0,0,0,382,85,1,0,0,0,383,384,7,1,0,0,384,
-  	87,1,0,0,0,385,395,1,0,0,0,386,391,3,56,28,0,387,388,5,40,0,0,388,390,
-  	3,56,28,0,389,387,1,0,0,0,390,393,1,0,0,0,391,389,1,0,0,0,391,392,1,0,
-  	0,0,392,395,1,0,0,0,393,391,1,0,0,0,394,385,1,0,0,0,394,386,1,0,0,0,395,
-  	89,1,0,0,0,396,401,5,45,0,0,397,398,5,43,0,0,398,399,3,56,28,0,399,400,
-  	5,44,0,0,400,402,1,0,0,0,401,397,1,0,0,0,401,402,1,0,0,0,402,91,1,0,0,
-  	0,28,107,113,119,130,146,152,171,174,187,199,267,276,284,292,300,308,
-  	316,324,332,340,348,356,364,372,381,391,394,401
+  	76,78,80,0,2,1,0,22,23,1,0,46,47,361,0,82,1,0,0,0,2,90,1,0,0,0,4,96,1,
+  	0,0,0,6,102,1,0,0,0,8,107,1,0,0,0,10,109,1,0,0,0,12,111,1,0,0,0,14,118,
+  	1,0,0,0,16,129,1,0,0,0,18,131,1,0,0,0,20,151,1,0,0,0,22,153,1,0,0,0,24,
+  	156,1,0,0,0,26,160,1,0,0,0,28,176,1,0,0,0,30,178,1,0,0,0,32,185,1,0,0,
+  	0,34,189,1,0,0,0,36,214,1,0,0,0,38,216,1,0,0,0,40,223,1,0,0,0,42,227,
+  	1,0,0,0,44,230,1,0,0,0,46,238,1,0,0,0,48,244,1,0,0,0,50,257,1,0,0,0,52,
+  	259,1,0,0,0,54,261,1,0,0,0,56,269,1,0,0,0,58,277,1,0,0,0,60,285,1,0,0,
+  	0,62,293,1,0,0,0,64,301,1,0,0,0,66,309,1,0,0,0,68,317,1,0,0,0,70,325,
+  	1,0,0,0,72,333,1,0,0,0,74,347,1,0,0,0,76,349,1,0,0,0,78,360,1,0,0,0,80,
+  	362,1,0,0,0,82,83,5,1,0,0,83,84,5,10,0,0,84,85,3,2,1,0,85,86,5,9,0,0,
+  	86,87,5,19,0,0,87,88,3,26,13,0,88,89,5,5,0,0,89,1,1,0,0,0,90,91,3,4,2,
+  	0,91,92,3,6,3,0,92,3,1,0,0,0,93,95,3,12,6,0,94,93,1,0,0,0,95,98,1,0,0,
+  	0,96,94,1,0,0,0,96,97,1,0,0,0,97,5,1,0,0,0,98,96,1,0,0,0,99,101,3,18,
+  	9,0,100,99,1,0,0,0,101,104,1,0,0,0,102,100,1,0,0,0,102,103,1,0,0,0,103,
+  	7,1,0,0,0,104,102,1,0,0,0,105,108,3,10,5,0,106,108,5,45,0,0,107,105,1,
+  	0,0,0,107,106,1,0,0,0,108,9,1,0,0,0,109,110,7,0,0,0,110,11,1,0,0,0,111,
+  	112,5,16,0,0,112,113,3,14,7,0,113,114,5,38,0,0,114,115,3,8,4,0,115,116,
+  	3,16,8,0,116,117,5,39,0,0,117,13,1,0,0,0,118,123,5,45,0,0,119,120,5,40,
+  	0,0,120,122,5,45,0,0,121,119,1,0,0,0,122,125,1,0,0,0,123,121,1,0,0,0,
+  	123,124,1,0,0,0,124,15,1,0,0,0,125,123,1,0,0,0,126,130,1,0,0,0,127,128,
+  	5,36,0,0,128,130,3,76,38,0,129,126,1,0,0,0,129,127,1,0,0,0,130,17,1,0,
+  	0,0,131,132,5,7,0,0,132,133,5,45,0,0,133,134,5,41,0,0,134,135,3,20,10,
+  	0,135,136,5,42,0,0,136,137,3,22,11,0,137,138,5,19,0,0,138,139,3,26,13,
+  	0,139,140,5,5,0,0,140,141,5,39,0,0,141,19,1,0,0,0,142,152,1,0,0,0,143,
+  	148,3,24,12,0,144,145,5,40,0,0,145,147,3,24,12,0,146,144,1,0,0,0,147,
+  	150,1,0,0,0,148,146,1,0,0,0,148,149,1,0,0,0,149,152,1,0,0,0,150,148,1,
+  	0,0,0,151,142,1,0,0,0,151,143,1,0,0,0,152,21,1,0,0,0,153,154,5,38,0,0,
+  	154,155,3,8,4,0,155,23,1,0,0,0,156,157,5,45,0,0,157,158,5,38,0,0,158,
+  	159,3,8,4,0,159,25,1,0,0,0,160,164,3,28,14,0,161,163,3,28,14,0,162,161,
+  	1,0,0,0,163,166,1,0,0,0,164,162,1,0,0,0,164,165,1,0,0,0,165,27,1,0,0,
+  	0,166,164,1,0,0,0,167,177,3,48,24,0,168,177,3,40,20,0,169,177,3,44,22,
+  	0,170,177,3,46,23,0,171,177,3,38,19,0,172,177,3,36,18,0,173,177,3,34,
+  	17,0,174,177,3,32,16,0,175,177,3,30,15,0,176,167,1,0,0,0,176,168,1,0,
+  	0,0,176,169,1,0,0,0,176,170,1,0,0,0,176,171,1,0,0,0,176,172,1,0,0,0,176,
+  	173,1,0,0,0,176,174,1,0,0,0,176,175,1,0,0,0,177,29,1,0,0,0,178,179,5,
+  	10,0,0,179,180,3,2,1,0,180,181,5,9,0,0,181,182,3,26,13,0,182,183,5,5,
+  	0,0,183,184,5,39,0,0,184,31,1,0,0,0,185,186,5,21,0,0,186,187,3,52,26,
+  	0,187,188,5,39,0,0,188,33,1,0,0,0,189,190,5,2,0,0,190,191,5,39,0,0,191,
+  	35,1,0,0,0,192,193,5,6,0,0,193,194,5,45,0,0,194,195,5,36,0,0,195,196,
+  	3,52,26,0,196,197,5,13,0,0,197,198,3,52,26,0,198,199,5,3,0,0,199,200,
+  	3,26,13,0,200,201,5,20,0,0,201,202,5,39,0,0,202,215,1,0,0,0,203,204,5,
+  	6,0,0,204,205,5,45,0,0,205,206,5,36,0,0,206,207,3,52,26,0,207,208,5,14,
+  	0,0,208,209,3,52,26,0,209,210,5,3,0,0,210,211,3,26,13,0,211,212,5,20,
+  	0,0,212,213,5,39,0,0,213,215,1,0,0,0,214,192,1,0,0,0,214,203,1,0,0,0,
+  	215,37,1,0,0,0,216,217,5,17,0,0,217,218,3,52,26,0,218,219,5,3,0,0,219,
+  	220,3,26,13,0,220,221,5,20,0,0,221,222,5,39,0,0,222,39,1,0,0,0,223,224,
+  	3,80,40,0,224,225,5,36,0,0,225,226,3,42,21,0,226,41,1,0,0,0,227,228,3,
+  	52,26,0,228,229,5,39,0,0,229,43,1,0,0,0,230,231,5,45,0,0,231,232,5,36,
+  	0,0,232,233,5,45,0,0,233,234,5,41,0,0,234,235,3,78,39,0,235,236,5,42,
+  	0,0,236,237,5,39,0,0,237,45,1,0,0,0,238,239,5,45,0,0,239,240,5,41,0,0,
+  	240,241,3,78,39,0,241,242,5,42,0,0,242,243,5,39,0,0,243,47,1,0,0,0,244,
+  	245,5,8,0,0,245,246,3,52,26,0,246,247,5,12,0,0,247,248,3,26,13,0,248,
+  	249,3,50,25,0,249,49,1,0,0,0,250,251,5,18,0,0,251,258,5,39,0,0,252,253,
+  	5,4,0,0,253,254,3,26,13,0,254,255,5,18,0,0,255,256,5,39,0,0,256,258,1,
+  	0,0,0,257,250,1,0,0,0,257,252,1,0,0,0,258,51,1,0,0,0,259,260,3,54,27,
+  	0,260,53,1,0,0,0,261,266,3,56,28,0,262,263,5,32,0,0,263,265,3,56,28,0,
+  	264,262,1,0,0,0,265,268,1,0,0,0,266,264,1,0,0,0,266,267,1,0,0,0,267,55,
+  	1,0,0,0,268,266,1,0,0,0,269,274,3,58,29,0,270,271,5,33,0,0,271,273,3,
+  	58,29,0,272,270,1,0,0,0,273,276,1,0,0,0,274,272,1,0,0,0,274,275,1,0,0,
+  	0,275,57,1,0,0,0,276,274,1,0,0,0,277,282,3,60,30,0,278,279,5,30,0,0,279,
+  	281,3,60,30,0,280,278,1,0,0,0,281,284,1,0,0,0,282,280,1,0,0,0,282,283,
+  	1,0,0,0,283,59,1,0,0,0,284,282,1,0,0,0,285,290,3,62,31,0,286,287,5,31,
+  	0,0,287,289,3,62,31,0,288,286,1,0,0,0,289,292,1,0,0,0,290,288,1,0,0,0,
+  	290,291,1,0,0,0,291,61,1,0,0,0,292,290,1,0,0,0,293,298,3,64,32,0,294,
+  	295,5,29,0,0,295,297,3,64,32,0,296,294,1,0,0,0,297,300,1,0,0,0,298,296,
+  	1,0,0,0,298,299,1,0,0,0,299,63,1,0,0,0,300,298,1,0,0,0,301,306,3,66,33,
+  	0,302,303,5,28,0,0,303,305,3,66,33,0,304,302,1,0,0,0,305,308,1,0,0,0,
+  	306,304,1,0,0,0,306,307,1,0,0,0,307,65,1,0,0,0,308,306,1,0,0,0,309,314,
+  	3,68,34,0,310,311,5,25,0,0,311,313,3,68,34,0,312,310,1,0,0,0,313,316,
+  	1,0,0,0,314,312,1,0,0,0,314,315,1,0,0,0,315,67,1,0,0,0,316,314,1,0,0,
+  	0,317,322,3,70,35,0,318,319,5,24,0,0,319,321,3,70,35,0,320,318,1,0,0,
+  	0,321,324,1,0,0,0,322,320,1,0,0,0,322,323,1,0,0,0,323,69,1,0,0,0,324,
+  	322,1,0,0,0,325,330,3,72,36,0,326,327,5,27,0,0,327,329,3,72,36,0,328,
+  	326,1,0,0,0,329,332,1,0,0,0,330,328,1,0,0,0,330,331,1,0,0,0,331,71,1,
+  	0,0,0,332,330,1,0,0,0,333,338,3,74,37,0,334,335,5,26,0,0,335,337,3,74,
+  	37,0,336,334,1,0,0,0,337,340,1,0,0,0,338,336,1,0,0,0,338,339,1,0,0,0,
+  	339,73,1,0,0,0,340,338,1,0,0,0,341,342,5,41,0,0,342,343,3,52,26,0,343,
+  	344,5,42,0,0,344,348,1,0,0,0,345,348,3,80,40,0,346,348,3,76,38,0,347,
+  	341,1,0,0,0,347,345,1,0,0,0,347,346,1,0,0,0,348,75,1,0,0,0,349,350,7,
+  	1,0,0,350,77,1,0,0,0,351,361,1,0,0,0,352,357,3,52,26,0,353,354,5,40,0,
+  	0,354,356,3,52,26,0,355,353,1,0,0,0,356,359,1,0,0,0,357,355,1,0,0,0,357,
+  	358,1,0,0,0,358,361,1,0,0,0,359,357,1,0,0,0,360,351,1,0,0,0,360,352,1,
+  	0,0,0,361,79,1,0,0,0,362,367,5,45,0,0,363,364,5,43,0,0,364,365,3,52,26,
+  	0,365,366,5,44,0,0,366,368,1,0,0,0,367,363,1,0,0,0,367,368,1,0,0,0,368,
+  	81,1,0,0,0,25,96,102,107,123,129,148,151,164,176,214,257,266,274,282,
+  	290,298,306,314,322,330,338,347,357,360,367
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -331,19 +319,19 @@ SIMPParser::SimpProgramContext* SIMPParser::simpProgram() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(92);
+    setState(82);
     match(SIMPParser::KeywordMain);
-    setState(93);
+    setState(83);
     match(SIMPParser::KeywordLet);
-    setState(94);
+    setState(84);
     declSegment();
-    setState(95);
+    setState(85);
     match(SIMPParser::KeywordIn);
-    setState(96);
+    setState(86);
     match(SIMPParser::KeywordBegin);
-    setState(97);
+    setState(87);
     stmtList();
-    setState(98);
+    setState(88);
     match(SIMPParser::KeywordEnd);
    
   }
@@ -360,10 +348,6 @@ SIMPParser::SimpProgramContext* SIMPParser::simpProgram() {
 
 SIMPParser::DeclSegmentContext::DeclSegmentContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
-}
-
-SIMPParser::TypeDeclListContext* SIMPParser::DeclSegmentContext::typeDeclList() {
-  return getRuleContext<SIMPParser::TypeDeclListContext>(0);
 }
 
 SIMPParser::VarDeclListContext* SIMPParser::DeclSegmentContext::varDeclList() {
@@ -412,86 +396,10 @@ SIMPParser::DeclSegmentContext* SIMPParser::declSegment() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(100);
-    typeDeclList();
-    setState(101);
+    setState(90);
     varDeclList();
-    setState(102);
+    setState(91);
     funcDeclList();
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- TypeDeclListContext ------------------------------------------------------------------
-
-SIMPParser::TypeDeclListContext::TypeDeclListContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-std::vector<SIMPParser::TypeDeclContext *> SIMPParser::TypeDeclListContext::typeDecl() {
-  return getRuleContexts<SIMPParser::TypeDeclContext>();
-}
-
-SIMPParser::TypeDeclContext* SIMPParser::TypeDeclListContext::typeDecl(size_t i) {
-  return getRuleContext<SIMPParser::TypeDeclContext>(i);
-}
-
-
-size_t SIMPParser::TypeDeclListContext::getRuleIndex() const {
-  return SIMPParser::RuleTypeDeclList;
-}
-
-void SIMPParser::TypeDeclListContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterTypeDeclList(this);
-}
-
-void SIMPParser::TypeDeclListContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitTypeDeclList(this);
-}
-
-
-std::any SIMPParser::TypeDeclListContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<SIMPVisitor*>(visitor))
-    return parserVisitor->visitTypeDeclList(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-SIMPParser::TypeDeclListContext* SIMPParser::typeDeclList() {
-  TypeDeclListContext *_localctx = _tracker.createInstance<TypeDeclListContext>(_ctx, getState());
-  enterRule(_localctx, 4, SIMPParser::RuleTypeDeclList);
-  size_t _la = 0;
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(107);
-    _errHandler->sync(this);
-    _la = _input->LA(1);
-    while (_la == SIMPParser::KeywordType) {
-      setState(104);
-      typeDecl();
-      setState(109);
-      _errHandler->sync(this);
-      _la = _input->LA(1);
-    }
    
   }
   catch (RecognitionException &e) {
@@ -544,7 +452,7 @@ std::any SIMPParser::VarDeclListContext::accept(tree::ParseTreeVisitor *visitor)
 
 SIMPParser::VarDeclListContext* SIMPParser::varDeclList() {
   VarDeclListContext *_localctx = _tracker.createInstance<VarDeclListContext>(_ctx, getState());
-  enterRule(_localctx, 6, SIMPParser::RuleVarDeclList);
+  enterRule(_localctx, 4, SIMPParser::RuleVarDeclList);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -556,13 +464,13 @@ SIMPParser::VarDeclListContext* SIMPParser::varDeclList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(113);
+    setState(96);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::KeywordVar) {
-      setState(110);
+      setState(93);
       varDecl();
-      setState(115);
+      setState(98);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -618,7 +526,7 @@ std::any SIMPParser::FuncDeclListContext::accept(tree::ParseTreeVisitor *visitor
 
 SIMPParser::FuncDeclListContext* SIMPParser::funcDeclList() {
   FuncDeclListContext *_localctx = _tracker.createInstance<FuncDeclListContext>(_ctx, getState());
-  enterRule(_localctx, 8, SIMPParser::RuleFuncDeclList);
+  enterRule(_localctx, 6, SIMPParser::RuleFuncDeclList);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -630,101 +538,16 @@ SIMPParser::FuncDeclListContext* SIMPParser::funcDeclList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(119);
+    setState(102);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::KeywordFunction) {
-      setState(116);
+      setState(99);
       funcDecl();
-      setState(121);
+      setState(104);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- TypeDeclContext ------------------------------------------------------------------
-
-SIMPParser::TypeDeclContext::TypeDeclContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-tree::TerminalNode* SIMPParser::TypeDeclContext::KeywordType() {
-  return getToken(SIMPParser::KeywordType, 0);
-}
-
-tree::TerminalNode* SIMPParser::TypeDeclContext::ID() {
-  return getToken(SIMPParser::ID, 0);
-}
-
-tree::TerminalNode* SIMPParser::TypeDeclContext::Equals() {
-  return getToken(SIMPParser::Equals, 0);
-}
-
-SIMPParser::TypeContext* SIMPParser::TypeDeclContext::type() {
-  return getRuleContext<SIMPParser::TypeContext>(0);
-}
-
-tree::TerminalNode* SIMPParser::TypeDeclContext::Semicolon() {
-  return getToken(SIMPParser::Semicolon, 0);
-}
-
-
-size_t SIMPParser::TypeDeclContext::getRuleIndex() const {
-  return SIMPParser::RuleTypeDecl;
-}
-
-void SIMPParser::TypeDeclContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterTypeDecl(this);
-}
-
-void SIMPParser::TypeDeclContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitTypeDecl(this);
-}
-
-
-std::any SIMPParser::TypeDeclContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<SIMPVisitor*>(visitor))
-    return parserVisitor->visitTypeDecl(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-SIMPParser::TypeDeclContext* SIMPParser::typeDecl() {
-  TypeDeclContext *_localctx = _tracker.createInstance<TypeDeclContext>(_ctx, getState());
-  enterRule(_localctx, 10, SIMPParser::RuleTypeDecl);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(122);
-    match(SIMPParser::KeywordType);
-    setState(123);
-    match(SIMPParser::ID);
-    setState(124);
-    match(SIMPParser::Equals);
-    setState(125);
-    type();
-    setState(126);
-    match(SIMPParser::Semicolon);
    
   }
   catch (RecognitionException &e) {
@@ -777,7 +600,7 @@ std::any SIMPParser::TypeContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::TypeContext* SIMPParser::type() {
   TypeContext *_localctx = _tracker.createInstance<TypeContext>(_ctx, getState());
-  enterRule(_localctx, 12, SIMPParser::RuleType);
+  enterRule(_localctx, 8, SIMPParser::RuleType);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -787,20 +610,20 @@ SIMPParser::TypeContext* SIMPParser::type() {
     exitRule();
   });
   try {
-    setState(130);
+    setState(107);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::KeywordInt:
       case SIMPParser::KeywordFloat: {
         enterOuterAlt(_localctx, 1);
-        setState(128);
+        setState(105);
         typeId();
         break;
       }
 
       case SIMPParser::ID: {
         enterOuterAlt(_localctx, 2);
-        setState(129);
+        setState(106);
         match(SIMPParser::ID);
         break;
       }
@@ -860,7 +683,7 @@ std::any SIMPParser::TypeIdContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::TypeIdContext* SIMPParser::typeId() {
   TypeIdContext *_localctx = _tracker.createInstance<TypeIdContext>(_ctx, getState());
-  enterRule(_localctx, 14, SIMPParser::RuleTypeId);
+  enterRule(_localctx, 10, SIMPParser::RuleTypeId);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -872,7 +695,7 @@ SIMPParser::TypeIdContext* SIMPParser::typeId() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(132);
+    setState(109);
     _la = _input->LA(1);
     if (!(_la == SIMPParser::KeywordInt
 
@@ -951,7 +774,7 @@ std::any SIMPParser::VarDeclContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::VarDeclContext* SIMPParser::varDecl() {
   VarDeclContext *_localctx = _tracker.createInstance<VarDeclContext>(_ctx, getState());
-  enterRule(_localctx, 16, SIMPParser::RuleVarDecl);
+  enterRule(_localctx, 12, SIMPParser::RuleVarDecl);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -962,17 +785,17 @@ SIMPParser::VarDeclContext* SIMPParser::varDecl() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(134);
+    setState(111);
     match(SIMPParser::KeywordVar);
-    setState(135);
+    setState(112);
     idList();
-    setState(136);
+    setState(113);
     match(SIMPParser::Colon);
-    setState(137);
+    setState(114);
     type();
-    setState(138);
+    setState(115);
     optionalInit();
-    setState(139);
+    setState(116);
     match(SIMPParser::Semicolon);
    
   }
@@ -1034,7 +857,7 @@ std::any SIMPParser::IdListContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::IdListContext* SIMPParser::idList() {
   IdListContext *_localctx = _tracker.createInstance<IdListContext>(_ctx, getState());
-  enterRule(_localctx, 18, SIMPParser::RuleIdList);
+  enterRule(_localctx, 14, SIMPParser::RuleIdList);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1046,17 +869,17 @@ SIMPParser::IdListContext* SIMPParser::idList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(141);
+    setState(118);
     match(SIMPParser::ID);
-    setState(146);
+    setState(123);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::Comma) {
-      setState(142);
+      setState(119);
       match(SIMPParser::Comma);
-      setState(143);
+      setState(120);
       match(SIMPParser::ID);
-      setState(148);
+      setState(125);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -1112,7 +935,7 @@ std::any SIMPParser::OptionalInitContext::accept(tree::ParseTreeVisitor *visitor
 
 SIMPParser::OptionalInitContext* SIMPParser::optionalInit() {
   OptionalInitContext *_localctx = _tracker.createInstance<OptionalInitContext>(_ctx, getState());
-  enterRule(_localctx, 20, SIMPParser::RuleOptionalInit);
+  enterRule(_localctx, 16, SIMPParser::RuleOptionalInit);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1122,7 +945,7 @@ SIMPParser::OptionalInitContext* SIMPParser::optionalInit() {
     exitRule();
   });
   try {
-    setState(152);
+    setState(129);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::Semicolon: {
@@ -1133,9 +956,9 @@ SIMPParser::OptionalInitContext* SIMPParser::optionalInit() {
 
       case SIMPParser::OpAssign: {
         enterOuterAlt(_localctx, 2);
-        setState(150);
+        setState(127);
         match(SIMPParser::OpAssign);
-        setState(151);
+        setState(128);
         constant();
         break;
       }
@@ -1227,7 +1050,7 @@ std::any SIMPParser::FuncDeclContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::FuncDeclContext* SIMPParser::funcDecl() {
   FuncDeclContext *_localctx = _tracker.createInstance<FuncDeclContext>(_ctx, getState());
-  enterRule(_localctx, 22, SIMPParser::RuleFuncDecl);
+  enterRule(_localctx, 18, SIMPParser::RuleFuncDecl);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1238,25 +1061,25 @@ SIMPParser::FuncDeclContext* SIMPParser::funcDecl() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(154);
+    setState(131);
     match(SIMPParser::KeywordFunction);
-    setState(155);
+    setState(132);
     match(SIMPParser::ID);
-    setState(156);
+    setState(133);
     match(SIMPParser::LParen);
-    setState(157);
+    setState(134);
     paramList();
-    setState(158);
+    setState(135);
     match(SIMPParser::RParen);
-    setState(159);
+    setState(136);
     retType();
-    setState(160);
+    setState(137);
     match(SIMPParser::KeywordBegin);
-    setState(161);
+    setState(138);
     stmtList();
-    setState(162);
+    setState(139);
     match(SIMPParser::KeywordEnd);
-    setState(163);
+    setState(140);
     match(SIMPParser::Semicolon);
    
   }
@@ -1318,7 +1141,7 @@ std::any SIMPParser::ParamListContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ParamListContext* SIMPParser::paramList() {
   ParamListContext *_localctx = _tracker.createInstance<ParamListContext>(_ctx, getState());
-  enterRule(_localctx, 24, SIMPParser::RuleParamList);
+  enterRule(_localctx, 20, SIMPParser::RuleParamList);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1329,7 +1152,7 @@ SIMPParser::ParamListContext* SIMPParser::paramList() {
     exitRule();
   });
   try {
-    setState(174);
+    setState(151);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::RParen: {
@@ -1340,17 +1163,17 @@ SIMPParser::ParamListContext* SIMPParser::paramList() {
 
       case SIMPParser::ID: {
         enterOuterAlt(_localctx, 2);
-        setState(166);
+        setState(143);
         param();
-        setState(171);
+        setState(148);
         _errHandler->sync(this);
         _la = _input->LA(1);
         while (_la == SIMPParser::Comma) {
-          setState(167);
+          setState(144);
           match(SIMPParser::Comma);
-          setState(168);
+          setState(145);
           param();
-          setState(173);
+          setState(150);
           _errHandler->sync(this);
           _la = _input->LA(1);
         }
@@ -1412,7 +1235,7 @@ std::any SIMPParser::RetTypeContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::RetTypeContext* SIMPParser::retType() {
   RetTypeContext *_localctx = _tracker.createInstance<RetTypeContext>(_ctx, getState());
-  enterRule(_localctx, 26, SIMPParser::RuleRetType);
+  enterRule(_localctx, 22, SIMPParser::RuleRetType);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1423,9 +1246,9 @@ SIMPParser::RetTypeContext* SIMPParser::retType() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(176);
+    setState(153);
     match(SIMPParser::Colon);
-    setState(177);
+    setState(154);
     type();
    
   }
@@ -1483,7 +1306,7 @@ std::any SIMPParser::ParamContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ParamContext* SIMPParser::param() {
   ParamContext *_localctx = _tracker.createInstance<ParamContext>(_ctx, getState());
-  enterRule(_localctx, 28, SIMPParser::RuleParam);
+  enterRule(_localctx, 24, SIMPParser::RuleParam);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1494,11 +1317,11 @@ SIMPParser::ParamContext* SIMPParser::param() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(179);
+    setState(156);
     match(SIMPParser::ID);
-    setState(180);
+    setState(157);
     match(SIMPParser::Colon);
-    setState(181);
+    setState(158);
     type();
    
   }
@@ -1552,7 +1375,7 @@ std::any SIMPParser::StmtListContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::StmtListContext* SIMPParser::stmtList() {
   StmtListContext *_localctx = _tracker.createInstance<StmtListContext>(_ctx, getState());
-  enterRule(_localctx, 30, SIMPParser::RuleStmtList);
+  enterRule(_localctx, 26, SIMPParser::RuleStmtList);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1564,16 +1387,16 @@ SIMPParser::StmtListContext* SIMPParser::stmtList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(183);
+    setState(160);
     stmt();
-    setState(187);
+    setState(164);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 35184373204292) != 0)) {
-      setState(184);
+      ((1ULL << _la) & 35184374318404) != 0)) {
+      setState(161);
       stmt();
-      setState(189);
+      setState(166);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -1657,7 +1480,7 @@ std::any SIMPParser::StmtContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::StmtContext* SIMPParser::stmt() {
   StmtContext *_localctx = _tracker.createInstance<StmtContext>(_ctx, getState());
-  enterRule(_localctx, 32, SIMPParser::RuleStmt);
+  enterRule(_localctx, 28, SIMPParser::RuleStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1667,68 +1490,68 @@ SIMPParser::StmtContext* SIMPParser::stmt() {
     exitRule();
   });
   try {
-    setState(199);
+    setState(176);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 9, _ctx)) {
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 8, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(190);
+      setState(167);
       ifStmt();
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(191);
+      setState(168);
       assignStmt();
       break;
     }
 
     case 3: {
       enterOuterAlt(_localctx, 3);
-      setState(192);
+      setState(169);
       rcallStmt();
       break;
     }
 
     case 4: {
       enterOuterAlt(_localctx, 4);
-      setState(193);
+      setState(170);
       callStmt();
       break;
     }
 
     case 5: {
       enterOuterAlt(_localctx, 5);
-      setState(194);
+      setState(171);
       whileStmt();
       break;
     }
 
     case 6: {
       enterOuterAlt(_localctx, 6);
-      setState(195);
+      setState(172);
       forStmt();
       break;
     }
 
     case 7: {
       enterOuterAlt(_localctx, 7);
-      setState(196);
+      setState(173);
       breakStmt();
       break;
     }
 
     case 8: {
       enterOuterAlt(_localctx, 8);
-      setState(197);
+      setState(174);
       returnStmt();
       break;
     }
 
     case 9: {
       enterOuterAlt(_localctx, 9);
-      setState(198);
+      setState(175);
       letStmt();
       break;
     }
@@ -1804,7 +1627,7 @@ std::any SIMPParser::LetStmtContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::LetStmtContext* SIMPParser::letStmt() {
   LetStmtContext *_localctx = _tracker.createInstance<LetStmtContext>(_ctx, getState());
-  enterRule(_localctx, 34, SIMPParser::RuleLetStmt);
+  enterRule(_localctx, 30, SIMPParser::RuleLetStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1815,17 +1638,17 @@ SIMPParser::LetStmtContext* SIMPParser::letStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(201);
+    setState(178);
     match(SIMPParser::KeywordLet);
-    setState(202);
+    setState(179);
     declSegment();
-    setState(203);
+    setState(180);
     match(SIMPParser::KeywordIn);
-    setState(204);
+    setState(181);
     stmtList();
-    setState(205);
+    setState(182);
     match(SIMPParser::KeywordEnd);
-    setState(206);
+    setState(183);
     match(SIMPParser::Semicolon);
    
   }
@@ -1883,7 +1706,7 @@ std::any SIMPParser::ReturnStmtContext::accept(tree::ParseTreeVisitor *visitor) 
 
 SIMPParser::ReturnStmtContext* SIMPParser::returnStmt() {
   ReturnStmtContext *_localctx = _tracker.createInstance<ReturnStmtContext>(_ctx, getState());
-  enterRule(_localctx, 36, SIMPParser::RuleReturnStmt);
+  enterRule(_localctx, 32, SIMPParser::RuleReturnStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1894,11 +1717,11 @@ SIMPParser::ReturnStmtContext* SIMPParser::returnStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(208);
+    setState(185);
     match(SIMPParser::KeywordReturn);
-    setState(209);
+    setState(186);
     expr();
-    setState(210);
+    setState(187);
     match(SIMPParser::Semicolon);
    
   }
@@ -1952,7 +1775,7 @@ std::any SIMPParser::BreakStmtContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::BreakStmtContext* SIMPParser::breakStmt() {
   BreakStmtContext *_localctx = _tracker.createInstance<BreakStmtContext>(_ctx, getState());
-  enterRule(_localctx, 38, SIMPParser::RuleBreakStmt);
+  enterRule(_localctx, 34, SIMPParser::RuleBreakStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1963,9 +1786,9 @@ SIMPParser::BreakStmtContext* SIMPParser::breakStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(212);
+    setState(189);
     match(SIMPParser::KeywordBreak);
-    setState(213);
+    setState(190);
     match(SIMPParser::Semicolon);
    
   }
@@ -2024,6 +1847,10 @@ tree::TerminalNode* SIMPParser::ForStmtContext::Semicolon() {
   return getToken(SIMPParser::Semicolon, 0);
 }
 
+tree::TerminalNode* SIMPParser::ForStmtContext::KeywordDownto() {
+  return getToken(SIMPParser::KeywordDownto, 0);
+}
+
 
 size_t SIMPParser::ForStmtContext::getRuleIndex() const {
   return SIMPParser::RuleForStmt;
@@ -2051,7 +1878,7 @@ std::any SIMPParser::ForStmtContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ForStmtContext* SIMPParser::forStmt() {
   ForStmtContext *_localctx = _tracker.createInstance<ForStmtContext>(_ctx, getState());
-  enterRule(_localctx, 40, SIMPParser::RuleForStmt);
+  enterRule(_localctx, 36, SIMPParser::RuleForStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2061,27 +1888,62 @@ SIMPParser::ForStmtContext* SIMPParser::forStmt() {
     exitRule();
   });
   try {
-    enterOuterAlt(_localctx, 1);
-    setState(215);
-    match(SIMPParser::KeywordFor);
-    setState(216);
-    match(SIMPParser::ID);
-    setState(217);
-    match(SIMPParser::OpAssign);
-    setState(218);
-    expr();
-    setState(219);
-    match(SIMPParser::KeywordTo);
-    setState(220);
-    expr();
-    setState(221);
-    match(SIMPParser::KeywordDo);
-    setState(222);
-    stmtList();
-    setState(223);
-    match(SIMPParser::KeywordEnddo);
-    setState(224);
-    match(SIMPParser::Semicolon);
+    setState(214);
+    _errHandler->sync(this);
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 9, _ctx)) {
+    case 1: {
+      enterOuterAlt(_localctx, 1);
+      setState(192);
+      match(SIMPParser::KeywordFor);
+      setState(193);
+      match(SIMPParser::ID);
+      setState(194);
+      match(SIMPParser::OpAssign);
+      setState(195);
+      expr();
+      setState(196);
+      match(SIMPParser::KeywordTo);
+      setState(197);
+      expr();
+      setState(198);
+      match(SIMPParser::KeywordDo);
+      setState(199);
+      stmtList();
+      setState(200);
+      match(SIMPParser::KeywordEnddo);
+      setState(201);
+      match(SIMPParser::Semicolon);
+      break;
+    }
+
+    case 2: {
+      enterOuterAlt(_localctx, 2);
+      setState(203);
+      match(SIMPParser::KeywordFor);
+      setState(204);
+      match(SIMPParser::ID);
+      setState(205);
+      match(SIMPParser::OpAssign);
+      setState(206);
+      expr();
+      setState(207);
+      match(SIMPParser::KeywordDownto);
+      setState(208);
+      expr();
+      setState(209);
+      match(SIMPParser::KeywordDo);
+      setState(210);
+      stmtList();
+      setState(211);
+      match(SIMPParser::KeywordEnddo);
+      setState(212);
+      match(SIMPParser::Semicolon);
+      break;
+    }
+
+    default:
+      break;
+    }
    
   }
   catch (RecognitionException &e) {
@@ -2150,7 +2012,7 @@ std::any SIMPParser::WhileStmtContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::WhileStmtContext* SIMPParser::whileStmt() {
   WhileStmtContext *_localctx = _tracker.createInstance<WhileStmtContext>(_ctx, getState());
-  enterRule(_localctx, 42, SIMPParser::RuleWhileStmt);
+  enterRule(_localctx, 38, SIMPParser::RuleWhileStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2161,17 +2023,17 @@ SIMPParser::WhileStmtContext* SIMPParser::whileStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(226);
+    setState(216);
     match(SIMPParser::KeywordWhile);
-    setState(227);
+    setState(217);
     expr();
-    setState(228);
+    setState(218);
     match(SIMPParser::KeywordDo);
-    setState(229);
+    setState(219);
     stmtList();
-    setState(230);
+    setState(220);
     match(SIMPParser::KeywordEnddo);
-    setState(231);
+    setState(221);
     match(SIMPParser::Semicolon);
    
   }
@@ -2229,7 +2091,7 @@ std::any SIMPParser::AssignStmtContext::accept(tree::ParseTreeVisitor *visitor) 
 
 SIMPParser::AssignStmtContext* SIMPParser::assignStmt() {
   AssignStmtContext *_localctx = _tracker.createInstance<AssignStmtContext>(_ctx, getState());
-  enterRule(_localctx, 44, SIMPParser::RuleAssignStmt);
+  enterRule(_localctx, 40, SIMPParser::RuleAssignStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2240,11 +2102,11 @@ SIMPParser::AssignStmtContext* SIMPParser::assignStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(233);
+    setState(223);
     lvalue();
-    setState(234);
+    setState(224);
     match(SIMPParser::OpAssign);
-    setState(235);
+    setState(225);
     rValue();
    
   }
@@ -2298,7 +2160,7 @@ std::any SIMPParser::RValueContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::RValueContext* SIMPParser::rValue() {
   RValueContext *_localctx = _tracker.createInstance<RValueContext>(_ctx, getState());
-  enterRule(_localctx, 46, SIMPParser::RuleRValue);
+  enterRule(_localctx, 42, SIMPParser::RuleRValue);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2309,9 +2171,9 @@ SIMPParser::RValueContext* SIMPParser::rValue() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(237);
+    setState(227);
     expr();
-    setState(238);
+    setState(228);
     match(SIMPParser::Semicolon);
    
   }
@@ -2385,7 +2247,7 @@ std::any SIMPParser::RcallStmtContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::RcallStmtContext* SIMPParser::rcallStmt() {
   RcallStmtContext *_localctx = _tracker.createInstance<RcallStmtContext>(_ctx, getState());
-  enterRule(_localctx, 48, SIMPParser::RuleRcallStmt);
+  enterRule(_localctx, 44, SIMPParser::RuleRcallStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2396,19 +2258,19 @@ SIMPParser::RcallStmtContext* SIMPParser::rcallStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(240);
+    setState(230);
     match(SIMPParser::ID);
-    setState(241);
+    setState(231);
     match(SIMPParser::OpAssign);
-    setState(242);
+    setState(232);
     match(SIMPParser::ID);
-    setState(243);
+    setState(233);
     match(SIMPParser::LParen);
-    setState(244);
+    setState(234);
     exprList();
-    setState(245);
+    setState(235);
     match(SIMPParser::RParen);
-    setState(246);
+    setState(236);
     match(SIMPParser::Semicolon);
    
   }
@@ -2474,7 +2336,7 @@ std::any SIMPParser::CallStmtContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::CallStmtContext* SIMPParser::callStmt() {
   CallStmtContext *_localctx = _tracker.createInstance<CallStmtContext>(_ctx, getState());
-  enterRule(_localctx, 50, SIMPParser::RuleCallStmt);
+  enterRule(_localctx, 46, SIMPParser::RuleCallStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2485,15 +2347,15 @@ SIMPParser::CallStmtContext* SIMPParser::callStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(248);
+    setState(238);
     match(SIMPParser::ID);
-    setState(249);
+    setState(239);
     match(SIMPParser::LParen);
-    setState(250);
+    setState(240);
     exprList();
-    setState(251);
+    setState(241);
     match(SIMPParser::RParen);
-    setState(252);
+    setState(242);
     match(SIMPParser::Semicolon);
    
   }
@@ -2559,7 +2421,7 @@ std::any SIMPParser::IfStmtContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::IfStmtContext* SIMPParser::ifStmt() {
   IfStmtContext *_localctx = _tracker.createInstance<IfStmtContext>(_ctx, getState());
-  enterRule(_localctx, 52, SIMPParser::RuleIfStmt);
+  enterRule(_localctx, 48, SIMPParser::RuleIfStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2570,15 +2432,15 @@ SIMPParser::IfStmtContext* SIMPParser::ifStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(254);
+    setState(244);
     match(SIMPParser::KeywordIf);
-    setState(255);
+    setState(245);
     expr();
-    setState(256);
+    setState(246);
     match(SIMPParser::KeywordThen);
-    setState(257);
+    setState(247);
     stmtList();
-    setState(258);
+    setState(248);
     ifStmtTail();
    
   }
@@ -2640,7 +2502,7 @@ std::any SIMPParser::IfStmtTailContext::accept(tree::ParseTreeVisitor *visitor) 
 
 SIMPParser::IfStmtTailContext* SIMPParser::ifStmtTail() {
   IfStmtTailContext *_localctx = _tracker.createInstance<IfStmtTailContext>(_ctx, getState());
-  enterRule(_localctx, 54, SIMPParser::RuleIfStmtTail);
+  enterRule(_localctx, 50, SIMPParser::RuleIfStmtTail);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2650,27 +2512,27 @@ SIMPParser::IfStmtTailContext* SIMPParser::ifStmtTail() {
     exitRule();
   });
   try {
-    setState(267);
+    setState(257);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::KeywordEndif: {
         enterOuterAlt(_localctx, 1);
-        setState(260);
+        setState(250);
         match(SIMPParser::KeywordEndif);
-        setState(261);
+        setState(251);
         match(SIMPParser::Semicolon);
         break;
       }
 
       case SIMPParser::KeywordElse: {
         enterOuterAlt(_localctx, 2);
-        setState(262);
+        setState(252);
         match(SIMPParser::KeywordElse);
-        setState(263);
+        setState(253);
         stmtList();
-        setState(264);
+        setState(254);
         match(SIMPParser::KeywordEndif);
-        setState(265);
+        setState(255);
         match(SIMPParser::Semicolon);
         break;
       }
@@ -2695,8 +2557,8 @@ SIMPParser::ExprContext::ExprContext(ParserRuleContext *parent, size_t invokingS
   : ParserRuleContext(parent, invokingState) {
 }
 
-SIMPParser::OrTermContext* SIMPParser::ExprContext::orTerm() {
-  return getRuleContext<SIMPParser::OrTermContext>(0);
+SIMPParser::LeTermContext* SIMPParser::ExprContext::leTerm() {
+  return getRuleContext<SIMPParser::LeTermContext>(0);
 }
 
 
@@ -2726,7 +2588,7 @@ std::any SIMPParser::ExprContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ExprContext* SIMPParser::expr() {
   ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, getState());
-  enterRule(_localctx, 56, SIMPParser::RuleExpr);
+  enterRule(_localctx, 52, SIMPParser::RuleExpr);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2737,180 +2599,8 @@ SIMPParser::ExprContext* SIMPParser::expr() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(269);
-    orTerm();
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- OrTermContext ------------------------------------------------------------------
-
-SIMPParser::OrTermContext::OrTermContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-std::vector<SIMPParser::AndTermContext *> SIMPParser::OrTermContext::andTerm() {
-  return getRuleContexts<SIMPParser::AndTermContext>();
-}
-
-SIMPParser::AndTermContext* SIMPParser::OrTermContext::andTerm(size_t i) {
-  return getRuleContext<SIMPParser::AndTermContext>(i);
-}
-
-std::vector<tree::TerminalNode *> SIMPParser::OrTermContext::BinOpOr() {
-  return getTokens(SIMPParser::BinOpOr);
-}
-
-tree::TerminalNode* SIMPParser::OrTermContext::BinOpOr(size_t i) {
-  return getToken(SIMPParser::BinOpOr, i);
-}
-
-
-size_t SIMPParser::OrTermContext::getRuleIndex() const {
-  return SIMPParser::RuleOrTerm;
-}
-
-void SIMPParser::OrTermContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterOrTerm(this);
-}
-
-void SIMPParser::OrTermContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitOrTerm(this);
-}
-
-
-std::any SIMPParser::OrTermContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<SIMPVisitor*>(visitor))
-    return parserVisitor->visitOrTerm(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-SIMPParser::OrTermContext* SIMPParser::orTerm() {
-  OrTermContext *_localctx = _tracker.createInstance<OrTermContext>(_ctx, getState());
-  enterRule(_localctx, 58, SIMPParser::RuleOrTerm);
-  size_t _la = 0;
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(271);
-    andTerm();
-    setState(276);
-    _errHandler->sync(this);
-    _la = _input->LA(1);
-    while (_la == SIMPParser::BinOpOr) {
-      setState(272);
-      match(SIMPParser::BinOpOr);
-      setState(273);
-      andTerm();
-      setState(278);
-      _errHandler->sync(this);
-      _la = _input->LA(1);
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- AndTermContext ------------------------------------------------------------------
-
-SIMPParser::AndTermContext::AndTermContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-std::vector<SIMPParser::LeTermContext *> SIMPParser::AndTermContext::leTerm() {
-  return getRuleContexts<SIMPParser::LeTermContext>();
-}
-
-SIMPParser::LeTermContext* SIMPParser::AndTermContext::leTerm(size_t i) {
-  return getRuleContext<SIMPParser::LeTermContext>(i);
-}
-
-std::vector<tree::TerminalNode *> SIMPParser::AndTermContext::BinOpAnd() {
-  return getTokens(SIMPParser::BinOpAnd);
-}
-
-tree::TerminalNode* SIMPParser::AndTermContext::BinOpAnd(size_t i) {
-  return getToken(SIMPParser::BinOpAnd, i);
-}
-
-
-size_t SIMPParser::AndTermContext::getRuleIndex() const {
-  return SIMPParser::RuleAndTerm;
-}
-
-void SIMPParser::AndTermContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterAndTerm(this);
-}
-
-void SIMPParser::AndTermContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitAndTerm(this);
-}
-
-
-std::any SIMPParser::AndTermContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<SIMPVisitor*>(visitor))
-    return parserVisitor->visitAndTerm(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-SIMPParser::AndTermContext* SIMPParser::andTerm() {
-  AndTermContext *_localctx = _tracker.createInstance<AndTermContext>(_ctx, getState());
-  enterRule(_localctx, 60, SIMPParser::RuleAndTerm);
-  size_t _la = 0;
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(279);
+    setState(259);
     leTerm();
-    setState(284);
-    _errHandler->sync(this);
-    _la = _input->LA(1);
-    while (_la == SIMPParser::BinOpAnd) {
-      setState(280);
-      match(SIMPParser::BinOpAnd);
-      setState(281);
-      leTerm();
-      setState(286);
-      _errHandler->sync(this);
-      _la = _input->LA(1);
-    }
    
   }
   catch (RecognitionException &e) {
@@ -2971,7 +2661,7 @@ std::any SIMPParser::LeTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::LeTermContext* SIMPParser::leTerm() {
   LeTermContext *_localctx = _tracker.createInstance<LeTermContext>(_ctx, getState());
-  enterRule(_localctx, 62, SIMPParser::RuleLeTerm);
+  enterRule(_localctx, 54, SIMPParser::RuleLeTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2983,17 +2673,17 @@ SIMPParser::LeTermContext* SIMPParser::leTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(287);
+    setState(261);
     geTerm();
-    setState(292);
+    setState(266);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpLeq) {
-      setState(288);
+      setState(262);
       match(SIMPParser::BinOpLeq);
-      setState(289);
+      setState(263);
       geTerm();
-      setState(294);
+      setState(268);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3057,7 +2747,7 @@ std::any SIMPParser::GeTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::GeTermContext* SIMPParser::geTerm() {
   GeTermContext *_localctx = _tracker.createInstance<GeTermContext>(_ctx, getState());
-  enterRule(_localctx, 64, SIMPParser::RuleGeTerm);
+  enterRule(_localctx, 56, SIMPParser::RuleGeTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3069,17 +2759,17 @@ SIMPParser::GeTermContext* SIMPParser::geTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(295);
+    setState(269);
     ltTerm();
-    setState(300);
+    setState(274);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpGeq) {
-      setState(296);
+      setState(270);
       match(SIMPParser::BinOpGeq);
-      setState(297);
+      setState(271);
       ltTerm();
-      setState(302);
+      setState(276);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3143,7 +2833,7 @@ std::any SIMPParser::LtTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::LtTermContext* SIMPParser::ltTerm() {
   LtTermContext *_localctx = _tracker.createInstance<LtTermContext>(_ctx, getState());
-  enterRule(_localctx, 66, SIMPParser::RuleLtTerm);
+  enterRule(_localctx, 58, SIMPParser::RuleLtTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3155,17 +2845,17 @@ SIMPParser::LtTermContext* SIMPParser::ltTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(303);
+    setState(277);
     gtTerm();
-    setState(308);
+    setState(282);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpLt) {
-      setState(304);
+      setState(278);
       match(SIMPParser::BinOpLt);
-      setState(305);
+      setState(279);
       gtTerm();
-      setState(310);
+      setState(284);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3229,7 +2919,7 @@ std::any SIMPParser::GtTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::GtTermContext* SIMPParser::gtTerm() {
   GtTermContext *_localctx = _tracker.createInstance<GtTermContext>(_ctx, getState());
-  enterRule(_localctx, 68, SIMPParser::RuleGtTerm);
+  enterRule(_localctx, 60, SIMPParser::RuleGtTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3241,17 +2931,17 @@ SIMPParser::GtTermContext* SIMPParser::gtTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(311);
+    setState(285);
     neTerm();
-    setState(316);
+    setState(290);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpGt) {
-      setState(312);
+      setState(286);
       match(SIMPParser::BinOpGt);
-      setState(313);
+      setState(287);
       neTerm();
-      setState(318);
+      setState(292);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3315,7 +3005,7 @@ std::any SIMPParser::NeTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::NeTermContext* SIMPParser::neTerm() {
   NeTermContext *_localctx = _tracker.createInstance<NeTermContext>(_ctx, getState());
-  enterRule(_localctx, 70, SIMPParser::RuleNeTerm);
+  enterRule(_localctx, 62, SIMPParser::RuleNeTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3327,17 +3017,17 @@ SIMPParser::NeTermContext* SIMPParser::neTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(319);
+    setState(293);
     eqTerm();
-    setState(324);
+    setState(298);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpNeq) {
-      setState(320);
+      setState(294);
       match(SIMPParser::BinOpNeq);
-      setState(321);
+      setState(295);
       eqTerm();
-      setState(326);
+      setState(300);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3401,7 +3091,7 @@ std::any SIMPParser::EqTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::EqTermContext* SIMPParser::eqTerm() {
   EqTermContext *_localctx = _tracker.createInstance<EqTermContext>(_ctx, getState());
-  enterRule(_localctx, 72, SIMPParser::RuleEqTerm);
+  enterRule(_localctx, 64, SIMPParser::RuleEqTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3413,17 +3103,17 @@ SIMPParser::EqTermContext* SIMPParser::eqTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(327);
+    setState(301);
     subTerm();
-    setState(332);
+    setState(306);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpEq) {
-      setState(328);
+      setState(302);
       match(SIMPParser::BinOpEq);
-      setState(329);
+      setState(303);
       subTerm();
-      setState(334);
+      setState(308);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3487,7 +3177,7 @@ std::any SIMPParser::SubTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::SubTermContext* SIMPParser::subTerm() {
   SubTermContext *_localctx = _tracker.createInstance<SubTermContext>(_ctx, getState());
-  enterRule(_localctx, 74, SIMPParser::RuleSubTerm);
+  enterRule(_localctx, 66, SIMPParser::RuleSubTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3499,17 +3189,17 @@ SIMPParser::SubTermContext* SIMPParser::subTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(335);
+    setState(309);
     addTerm();
-    setState(340);
+    setState(314);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpMinus) {
-      setState(336);
+      setState(310);
       match(SIMPParser::BinOpMinus);
-      setState(337);
+      setState(311);
       addTerm();
-      setState(342);
+      setState(316);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3573,7 +3263,7 @@ std::any SIMPParser::AddTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::AddTermContext* SIMPParser::addTerm() {
   AddTermContext *_localctx = _tracker.createInstance<AddTermContext>(_ctx, getState());
-  enterRule(_localctx, 76, SIMPParser::RuleAddTerm);
+  enterRule(_localctx, 68, SIMPParser::RuleAddTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3585,17 +3275,17 @@ SIMPParser::AddTermContext* SIMPParser::addTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(343);
+    setState(317);
     divTerm();
-    setState(348);
+    setState(322);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpPlus) {
-      setState(344);
+      setState(318);
       match(SIMPParser::BinOpPlus);
-      setState(345);
+      setState(319);
       divTerm();
-      setState(350);
+      setState(324);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3659,7 +3349,7 @@ std::any SIMPParser::DivTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::DivTermContext* SIMPParser::divTerm() {
   DivTermContext *_localctx = _tracker.createInstance<DivTermContext>(_ctx, getState());
-  enterRule(_localctx, 78, SIMPParser::RuleDivTerm);
+  enterRule(_localctx, 70, SIMPParser::RuleDivTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3671,17 +3361,17 @@ SIMPParser::DivTermContext* SIMPParser::divTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(351);
+    setState(325);
     mulTerm();
-    setState(356);
+    setState(330);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpDivide) {
-      setState(352);
+      setState(326);
       match(SIMPParser::BinOpDivide);
-      setState(353);
+      setState(327);
       mulTerm();
-      setState(358);
+      setState(332);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3702,12 +3392,12 @@ SIMPParser::MulTermContext::MulTermContext(ParserRuleContext *parent, size_t inv
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<SIMPParser::PowTermContext *> SIMPParser::MulTermContext::powTerm() {
-  return getRuleContexts<SIMPParser::PowTermContext>();
+std::vector<SIMPParser::ParnTermContext *> SIMPParser::MulTermContext::parnTerm() {
+  return getRuleContexts<SIMPParser::ParnTermContext>();
 }
 
-SIMPParser::PowTermContext* SIMPParser::MulTermContext::powTerm(size_t i) {
-  return getRuleContext<SIMPParser::PowTermContext>(i);
+SIMPParser::ParnTermContext* SIMPParser::MulTermContext::parnTerm(size_t i) {
+  return getRuleContext<SIMPParser::ParnTermContext>(i);
 }
 
 std::vector<tree::TerminalNode *> SIMPParser::MulTermContext::BinOpTimes() {
@@ -3745,7 +3435,7 @@ std::any SIMPParser::MulTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::MulTermContext* SIMPParser::mulTerm() {
   MulTermContext *_localctx = _tracker.createInstance<MulTermContext>(_ctx, getState());
-  enterRule(_localctx, 80, SIMPParser::RuleMulTerm);
+  enterRule(_localctx, 72, SIMPParser::RuleMulTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3757,103 +3447,17 @@ SIMPParser::MulTermContext* SIMPParser::mulTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(359);
-    powTerm();
-    setState(364);
+    setState(333);
+    parnTerm();
+    setState(338);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpTimes) {
-      setState(360);
+      setState(334);
       match(SIMPParser::BinOpTimes);
-      setState(361);
-      powTerm();
-      setState(366);
-      _errHandler->sync(this);
-      _la = _input->LA(1);
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- PowTermContext ------------------------------------------------------------------
-
-SIMPParser::PowTermContext::PowTermContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-std::vector<SIMPParser::ParnTermContext *> SIMPParser::PowTermContext::parnTerm() {
-  return getRuleContexts<SIMPParser::ParnTermContext>();
-}
-
-SIMPParser::ParnTermContext* SIMPParser::PowTermContext::parnTerm(size_t i) {
-  return getRuleContext<SIMPParser::ParnTermContext>(i);
-}
-
-std::vector<tree::TerminalNode *> SIMPParser::PowTermContext::BinOpPower() {
-  return getTokens(SIMPParser::BinOpPower);
-}
-
-tree::TerminalNode* SIMPParser::PowTermContext::BinOpPower(size_t i) {
-  return getToken(SIMPParser::BinOpPower, i);
-}
-
-
-size_t SIMPParser::PowTermContext::getRuleIndex() const {
-  return SIMPParser::RulePowTerm;
-}
-
-void SIMPParser::PowTermContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterPowTerm(this);
-}
-
-void SIMPParser::PowTermContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SIMPListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitPowTerm(this);
-}
-
-
-std::any SIMPParser::PowTermContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<SIMPVisitor*>(visitor))
-    return parserVisitor->visitPowTerm(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-SIMPParser::PowTermContext* SIMPParser::powTerm() {
-  PowTermContext *_localctx = _tracker.createInstance<PowTermContext>(_ctx, getState());
-  enterRule(_localctx, 82, SIMPParser::RulePowTerm);
-  size_t _la = 0;
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(367);
-    parnTerm();
-    setState(372);
-    _errHandler->sync(this);
-    _la = _input->LA(1);
-    while (_la == SIMPParser::BinOpPower) {
-      setState(368);
-      match(SIMPParser::BinOpPower);
-      setState(369);
+      setState(335);
       parnTerm();
-      setState(374);
+      setState(340);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3921,7 +3525,7 @@ std::any SIMPParser::ParnTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ParnTermContext* SIMPParser::parnTerm() {
   ParnTermContext *_localctx = _tracker.createInstance<ParnTermContext>(_ctx, getState());
-  enterRule(_localctx, 84, SIMPParser::RuleParnTerm);
+  enterRule(_localctx, 74, SIMPParser::RuleParnTerm);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3931,23 +3535,23 @@ SIMPParser::ParnTermContext* SIMPParser::parnTerm() {
     exitRule();
   });
   try {
-    setState(381);
+    setState(347);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::LParen: {
         enterOuterAlt(_localctx, 1);
-        setState(375);
+        setState(341);
         match(SIMPParser::LParen);
-        setState(376);
+        setState(342);
         expr();
-        setState(377);
+        setState(343);
         match(SIMPParser::RParen);
         break;
       }
 
       case SIMPParser::ID: {
         enterOuterAlt(_localctx, 2);
-        setState(379);
+        setState(345);
         lvalue();
         break;
       }
@@ -3955,7 +3559,7 @@ SIMPParser::ParnTermContext* SIMPParser::parnTerm() {
       case SIMPParser::IntLit:
       case SIMPParser::FloatLit: {
         enterOuterAlt(_localctx, 3);
-        setState(380);
+        setState(346);
         constant();
         break;
       }
@@ -4015,7 +3619,7 @@ std::any SIMPParser::ConstantContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ConstantContext* SIMPParser::constant() {
   ConstantContext *_localctx = _tracker.createInstance<ConstantContext>(_ctx, getState());
-  enterRule(_localctx, 86, SIMPParser::RuleConstant);
+  enterRule(_localctx, 76, SIMPParser::RuleConstant);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -4027,7 +3631,7 @@ SIMPParser::ConstantContext* SIMPParser::constant() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(383);
+    setState(349);
     _la = _input->LA(1);
     if (!(_la == SIMPParser::IntLit
 
@@ -4098,7 +3702,7 @@ std::any SIMPParser::ExprListContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ExprListContext* SIMPParser::exprList() {
   ExprListContext *_localctx = _tracker.createInstance<ExprListContext>(_ctx, getState());
-  enterRule(_localctx, 88, SIMPParser::RuleExprList);
+  enterRule(_localctx, 78, SIMPParser::RuleExprList);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -4109,7 +3713,7 @@ SIMPParser::ExprListContext* SIMPParser::exprList() {
     exitRule();
   });
   try {
-    setState(394);
+    setState(360);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::RParen: {
@@ -4123,17 +3727,17 @@ SIMPParser::ExprListContext* SIMPParser::exprList() {
       case SIMPParser::IntLit:
       case SIMPParser::FloatLit: {
         enterOuterAlt(_localctx, 2);
-        setState(386);
+        setState(352);
         expr();
-        setState(391);
+        setState(357);
         _errHandler->sync(this);
         _la = _input->LA(1);
         while (_la == SIMPParser::Comma) {
-          setState(387);
+          setState(353);
           match(SIMPParser::Comma);
-          setState(388);
+          setState(354);
           expr();
-          setState(393);
+          setState(359);
           _errHandler->sync(this);
           _la = _input->LA(1);
         }
@@ -4203,7 +3807,7 @@ std::any SIMPParser::LvalueContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::LvalueContext* SIMPParser::lvalue() {
   LvalueContext *_localctx = _tracker.createInstance<LvalueContext>(_ctx, getState());
-  enterRule(_localctx, 90, SIMPParser::RuleLvalue);
+  enterRule(_localctx, 80, SIMPParser::RuleLvalue);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -4215,18 +3819,18 @@ SIMPParser::LvalueContext* SIMPParser::lvalue() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(396);
+    setState(362);
     match(SIMPParser::ID);
-    setState(401);
+    setState(367);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == SIMPParser::LBracket) {
-      setState(397);
+      setState(363);
       match(SIMPParser::LBracket);
-      setState(398);
+      setState(364);
       expr();
-      setState(399);
+      setState(365);
       match(SIMPParser::RBracket);
     }
    
