@@ -3,11 +3,14 @@
 #include "antlr4-runtime.h"
 #include "SIMPParser.h"
 #include "SIMPLexer.h"
-#include "SIMPBaseVisitor.h"
+//#include "SIMPBaseVisitor.h"
+#include "SIMPTreeVisitor.h"
+
+//#include "SIMPBaseListener.h"
 
 #include <boost/program_options.hpp>
 
-#include <Windows.h>
+//#include <Windows.h>
 #include <vector>
 #include <string>
 #include <iterator>
@@ -18,6 +21,7 @@
 
 using namespace antlrcpptest;
 using namespace antlr4;
+
 
 template<class T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& v)
@@ -81,23 +85,76 @@ int main(int argc, char** argv) {
 
 	try {
 		
+		//std::string_view str("main let in begin return 0; end");
 		ANTLRInputStream input(inputFile);
 		SIMPLexer lexer(&input);
 		CommonTokenStream tokens(&lexer);
 
 		SIMPParser parser(&tokens);
-		//SIMPBaseVisitor visitor;
-		//std::any a = visitor.visitSimpProgram(parser.simpProgram());
-		tree::ParseTree* tree = parser.simpProgram();
 
-		auto s = tree->toStringTree(&parser);
-		std::cout << "Parse Tree: " << s << std::endl;
+		//tree::ParseTree* tree = parser.simpProgram();
+
+
+		SymbolTableManager& symbolTableManager = SymbolTableManager::initialSymbolTableManager();
+		
+		Quadruples quadruples;
+
+		SemanticAnalyzer& semanticAnalyzer = SemanticAnalyzer::initialSemanticAnalyzer(symbolTableManager, quadruples);
+
+		
+		SIMPTreeVisitor visitor(symbolTableManager, semanticAnalyzer);
+
+		visitor.visitSimpProgram(parser.simpProgram());
+
+		ofstream outFile;
+
+		outFile.open("test.o");
+
+		quadruples.output(outFile);
+
+		/*std::vector<SIMPParser::StmtContext*> stmts = parser.simpProgram()->stmtList()->stmt();*/
+
+		/*for (int i = 0; i < stmts.size(); i++) {
+			if (stmts[i]->ifStmt() != nullptr) {
+				bool operatorExists = false;
+				SymbolType condition;
+				visitor.onExprCondition(visitor.visitExpr(stmts[i]->ifStmt()->expr()), operatorExists, condition);
+			}
+
+		}*/
+		
+
+
+
+		/*SIMPTreeVisitor* visitor
+		ASTRoot* ast = visitor->visitSimpProgram(parser.simpProgram());
+		std::vector<AbstractASTNode*>* vec = ast->getRoot()->getBody()->getStmts();
+		
+		std::vector<AbstractASTNode*>* vec2 = ast->getRoot()->getDecls()->getVarDecls()->getDecls();
+
+		for (int i = 0; i < vec2->size(); i++) {
+			std::cout << reinterpret_cast<ASTVarDecl*>(vec2->at(i))->getInitializer()->type;
+		}
+
+		for (int i = 0; i < vec->size(); i++) {
+			std::cout << reinterpret_cast<AbstractASTStmt*>(vec->at(i))->getCode();
+		}*/
+
+
+		
+		
+
+		inputFile.close();
+		//auto s = tree->toStringTree(&parser);
+		//std::cout << "Parse Tree: " << s << std::endl;
 	}
 	catch (std::exception e) {
 		std::cout << e.what() << std::endl;
 	}
+	catch (antlr4::IllegalStateException e) {
+		std::cout << e.what() << std::endl;
+	}
 	
-	//InputParser parseArgs(argc, argv);
 
 	
 
