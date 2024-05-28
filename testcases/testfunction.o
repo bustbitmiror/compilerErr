@@ -1,0 +1,12 @@
+LAB f_print_008BD670
+WI v_n_008BD740
+NL 
+FAS v_n_008BD740, f_print_008BD670
+JMP print_end
+LAB print_end
+RTN 
+LAB _main
+PUSH n_5
+CALF f_print_008BD670, t_1
+LAB main_end
+RTN 

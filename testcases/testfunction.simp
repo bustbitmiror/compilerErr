@@ -1,0 +1,10 @@
+main
+let
+        function print ( n : int ) : int begin
+                write(n);
+                return n;
+        end;
+in
+begin
+        print(5);
+end
