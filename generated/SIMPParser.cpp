@@ -58,147 +58,150 @@ void simpParserInitialize() {
       "typeId", "varDecl", "idList", "optionalInit", "funcDecl", "paramList", 
       "retType", "param", "stmtList", "stmt", "letStmt", "returnStmt", "breakStmt", 
       "forStmt", "whileStmt", "assignStmt", "rValue", "rcallStmt", "callStmt", 
-      "ifStmt", "ifStmtTail", "expr", "leTerm", "geTerm", "ltTerm", "gtTerm", 
-      "neTerm", "eqTerm", "subTerm", "addTerm", "divTerm", "mulTerm", "parnTerm", 
-      "constant", "exprList", "lvalue"
+      "ifStmt", "ifStmtTail", "writeStmt", "expr", "leTerm", "geTerm", "ltTerm", 
+      "gtTerm", "neTerm", "eqTerm", "subTerm", "addTerm", "divTerm", "mulTerm", 
+      "parnTerm", "constant", "exprList", "lvalue"
     },
     std::vector<std::string>{
       "", "'main'", "'break'", "'do'", "'else'", "'end'", "'for'", "'function'", 
       "'if'", "'in'", "'let'", "'of'", "'then'", "'to'", "'downto'", "'type'", 
       "'var'", "'while'", "'endif'", "'begin'", "'enddo'", "'return'", "'int'", 
-      "'float'", "'+'", "'-'", "'*'", "'/'", "'=='", "'!='", "'<'", "'>'", 
-      "'<='", "'>='", "'&'", "'|'", "':='", "'='", "':'", "';'", "','", 
-      "'('", "')'", "'['", "']'"
+      "'float'", "'write'", "'+'", "'-'", "'*'", "'/'", "'=='", "'!='", 
+      "'<'", "'>'", "'<='", "'>='", "'&'", "'|'", "':='", "'='", "':'", 
+      "';'", "','", "'('", "')'", "'['", "']'"
     },
     std::vector<std::string>{
       "", "KeywordMain", "KeywordBreak", "KeywordDo", "KeywordElse", "KeywordEnd", 
       "KeywordFor", "KeywordFunction", "KeywordIf", "KeywordIn", "KeywordLet", 
       "KeywordOf", "KeywordThen", "KeywordTo", "KeywordDownto", "KeywordType", 
       "KeywordVar", "KeywordWhile", "KeywordEndif", "KeywordBegin", "KeywordEnddo", 
-      "KeywordReturn", "KeywordInt", "KeywordFloat", "BinOpPlus", "BinOpMinus", 
-      "BinOpTimes", "BinOpDivide", "BinOpEq", "BinOpNeq", "BinOpLt", "BinOpGt", 
-      "BinOpLeq", "BinOpGeq", "BinOpAnd", "BinOpOr", "OpAssign", "Equals", 
-      "Colon", "Semicolon", "Comma", "LParen", "RParen", "LBracket", "RBracket", 
-      "ID", "IntLit", "FloatLit", "Comment", "Whitespace"
+      "KeywordReturn", "KeywordInt", "KeywordFloat", "KeywordWrite", "BinOpPlus", 
+      "BinOpMinus", "BinOpTimes", "BinOpDivide", "BinOpEq", "BinOpNeq", 
+      "BinOpLt", "BinOpGt", "BinOpLeq", "BinOpGeq", "BinOpAnd", "BinOpOr", 
+      "OpAssign", "Equals", "Colon", "Semicolon", "Comma", "LParen", "RParen", 
+      "LBracket", "RBracket", "ID", "IntLit", "FloatLit", "Comment", "Whitespace"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,49,370,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	4,1,50,377,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
   	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,
   	14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,7,20,2,21,7,
   	21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,2,27,7,27,2,28,7,
   	28,2,29,7,29,2,30,7,30,2,31,7,31,2,32,7,32,2,33,7,33,2,34,7,34,2,35,7,
-  	35,2,36,7,36,2,37,7,37,2,38,7,38,2,39,7,39,2,40,7,40,1,0,1,0,1,0,1,0,
-  	1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,2,5,2,95,8,2,10,2,12,2,98,9,2,1,3,5,3,101,
-  	8,3,10,3,12,3,104,9,3,1,4,1,4,3,4,108,8,4,1,5,1,5,1,6,1,6,1,6,1,6,1,6,
-  	1,6,1,6,1,7,1,7,1,7,5,7,122,8,7,10,7,12,7,125,9,7,1,8,1,8,1,8,3,8,130,
-  	8,8,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,10,1,10,1,10,1,10,5,
-  	10,147,8,10,10,10,12,10,150,9,10,3,10,152,8,10,1,11,1,11,1,11,1,12,1,
-  	12,1,12,1,12,1,13,1,13,5,13,163,8,13,10,13,12,13,166,9,13,1,14,1,14,1,
-  	14,1,14,1,14,1,14,1,14,1,14,1,14,3,14,177,8,14,1,15,1,15,1,15,1,15,1,
-  	15,1,15,1,15,1,16,1,16,1,16,1,16,1,17,1,17,1,17,1,18,1,18,1,18,1,18,1,
+  	35,2,36,7,36,2,37,7,37,2,38,7,38,2,39,7,39,2,40,7,40,2,41,7,41,1,0,1,
+  	0,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,2,5,2,97,8,2,10,2,12,2,100,9,
+  	2,1,3,5,3,103,8,3,10,3,12,3,106,9,3,1,4,1,4,3,4,110,8,4,1,5,1,5,1,6,1,
+  	6,1,6,1,6,1,6,1,6,1,6,1,7,1,7,1,7,5,7,124,8,7,10,7,12,7,127,9,7,1,8,1,
+  	8,1,8,3,8,132,8,8,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,10,1,
+  	10,1,10,1,10,5,10,149,8,10,10,10,12,10,152,9,10,3,10,154,8,10,1,11,1,
+  	11,1,11,1,12,1,12,1,12,1,12,1,13,1,13,5,13,165,8,13,10,13,12,13,168,9,
+  	13,1,14,1,14,1,14,1,14,1,14,1,14,1,14,1,14,1,14,1,14,3,14,180,8,14,1,
+  	15,1,15,1,15,1,15,1,15,1,15,1,15,1,16,1,16,1,16,1,16,1,17,1,17,1,17,1,
   	18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,
-  	18,1,18,1,18,1,18,3,18,215,8,18,1,19,1,19,1,19,1,19,1,19,1,19,1,19,1,
-  	20,1,20,1,20,1,20,1,21,1,21,1,21,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,
-  	22,1,23,1,23,1,23,1,23,1,23,1,23,1,24,1,24,1,24,1,24,1,24,1,24,1,25,1,
-  	25,1,25,1,25,1,25,1,25,1,25,3,25,258,8,25,1,26,1,26,1,27,1,27,1,27,5,
-  	27,265,8,27,10,27,12,27,268,9,27,1,28,1,28,1,28,5,28,273,8,28,10,28,12,
-  	28,276,9,28,1,29,1,29,1,29,5,29,281,8,29,10,29,12,29,284,9,29,1,30,1,
-  	30,1,30,5,30,289,8,30,10,30,12,30,292,9,30,1,31,1,31,1,31,5,31,297,8,
-  	31,10,31,12,31,300,9,31,1,32,1,32,1,32,5,32,305,8,32,10,32,12,32,308,
-  	9,32,1,33,1,33,1,33,5,33,313,8,33,10,33,12,33,316,9,33,1,34,1,34,1,34,
-  	5,34,321,8,34,10,34,12,34,324,9,34,1,35,1,35,1,35,5,35,329,8,35,10,35,
-  	12,35,332,9,35,1,36,1,36,1,36,5,36,337,8,36,10,36,12,36,340,9,36,1,37,
-  	1,37,1,37,1,37,1,37,1,37,3,37,348,8,37,1,38,1,38,1,39,1,39,1,39,1,39,
-  	5,39,356,8,39,10,39,12,39,359,9,39,3,39,361,8,39,1,40,1,40,1,40,1,40,
-  	1,40,3,40,368,8,40,1,40,0,0,41,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,
-  	30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,
-  	76,78,80,0,2,1,0,22,23,1,0,46,47,361,0,82,1,0,0,0,2,90,1,0,0,0,4,96,1,
-  	0,0,0,6,102,1,0,0,0,8,107,1,0,0,0,10,109,1,0,0,0,12,111,1,0,0,0,14,118,
-  	1,0,0,0,16,129,1,0,0,0,18,131,1,0,0,0,20,151,1,0,0,0,22,153,1,0,0,0,24,
-  	156,1,0,0,0,26,160,1,0,0,0,28,176,1,0,0,0,30,178,1,0,0,0,32,185,1,0,0,
-  	0,34,189,1,0,0,0,36,214,1,0,0,0,38,216,1,0,0,0,40,223,1,0,0,0,42,227,
-  	1,0,0,0,44,230,1,0,0,0,46,238,1,0,0,0,48,244,1,0,0,0,50,257,1,0,0,0,52,
-  	259,1,0,0,0,54,261,1,0,0,0,56,269,1,0,0,0,58,277,1,0,0,0,60,285,1,0,0,
-  	0,62,293,1,0,0,0,64,301,1,0,0,0,66,309,1,0,0,0,68,317,1,0,0,0,70,325,
-  	1,0,0,0,72,333,1,0,0,0,74,347,1,0,0,0,76,349,1,0,0,0,78,360,1,0,0,0,80,
-  	362,1,0,0,0,82,83,5,1,0,0,83,84,5,10,0,0,84,85,3,2,1,0,85,86,5,9,0,0,
-  	86,87,5,19,0,0,87,88,3,26,13,0,88,89,5,5,0,0,89,1,1,0,0,0,90,91,3,4,2,
-  	0,91,92,3,6,3,0,92,3,1,0,0,0,93,95,3,12,6,0,94,93,1,0,0,0,95,98,1,0,0,
-  	0,96,94,1,0,0,0,96,97,1,0,0,0,97,5,1,0,0,0,98,96,1,0,0,0,99,101,3,18,
-  	9,0,100,99,1,0,0,0,101,104,1,0,0,0,102,100,1,0,0,0,102,103,1,0,0,0,103,
-  	7,1,0,0,0,104,102,1,0,0,0,105,108,3,10,5,0,106,108,5,45,0,0,107,105,1,
-  	0,0,0,107,106,1,0,0,0,108,9,1,0,0,0,109,110,7,0,0,0,110,11,1,0,0,0,111,
-  	112,5,16,0,0,112,113,3,14,7,0,113,114,5,38,0,0,114,115,3,8,4,0,115,116,
-  	3,16,8,0,116,117,5,39,0,0,117,13,1,0,0,0,118,123,5,45,0,0,119,120,5,40,
-  	0,0,120,122,5,45,0,0,121,119,1,0,0,0,122,125,1,0,0,0,123,121,1,0,0,0,
-  	123,124,1,0,0,0,124,15,1,0,0,0,125,123,1,0,0,0,126,130,1,0,0,0,127,128,
-  	5,36,0,0,128,130,3,76,38,0,129,126,1,0,0,0,129,127,1,0,0,0,130,17,1,0,
-  	0,0,131,132,5,7,0,0,132,133,5,45,0,0,133,134,5,41,0,0,134,135,3,20,10,
-  	0,135,136,5,42,0,0,136,137,3,22,11,0,137,138,5,19,0,0,138,139,3,26,13,
-  	0,139,140,5,5,0,0,140,141,5,39,0,0,141,19,1,0,0,0,142,152,1,0,0,0,143,
-  	148,3,24,12,0,144,145,5,40,0,0,145,147,3,24,12,0,146,144,1,0,0,0,147,
-  	150,1,0,0,0,148,146,1,0,0,0,148,149,1,0,0,0,149,152,1,0,0,0,150,148,1,
-  	0,0,0,151,142,1,0,0,0,151,143,1,0,0,0,152,21,1,0,0,0,153,154,5,38,0,0,
-  	154,155,3,8,4,0,155,23,1,0,0,0,156,157,5,45,0,0,157,158,5,38,0,0,158,
-  	159,3,8,4,0,159,25,1,0,0,0,160,164,3,28,14,0,161,163,3,28,14,0,162,161,
-  	1,0,0,0,163,166,1,0,0,0,164,162,1,0,0,0,164,165,1,0,0,0,165,27,1,0,0,
-  	0,166,164,1,0,0,0,167,177,3,48,24,0,168,177,3,40,20,0,169,177,3,44,22,
-  	0,170,177,3,46,23,0,171,177,3,38,19,0,172,177,3,36,18,0,173,177,3,34,
-  	17,0,174,177,3,32,16,0,175,177,3,30,15,0,176,167,1,0,0,0,176,168,1,0,
-  	0,0,176,169,1,0,0,0,176,170,1,0,0,0,176,171,1,0,0,0,176,172,1,0,0,0,176,
-  	173,1,0,0,0,176,174,1,0,0,0,176,175,1,0,0,0,177,29,1,0,0,0,178,179,5,
-  	10,0,0,179,180,3,2,1,0,180,181,5,9,0,0,181,182,3,26,13,0,182,183,5,5,
-  	0,0,183,184,5,39,0,0,184,31,1,0,0,0,185,186,5,21,0,0,186,187,3,52,26,
-  	0,187,188,5,39,0,0,188,33,1,0,0,0,189,190,5,2,0,0,190,191,5,39,0,0,191,
-  	35,1,0,0,0,192,193,5,6,0,0,193,194,5,45,0,0,194,195,5,36,0,0,195,196,
-  	3,52,26,0,196,197,5,13,0,0,197,198,3,52,26,0,198,199,5,3,0,0,199,200,
-  	3,26,13,0,200,201,5,20,0,0,201,202,5,39,0,0,202,215,1,0,0,0,203,204,5,
-  	6,0,0,204,205,5,45,0,0,205,206,5,36,0,0,206,207,3,52,26,0,207,208,5,14,
-  	0,0,208,209,3,52,26,0,209,210,5,3,0,0,210,211,3,26,13,0,211,212,5,20,
-  	0,0,212,213,5,39,0,0,213,215,1,0,0,0,214,192,1,0,0,0,214,203,1,0,0,0,
-  	215,37,1,0,0,0,216,217,5,17,0,0,217,218,3,52,26,0,218,219,5,3,0,0,219,
-  	220,3,26,13,0,220,221,5,20,0,0,221,222,5,39,0,0,222,39,1,0,0,0,223,224,
-  	3,80,40,0,224,225,5,36,0,0,225,226,3,42,21,0,226,41,1,0,0,0,227,228,3,
-  	52,26,0,228,229,5,39,0,0,229,43,1,0,0,0,230,231,5,45,0,0,231,232,5,36,
-  	0,0,232,233,5,45,0,0,233,234,5,41,0,0,234,235,3,78,39,0,235,236,5,42,
-  	0,0,236,237,5,39,0,0,237,45,1,0,0,0,238,239,5,45,0,0,239,240,5,41,0,0,
-  	240,241,3,78,39,0,241,242,5,42,0,0,242,243,5,39,0,0,243,47,1,0,0,0,244,
-  	245,5,8,0,0,245,246,3,52,26,0,246,247,5,12,0,0,247,248,3,26,13,0,248,
-  	249,3,50,25,0,249,49,1,0,0,0,250,251,5,18,0,0,251,258,5,39,0,0,252,253,
-  	5,4,0,0,253,254,3,26,13,0,254,255,5,18,0,0,255,256,5,39,0,0,256,258,1,
-  	0,0,0,257,250,1,0,0,0,257,252,1,0,0,0,258,51,1,0,0,0,259,260,3,54,27,
-  	0,260,53,1,0,0,0,261,266,3,56,28,0,262,263,5,32,0,0,263,265,3,56,28,0,
-  	264,262,1,0,0,0,265,268,1,0,0,0,266,264,1,0,0,0,266,267,1,0,0,0,267,55,
-  	1,0,0,0,268,266,1,0,0,0,269,274,3,58,29,0,270,271,5,33,0,0,271,273,3,
-  	58,29,0,272,270,1,0,0,0,273,276,1,0,0,0,274,272,1,0,0,0,274,275,1,0,0,
-  	0,275,57,1,0,0,0,276,274,1,0,0,0,277,282,3,60,30,0,278,279,5,30,0,0,279,
-  	281,3,60,30,0,280,278,1,0,0,0,281,284,1,0,0,0,282,280,1,0,0,0,282,283,
-  	1,0,0,0,283,59,1,0,0,0,284,282,1,0,0,0,285,290,3,62,31,0,286,287,5,31,
-  	0,0,287,289,3,62,31,0,288,286,1,0,0,0,289,292,1,0,0,0,290,288,1,0,0,0,
-  	290,291,1,0,0,0,291,61,1,0,0,0,292,290,1,0,0,0,293,298,3,64,32,0,294,
-  	295,5,29,0,0,295,297,3,64,32,0,296,294,1,0,0,0,297,300,1,0,0,0,298,296,
-  	1,0,0,0,298,299,1,0,0,0,299,63,1,0,0,0,300,298,1,0,0,0,301,306,3,66,33,
-  	0,302,303,5,28,0,0,303,305,3,66,33,0,304,302,1,0,0,0,305,308,1,0,0,0,
-  	306,304,1,0,0,0,306,307,1,0,0,0,307,65,1,0,0,0,308,306,1,0,0,0,309,314,
-  	3,68,34,0,310,311,5,25,0,0,311,313,3,68,34,0,312,310,1,0,0,0,313,316,
-  	1,0,0,0,314,312,1,0,0,0,314,315,1,0,0,0,315,67,1,0,0,0,316,314,1,0,0,
-  	0,317,322,3,70,35,0,318,319,5,24,0,0,319,321,3,70,35,0,320,318,1,0,0,
-  	0,321,324,1,0,0,0,322,320,1,0,0,0,322,323,1,0,0,0,323,69,1,0,0,0,324,
-  	322,1,0,0,0,325,330,3,72,36,0,326,327,5,27,0,0,327,329,3,72,36,0,328,
-  	326,1,0,0,0,329,332,1,0,0,0,330,328,1,0,0,0,330,331,1,0,0,0,331,71,1,
-  	0,0,0,332,330,1,0,0,0,333,338,3,74,37,0,334,335,5,26,0,0,335,337,3,74,
-  	37,0,336,334,1,0,0,0,337,340,1,0,0,0,338,336,1,0,0,0,338,339,1,0,0,0,
-  	339,73,1,0,0,0,340,338,1,0,0,0,341,342,5,41,0,0,342,343,3,52,26,0,343,
-  	344,5,42,0,0,344,348,1,0,0,0,345,348,3,80,40,0,346,348,3,76,38,0,347,
-  	341,1,0,0,0,347,345,1,0,0,0,347,346,1,0,0,0,348,75,1,0,0,0,349,350,7,
-  	1,0,0,350,77,1,0,0,0,351,361,1,0,0,0,352,357,3,52,26,0,353,354,5,40,0,
-  	0,354,356,3,52,26,0,355,353,1,0,0,0,356,359,1,0,0,0,357,355,1,0,0,0,357,
-  	358,1,0,0,0,358,361,1,0,0,0,359,357,1,0,0,0,360,351,1,0,0,0,360,352,1,
-  	0,0,0,361,79,1,0,0,0,362,367,5,45,0,0,363,364,5,43,0,0,364,365,3,52,26,
-  	0,365,366,5,44,0,0,366,368,1,0,0,0,367,363,1,0,0,0,367,368,1,0,0,0,368,
-  	81,1,0,0,0,25,96,102,107,123,129,148,151,164,176,214,257,266,274,282,
-  	290,298,306,314,322,330,338,347,357,360,367
+  	18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,3,18,218,8,18,1,19,1,19,1,19,1,
+  	19,1,19,1,19,1,19,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,22,1,22,1,22,1,
+  	22,1,22,1,22,1,22,1,22,1,23,1,23,1,23,1,23,1,23,1,23,1,24,1,24,1,24,1,
+  	24,1,24,1,24,1,25,1,25,1,25,1,25,1,25,1,25,1,25,3,25,261,8,25,1,26,1,
+  	26,1,26,1,26,1,27,1,27,1,28,1,28,1,28,5,28,272,8,28,10,28,12,28,275,9,
+  	28,1,29,1,29,1,29,5,29,280,8,29,10,29,12,29,283,9,29,1,30,1,30,1,30,5,
+  	30,288,8,30,10,30,12,30,291,9,30,1,31,1,31,1,31,5,31,296,8,31,10,31,12,
+  	31,299,9,31,1,32,1,32,1,32,5,32,304,8,32,10,32,12,32,307,9,32,1,33,1,
+  	33,1,33,5,33,312,8,33,10,33,12,33,315,9,33,1,34,1,34,1,34,5,34,320,8,
+  	34,10,34,12,34,323,9,34,1,35,1,35,1,35,5,35,328,8,35,10,35,12,35,331,
+  	9,35,1,36,1,36,1,36,5,36,336,8,36,10,36,12,36,339,9,36,1,37,1,37,1,37,
+  	5,37,344,8,37,10,37,12,37,347,9,37,1,38,1,38,1,38,1,38,1,38,1,38,3,38,
+  	355,8,38,1,39,1,39,1,40,1,40,1,40,1,40,5,40,363,8,40,10,40,12,40,366,
+  	9,40,3,40,368,8,40,1,41,1,41,1,41,1,41,1,41,3,41,375,8,41,1,41,0,0,42,
+  	0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,
+  	50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,0,2,1,0,22,23,1,0,
+  	47,48,368,0,84,1,0,0,0,2,92,1,0,0,0,4,98,1,0,0,0,6,104,1,0,0,0,8,109,
+  	1,0,0,0,10,111,1,0,0,0,12,113,1,0,0,0,14,120,1,0,0,0,16,131,1,0,0,0,18,
+  	133,1,0,0,0,20,153,1,0,0,0,22,155,1,0,0,0,24,158,1,0,0,0,26,162,1,0,0,
+  	0,28,179,1,0,0,0,30,181,1,0,0,0,32,188,1,0,0,0,34,192,1,0,0,0,36,217,
+  	1,0,0,0,38,219,1,0,0,0,40,226,1,0,0,0,42,230,1,0,0,0,44,233,1,0,0,0,46,
+  	241,1,0,0,0,48,247,1,0,0,0,50,260,1,0,0,0,52,262,1,0,0,0,54,266,1,0,0,
+  	0,56,268,1,0,0,0,58,276,1,0,0,0,60,284,1,0,0,0,62,292,1,0,0,0,64,300,
+  	1,0,0,0,66,308,1,0,0,0,68,316,1,0,0,0,70,324,1,0,0,0,72,332,1,0,0,0,74,
+  	340,1,0,0,0,76,354,1,0,0,0,78,356,1,0,0,0,80,367,1,0,0,0,82,369,1,0,0,
+  	0,84,85,5,1,0,0,85,86,5,10,0,0,86,87,3,2,1,0,87,88,5,9,0,0,88,89,5,19,
+  	0,0,89,90,3,26,13,0,90,91,5,5,0,0,91,1,1,0,0,0,92,93,3,4,2,0,93,94,3,
+  	6,3,0,94,3,1,0,0,0,95,97,3,12,6,0,96,95,1,0,0,0,97,100,1,0,0,0,98,96,
+  	1,0,0,0,98,99,1,0,0,0,99,5,1,0,0,0,100,98,1,0,0,0,101,103,3,18,9,0,102,
+  	101,1,0,0,0,103,106,1,0,0,0,104,102,1,0,0,0,104,105,1,0,0,0,105,7,1,0,
+  	0,0,106,104,1,0,0,0,107,110,3,10,5,0,108,110,5,46,0,0,109,107,1,0,0,0,
+  	109,108,1,0,0,0,110,9,1,0,0,0,111,112,7,0,0,0,112,11,1,0,0,0,113,114,
+  	5,16,0,0,114,115,3,14,7,0,115,116,5,39,0,0,116,117,3,8,4,0,117,118,3,
+  	16,8,0,118,119,5,40,0,0,119,13,1,0,0,0,120,125,5,46,0,0,121,122,5,41,
+  	0,0,122,124,5,46,0,0,123,121,1,0,0,0,124,127,1,0,0,0,125,123,1,0,0,0,
+  	125,126,1,0,0,0,126,15,1,0,0,0,127,125,1,0,0,0,128,132,1,0,0,0,129,130,
+  	5,37,0,0,130,132,3,78,39,0,131,128,1,0,0,0,131,129,1,0,0,0,132,17,1,0,
+  	0,0,133,134,5,7,0,0,134,135,5,46,0,0,135,136,5,42,0,0,136,137,3,20,10,
+  	0,137,138,5,43,0,0,138,139,3,22,11,0,139,140,5,19,0,0,140,141,3,26,13,
+  	0,141,142,5,5,0,0,142,143,5,40,0,0,143,19,1,0,0,0,144,154,1,0,0,0,145,
+  	150,3,24,12,0,146,147,5,41,0,0,147,149,3,24,12,0,148,146,1,0,0,0,149,
+  	152,1,0,0,0,150,148,1,0,0,0,150,151,1,0,0,0,151,154,1,0,0,0,152,150,1,
+  	0,0,0,153,144,1,0,0,0,153,145,1,0,0,0,154,21,1,0,0,0,155,156,5,39,0,0,
+  	156,157,3,8,4,0,157,23,1,0,0,0,158,159,5,46,0,0,159,160,5,39,0,0,160,
+  	161,3,8,4,0,161,25,1,0,0,0,162,166,3,28,14,0,163,165,3,28,14,0,164,163,
+  	1,0,0,0,165,168,1,0,0,0,166,164,1,0,0,0,166,167,1,0,0,0,167,27,1,0,0,
+  	0,168,166,1,0,0,0,169,180,3,48,24,0,170,180,3,40,20,0,171,180,3,44,22,
+  	0,172,180,3,46,23,0,173,180,3,38,19,0,174,180,3,36,18,0,175,180,3,34,
+  	17,0,176,180,3,32,16,0,177,180,3,30,15,0,178,180,3,52,26,0,179,169,1,
+  	0,0,0,179,170,1,0,0,0,179,171,1,0,0,0,179,172,1,0,0,0,179,173,1,0,0,0,
+  	179,174,1,0,0,0,179,175,1,0,0,0,179,176,1,0,0,0,179,177,1,0,0,0,179,178,
+  	1,0,0,0,180,29,1,0,0,0,181,182,5,10,0,0,182,183,3,2,1,0,183,184,5,9,0,
+  	0,184,185,3,26,13,0,185,186,5,5,0,0,186,187,5,40,0,0,187,31,1,0,0,0,188,
+  	189,5,21,0,0,189,190,3,54,27,0,190,191,5,40,0,0,191,33,1,0,0,0,192,193,
+  	5,2,0,0,193,194,5,40,0,0,194,35,1,0,0,0,195,196,5,6,0,0,196,197,5,46,
+  	0,0,197,198,5,37,0,0,198,199,3,54,27,0,199,200,5,13,0,0,200,201,3,54,
+  	27,0,201,202,5,3,0,0,202,203,3,26,13,0,203,204,5,20,0,0,204,205,5,40,
+  	0,0,205,218,1,0,0,0,206,207,5,6,0,0,207,208,5,46,0,0,208,209,5,37,0,0,
+  	209,210,3,54,27,0,210,211,5,14,0,0,211,212,3,54,27,0,212,213,5,3,0,0,
+  	213,214,3,26,13,0,214,215,5,20,0,0,215,216,5,40,0,0,216,218,1,0,0,0,217,
+  	195,1,0,0,0,217,206,1,0,0,0,218,37,1,0,0,0,219,220,5,17,0,0,220,221,3,
+  	54,27,0,221,222,5,3,0,0,222,223,3,26,13,0,223,224,5,20,0,0,224,225,5,
+  	40,0,0,225,39,1,0,0,0,226,227,3,82,41,0,227,228,5,37,0,0,228,229,3,42,
+  	21,0,229,41,1,0,0,0,230,231,3,54,27,0,231,232,5,40,0,0,232,43,1,0,0,0,
+  	233,234,5,46,0,0,234,235,5,37,0,0,235,236,5,46,0,0,236,237,5,42,0,0,237,
+  	238,3,80,40,0,238,239,5,43,0,0,239,240,5,40,0,0,240,45,1,0,0,0,241,242,
+  	5,46,0,0,242,243,5,42,0,0,243,244,3,80,40,0,244,245,5,43,0,0,245,246,
+  	5,40,0,0,246,47,1,0,0,0,247,248,5,8,0,0,248,249,3,54,27,0,249,250,5,12,
+  	0,0,250,251,3,26,13,0,251,252,3,50,25,0,252,49,1,0,0,0,253,254,5,18,0,
+  	0,254,261,5,40,0,0,255,256,5,4,0,0,256,257,3,26,13,0,257,258,5,18,0,0,
+  	258,259,5,40,0,0,259,261,1,0,0,0,260,253,1,0,0,0,260,255,1,0,0,0,261,
+  	51,1,0,0,0,262,263,5,24,0,0,263,264,3,54,27,0,264,265,5,40,0,0,265,53,
+  	1,0,0,0,266,267,3,56,28,0,267,55,1,0,0,0,268,273,3,58,29,0,269,270,5,
+  	33,0,0,270,272,3,58,29,0,271,269,1,0,0,0,272,275,1,0,0,0,273,271,1,0,
+  	0,0,273,274,1,0,0,0,274,57,1,0,0,0,275,273,1,0,0,0,276,281,3,60,30,0,
+  	277,278,5,34,0,0,278,280,3,60,30,0,279,277,1,0,0,0,280,283,1,0,0,0,281,
+  	279,1,0,0,0,281,282,1,0,0,0,282,59,1,0,0,0,283,281,1,0,0,0,284,289,3,
+  	62,31,0,285,286,5,31,0,0,286,288,3,62,31,0,287,285,1,0,0,0,288,291,1,
+  	0,0,0,289,287,1,0,0,0,289,290,1,0,0,0,290,61,1,0,0,0,291,289,1,0,0,0,
+  	292,297,3,64,32,0,293,294,5,32,0,0,294,296,3,64,32,0,295,293,1,0,0,0,
+  	296,299,1,0,0,0,297,295,1,0,0,0,297,298,1,0,0,0,298,63,1,0,0,0,299,297,
+  	1,0,0,0,300,305,3,66,33,0,301,302,5,30,0,0,302,304,3,66,33,0,303,301,
+  	1,0,0,0,304,307,1,0,0,0,305,303,1,0,0,0,305,306,1,0,0,0,306,65,1,0,0,
+  	0,307,305,1,0,0,0,308,313,3,68,34,0,309,310,5,29,0,0,310,312,3,68,34,
+  	0,311,309,1,0,0,0,312,315,1,0,0,0,313,311,1,0,0,0,313,314,1,0,0,0,314,
+  	67,1,0,0,0,315,313,1,0,0,0,316,321,3,70,35,0,317,318,5,26,0,0,318,320,
+  	3,70,35,0,319,317,1,0,0,0,320,323,1,0,0,0,321,319,1,0,0,0,321,322,1,0,
+  	0,0,322,69,1,0,0,0,323,321,1,0,0,0,324,329,3,72,36,0,325,326,5,25,0,0,
+  	326,328,3,72,36,0,327,325,1,0,0,0,328,331,1,0,0,0,329,327,1,0,0,0,329,
+  	330,1,0,0,0,330,71,1,0,0,0,331,329,1,0,0,0,332,337,3,74,37,0,333,334,
+  	5,28,0,0,334,336,3,74,37,0,335,333,1,0,0,0,336,339,1,0,0,0,337,335,1,
+  	0,0,0,337,338,1,0,0,0,338,73,1,0,0,0,339,337,1,0,0,0,340,345,3,76,38,
+  	0,341,342,5,27,0,0,342,344,3,76,38,0,343,341,1,0,0,0,344,347,1,0,0,0,
+  	345,343,1,0,0,0,345,346,1,0,0,0,346,75,1,0,0,0,347,345,1,0,0,0,348,349,
+  	5,42,0,0,349,350,3,54,27,0,350,351,5,43,0,0,351,355,1,0,0,0,352,355,3,
+  	82,41,0,353,355,3,78,39,0,354,348,1,0,0,0,354,352,1,0,0,0,354,353,1,0,
+  	0,0,355,77,1,0,0,0,356,357,7,1,0,0,357,79,1,0,0,0,358,368,1,0,0,0,359,
+  	364,3,54,27,0,360,361,5,41,0,0,361,363,3,54,27,0,362,360,1,0,0,0,363,
+  	366,1,0,0,0,364,362,1,0,0,0,364,365,1,0,0,0,365,368,1,0,0,0,366,364,1,
+  	0,0,0,367,358,1,0,0,0,367,359,1,0,0,0,368,81,1,0,0,0,369,374,5,46,0,0,
+  	370,371,5,44,0,0,371,372,3,54,27,0,372,373,5,45,0,0,373,375,1,0,0,0,374,
+  	370,1,0,0,0,374,375,1,0,0,0,375,83,1,0,0,0,25,98,104,109,125,131,150,
+  	153,166,179,217,260,273,281,289,297,305,313,321,329,337,345,354,364,367,
+  	374
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -319,19 +322,19 @@ SIMPParser::SimpProgramContext* SIMPParser::simpProgram() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(82);
-    match(SIMPParser::KeywordMain);
-    setState(83);
-    match(SIMPParser::KeywordLet);
     setState(84);
-    declSegment();
+    match(SIMPParser::KeywordMain);
     setState(85);
-    match(SIMPParser::KeywordIn);
+    match(SIMPParser::KeywordLet);
     setState(86);
-    match(SIMPParser::KeywordBegin);
+    declSegment();
     setState(87);
-    stmtList();
+    match(SIMPParser::KeywordIn);
     setState(88);
+    match(SIMPParser::KeywordBegin);
+    setState(89);
+    stmtList();
+    setState(90);
     match(SIMPParser::KeywordEnd);
    
   }
@@ -396,9 +399,9 @@ SIMPParser::DeclSegmentContext* SIMPParser::declSegment() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(90);
+    setState(92);
     varDeclList();
-    setState(91);
+    setState(93);
     funcDeclList();
    
   }
@@ -464,13 +467,13 @@ SIMPParser::VarDeclListContext* SIMPParser::varDeclList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(96);
+    setState(98);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::KeywordVar) {
-      setState(93);
+      setState(95);
       varDecl();
-      setState(98);
+      setState(100);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -538,13 +541,13 @@ SIMPParser::FuncDeclListContext* SIMPParser::funcDeclList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(102);
+    setState(104);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::KeywordFunction) {
-      setState(99);
+      setState(101);
       funcDecl();
-      setState(104);
+      setState(106);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -610,20 +613,20 @@ SIMPParser::TypeContext* SIMPParser::type() {
     exitRule();
   });
   try {
-    setState(107);
+    setState(109);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::KeywordInt:
       case SIMPParser::KeywordFloat: {
         enterOuterAlt(_localctx, 1);
-        setState(105);
+        setState(107);
         typeId();
         break;
       }
 
       case SIMPParser::ID: {
         enterOuterAlt(_localctx, 2);
-        setState(106);
+        setState(108);
         match(SIMPParser::ID);
         break;
       }
@@ -695,7 +698,7 @@ SIMPParser::TypeIdContext* SIMPParser::typeId() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(109);
+    setState(111);
     _la = _input->LA(1);
     if (!(_la == SIMPParser::KeywordInt
 
@@ -785,17 +788,17 @@ SIMPParser::VarDeclContext* SIMPParser::varDecl() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(111);
-    match(SIMPParser::KeywordVar);
-    setState(112);
-    idList();
     setState(113);
-    match(SIMPParser::Colon);
+    match(SIMPParser::KeywordVar);
     setState(114);
-    type();
+    idList();
     setState(115);
-    optionalInit();
+    match(SIMPParser::Colon);
     setState(116);
+    type();
+    setState(117);
+    optionalInit();
+    setState(118);
     match(SIMPParser::Semicolon);
    
   }
@@ -869,17 +872,17 @@ SIMPParser::IdListContext* SIMPParser::idList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(118);
+    setState(120);
     match(SIMPParser::ID);
-    setState(123);
+    setState(125);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::Comma) {
-      setState(119);
+      setState(121);
       match(SIMPParser::Comma);
-      setState(120);
+      setState(122);
       match(SIMPParser::ID);
-      setState(125);
+      setState(127);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -945,7 +948,7 @@ SIMPParser::OptionalInitContext* SIMPParser::optionalInit() {
     exitRule();
   });
   try {
-    setState(129);
+    setState(131);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::Semicolon: {
@@ -956,9 +959,9 @@ SIMPParser::OptionalInitContext* SIMPParser::optionalInit() {
 
       case SIMPParser::OpAssign: {
         enterOuterAlt(_localctx, 2);
-        setState(127);
+        setState(129);
         match(SIMPParser::OpAssign);
-        setState(128);
+        setState(130);
         constant();
         break;
       }
@@ -1061,25 +1064,25 @@ SIMPParser::FuncDeclContext* SIMPParser::funcDecl() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(131);
-    match(SIMPParser::KeywordFunction);
-    setState(132);
-    match(SIMPParser::ID);
     setState(133);
-    match(SIMPParser::LParen);
+    match(SIMPParser::KeywordFunction);
     setState(134);
-    paramList();
+    match(SIMPParser::ID);
     setState(135);
-    match(SIMPParser::RParen);
+    match(SIMPParser::LParen);
     setState(136);
-    retType();
+    paramList();
     setState(137);
-    match(SIMPParser::KeywordBegin);
+    match(SIMPParser::RParen);
     setState(138);
-    stmtList();
+    retType();
     setState(139);
-    match(SIMPParser::KeywordEnd);
+    match(SIMPParser::KeywordBegin);
     setState(140);
+    stmtList();
+    setState(141);
+    match(SIMPParser::KeywordEnd);
+    setState(142);
     match(SIMPParser::Semicolon);
    
   }
@@ -1152,7 +1155,7 @@ SIMPParser::ParamListContext* SIMPParser::paramList() {
     exitRule();
   });
   try {
-    setState(151);
+    setState(153);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::RParen: {
@@ -1163,17 +1166,17 @@ SIMPParser::ParamListContext* SIMPParser::paramList() {
 
       case SIMPParser::ID: {
         enterOuterAlt(_localctx, 2);
-        setState(143);
+        setState(145);
         param();
-        setState(148);
+        setState(150);
         _errHandler->sync(this);
         _la = _input->LA(1);
         while (_la == SIMPParser::Comma) {
-          setState(144);
+          setState(146);
           match(SIMPParser::Comma);
-          setState(145);
+          setState(147);
           param();
-          setState(150);
+          setState(152);
           _errHandler->sync(this);
           _la = _input->LA(1);
         }
@@ -1246,9 +1249,9 @@ SIMPParser::RetTypeContext* SIMPParser::retType() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(153);
+    setState(155);
     match(SIMPParser::Colon);
-    setState(154);
+    setState(156);
     type();
    
   }
@@ -1317,11 +1320,11 @@ SIMPParser::ParamContext* SIMPParser::param() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(156);
-    match(SIMPParser::ID);
-    setState(157);
-    match(SIMPParser::Colon);
     setState(158);
+    match(SIMPParser::ID);
+    setState(159);
+    match(SIMPParser::Colon);
+    setState(160);
     type();
    
   }
@@ -1387,16 +1390,16 @@ SIMPParser::StmtListContext* SIMPParser::stmtList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(160);
+    setState(162);
     stmt();
-    setState(164);
+    setState(166);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 35184374318404) != 0)) {
-      setState(161);
+      ((1ULL << _la) & 70368763184452) != 0)) {
+      setState(163);
       stmt();
-      setState(166);
+      setState(168);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -1453,6 +1456,10 @@ SIMPParser::LetStmtContext* SIMPParser::StmtContext::letStmt() {
   return getRuleContext<SIMPParser::LetStmtContext>(0);
 }
 
+SIMPParser::WriteStmtContext* SIMPParser::StmtContext::writeStmt() {
+  return getRuleContext<SIMPParser::WriteStmtContext>(0);
+}
+
 
 size_t SIMPParser::StmtContext::getRuleIndex() const {
   return SIMPParser::RuleStmt;
@@ -1490,69 +1497,76 @@ SIMPParser::StmtContext* SIMPParser::stmt() {
     exitRule();
   });
   try {
-    setState(176);
+    setState(179);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 8, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(167);
+      setState(169);
       ifStmt();
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(168);
+      setState(170);
       assignStmt();
       break;
     }
 
     case 3: {
       enterOuterAlt(_localctx, 3);
-      setState(169);
+      setState(171);
       rcallStmt();
       break;
     }
 
     case 4: {
       enterOuterAlt(_localctx, 4);
-      setState(170);
+      setState(172);
       callStmt();
       break;
     }
 
     case 5: {
       enterOuterAlt(_localctx, 5);
-      setState(171);
+      setState(173);
       whileStmt();
       break;
     }
 
     case 6: {
       enterOuterAlt(_localctx, 6);
-      setState(172);
+      setState(174);
       forStmt();
       break;
     }
 
     case 7: {
       enterOuterAlt(_localctx, 7);
-      setState(173);
+      setState(175);
       breakStmt();
       break;
     }
 
     case 8: {
       enterOuterAlt(_localctx, 8);
-      setState(174);
+      setState(176);
       returnStmt();
       break;
     }
 
     case 9: {
       enterOuterAlt(_localctx, 9);
-      setState(175);
+      setState(177);
       letStmt();
+      break;
+    }
+
+    case 10: {
+      enterOuterAlt(_localctx, 10);
+      setState(178);
+      writeStmt();
       break;
     }
 
@@ -1638,17 +1652,17 @@ SIMPParser::LetStmtContext* SIMPParser::letStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(178);
-    match(SIMPParser::KeywordLet);
-    setState(179);
-    declSegment();
-    setState(180);
-    match(SIMPParser::KeywordIn);
     setState(181);
-    stmtList();
+    match(SIMPParser::KeywordLet);
     setState(182);
-    match(SIMPParser::KeywordEnd);
+    declSegment();
     setState(183);
+    match(SIMPParser::KeywordIn);
+    setState(184);
+    stmtList();
+    setState(185);
+    match(SIMPParser::KeywordEnd);
+    setState(186);
     match(SIMPParser::Semicolon);
    
   }
@@ -1717,11 +1731,11 @@ SIMPParser::ReturnStmtContext* SIMPParser::returnStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(185);
+    setState(188);
     match(SIMPParser::KeywordReturn);
-    setState(186);
+    setState(189);
     expr();
-    setState(187);
+    setState(190);
     match(SIMPParser::Semicolon);
    
   }
@@ -1786,9 +1800,9 @@ SIMPParser::BreakStmtContext* SIMPParser::breakStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(189);
+    setState(192);
     match(SIMPParser::KeywordBreak);
-    setState(190);
+    setState(193);
     match(SIMPParser::Semicolon);
    
   }
@@ -1888,55 +1902,55 @@ SIMPParser::ForStmtContext* SIMPParser::forStmt() {
     exitRule();
   });
   try {
-    setState(214);
+    setState(217);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 9, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(192);
-      match(SIMPParser::KeywordFor);
-      setState(193);
-      match(SIMPParser::ID);
-      setState(194);
-      match(SIMPParser::OpAssign);
       setState(195);
-      expr();
+      match(SIMPParser::KeywordFor);
       setState(196);
-      match(SIMPParser::KeywordTo);
+      match(SIMPParser::ID);
       setState(197);
-      expr();
+      match(SIMPParser::OpAssign);
       setState(198);
-      match(SIMPParser::KeywordDo);
+      expr();
       setState(199);
-      stmtList();
+      match(SIMPParser::KeywordTo);
       setState(200);
-      match(SIMPParser::KeywordEnddo);
+      expr();
       setState(201);
+      match(SIMPParser::KeywordDo);
+      setState(202);
+      stmtList();
+      setState(203);
+      match(SIMPParser::KeywordEnddo);
+      setState(204);
       match(SIMPParser::Semicolon);
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(203);
-      match(SIMPParser::KeywordFor);
-      setState(204);
-      match(SIMPParser::ID);
-      setState(205);
-      match(SIMPParser::OpAssign);
       setState(206);
-      expr();
+      match(SIMPParser::KeywordFor);
       setState(207);
-      match(SIMPParser::KeywordDownto);
+      match(SIMPParser::ID);
       setState(208);
-      expr();
+      match(SIMPParser::OpAssign);
       setState(209);
-      match(SIMPParser::KeywordDo);
+      expr();
       setState(210);
-      stmtList();
+      match(SIMPParser::KeywordDownto);
       setState(211);
-      match(SIMPParser::KeywordEnddo);
+      expr();
       setState(212);
+      match(SIMPParser::KeywordDo);
+      setState(213);
+      stmtList();
+      setState(214);
+      match(SIMPParser::KeywordEnddo);
+      setState(215);
       match(SIMPParser::Semicolon);
       break;
     }
@@ -2023,17 +2037,17 @@ SIMPParser::WhileStmtContext* SIMPParser::whileStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(216);
-    match(SIMPParser::KeywordWhile);
-    setState(217);
-    expr();
-    setState(218);
-    match(SIMPParser::KeywordDo);
     setState(219);
-    stmtList();
+    match(SIMPParser::KeywordWhile);
     setState(220);
-    match(SIMPParser::KeywordEnddo);
+    expr();
     setState(221);
+    match(SIMPParser::KeywordDo);
+    setState(222);
+    stmtList();
+    setState(223);
+    match(SIMPParser::KeywordEnddo);
+    setState(224);
     match(SIMPParser::Semicolon);
    
   }
@@ -2102,11 +2116,11 @@ SIMPParser::AssignStmtContext* SIMPParser::assignStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(223);
+    setState(226);
     lvalue();
-    setState(224);
+    setState(227);
     match(SIMPParser::OpAssign);
-    setState(225);
+    setState(228);
     rValue();
    
   }
@@ -2171,9 +2185,9 @@ SIMPParser::RValueContext* SIMPParser::rValue() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(227);
+    setState(230);
     expr();
-    setState(228);
+    setState(231);
     match(SIMPParser::Semicolon);
    
   }
@@ -2258,19 +2272,19 @@ SIMPParser::RcallStmtContext* SIMPParser::rcallStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(230);
-    match(SIMPParser::ID);
-    setState(231);
-    match(SIMPParser::OpAssign);
-    setState(232);
-    match(SIMPParser::ID);
     setState(233);
-    match(SIMPParser::LParen);
+    match(SIMPParser::ID);
     setState(234);
-    exprList();
+    match(SIMPParser::OpAssign);
     setState(235);
-    match(SIMPParser::RParen);
+    match(SIMPParser::ID);
     setState(236);
+    match(SIMPParser::LParen);
+    setState(237);
+    exprList();
+    setState(238);
+    match(SIMPParser::RParen);
+    setState(239);
     match(SIMPParser::Semicolon);
    
   }
@@ -2347,15 +2361,15 @@ SIMPParser::CallStmtContext* SIMPParser::callStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(238);
-    match(SIMPParser::ID);
-    setState(239);
-    match(SIMPParser::LParen);
-    setState(240);
-    exprList();
     setState(241);
-    match(SIMPParser::RParen);
+    match(SIMPParser::ID);
     setState(242);
+    match(SIMPParser::LParen);
+    setState(243);
+    exprList();
+    setState(244);
+    match(SIMPParser::RParen);
+    setState(245);
     match(SIMPParser::Semicolon);
    
   }
@@ -2432,15 +2446,15 @@ SIMPParser::IfStmtContext* SIMPParser::ifStmt() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(244);
-    match(SIMPParser::KeywordIf);
-    setState(245);
-    expr();
-    setState(246);
-    match(SIMPParser::KeywordThen);
     setState(247);
-    stmtList();
+    match(SIMPParser::KeywordIf);
     setState(248);
+    expr();
+    setState(249);
+    match(SIMPParser::KeywordThen);
+    setState(250);
+    stmtList();
+    setState(251);
     ifStmtTail();
    
   }
@@ -2512,27 +2526,27 @@ SIMPParser::IfStmtTailContext* SIMPParser::ifStmtTail() {
     exitRule();
   });
   try {
-    setState(257);
+    setState(260);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::KeywordEndif: {
         enterOuterAlt(_localctx, 1);
-        setState(250);
+        setState(253);
         match(SIMPParser::KeywordEndif);
-        setState(251);
+        setState(254);
         match(SIMPParser::Semicolon);
         break;
       }
 
       case SIMPParser::KeywordElse: {
         enterOuterAlt(_localctx, 2);
-        setState(252);
-        match(SIMPParser::KeywordElse);
-        setState(253);
-        stmtList();
-        setState(254);
-        match(SIMPParser::KeywordEndif);
         setState(255);
+        match(SIMPParser::KeywordElse);
+        setState(256);
+        stmtList();
+        setState(257);
+        match(SIMPParser::KeywordEndif);
+        setState(258);
         match(SIMPParser::Semicolon);
         break;
       }
@@ -2540,6 +2554,79 @@ SIMPParser::IfStmtTailContext* SIMPParser::ifStmtTail() {
     default:
       throw NoViableAltException(this);
     }
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- WriteStmtContext ------------------------------------------------------------------
+
+SIMPParser::WriteStmtContext::WriteStmtContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* SIMPParser::WriteStmtContext::KeywordWrite() {
+  return getToken(SIMPParser::KeywordWrite, 0);
+}
+
+SIMPParser::ExprContext* SIMPParser::WriteStmtContext::expr() {
+  return getRuleContext<SIMPParser::ExprContext>(0);
+}
+
+tree::TerminalNode* SIMPParser::WriteStmtContext::Semicolon() {
+  return getToken(SIMPParser::Semicolon, 0);
+}
+
+
+size_t SIMPParser::WriteStmtContext::getRuleIndex() const {
+  return SIMPParser::RuleWriteStmt;
+}
+
+void SIMPParser::WriteStmtContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<SIMPListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterWriteStmt(this);
+}
+
+void SIMPParser::WriteStmtContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<SIMPListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitWriteStmt(this);
+}
+
+
+std::any SIMPParser::WriteStmtContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<SIMPVisitor*>(visitor))
+    return parserVisitor->visitWriteStmt(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+SIMPParser::WriteStmtContext* SIMPParser::writeStmt() {
+  WriteStmtContext *_localctx = _tracker.createInstance<WriteStmtContext>(_ctx, getState());
+  enterRule(_localctx, 52, SIMPParser::RuleWriteStmt);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(262);
+    match(SIMPParser::KeywordWrite);
+    setState(263);
+    expr();
+    setState(264);
+    match(SIMPParser::Semicolon);
    
   }
   catch (RecognitionException &e) {
@@ -2588,7 +2675,7 @@ std::any SIMPParser::ExprContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ExprContext* SIMPParser::expr() {
   ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, getState());
-  enterRule(_localctx, 52, SIMPParser::RuleExpr);
+  enterRule(_localctx, 54, SIMPParser::RuleExpr);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2599,7 +2686,7 @@ SIMPParser::ExprContext* SIMPParser::expr() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(259);
+    setState(266);
     leTerm();
    
   }
@@ -2661,7 +2748,7 @@ std::any SIMPParser::LeTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::LeTermContext* SIMPParser::leTerm() {
   LeTermContext *_localctx = _tracker.createInstance<LeTermContext>(_ctx, getState());
-  enterRule(_localctx, 54, SIMPParser::RuleLeTerm);
+  enterRule(_localctx, 56, SIMPParser::RuleLeTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2673,17 +2760,17 @@ SIMPParser::LeTermContext* SIMPParser::leTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(261);
+    setState(268);
     geTerm();
-    setState(266);
+    setState(273);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpLeq) {
-      setState(262);
+      setState(269);
       match(SIMPParser::BinOpLeq);
-      setState(263);
+      setState(270);
       geTerm();
-      setState(268);
+      setState(275);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -2747,7 +2834,7 @@ std::any SIMPParser::GeTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::GeTermContext* SIMPParser::geTerm() {
   GeTermContext *_localctx = _tracker.createInstance<GeTermContext>(_ctx, getState());
-  enterRule(_localctx, 56, SIMPParser::RuleGeTerm);
+  enterRule(_localctx, 58, SIMPParser::RuleGeTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2759,17 +2846,17 @@ SIMPParser::GeTermContext* SIMPParser::geTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(269);
+    setState(276);
     ltTerm();
-    setState(274);
+    setState(281);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpGeq) {
-      setState(270);
+      setState(277);
       match(SIMPParser::BinOpGeq);
-      setState(271);
+      setState(278);
       ltTerm();
-      setState(276);
+      setState(283);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -2833,7 +2920,7 @@ std::any SIMPParser::LtTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::LtTermContext* SIMPParser::ltTerm() {
   LtTermContext *_localctx = _tracker.createInstance<LtTermContext>(_ctx, getState());
-  enterRule(_localctx, 58, SIMPParser::RuleLtTerm);
+  enterRule(_localctx, 60, SIMPParser::RuleLtTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2845,17 +2932,17 @@ SIMPParser::LtTermContext* SIMPParser::ltTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(277);
+    setState(284);
     gtTerm();
-    setState(282);
+    setState(289);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpLt) {
-      setState(278);
+      setState(285);
       match(SIMPParser::BinOpLt);
-      setState(279);
+      setState(286);
       gtTerm();
-      setState(284);
+      setState(291);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -2919,7 +3006,7 @@ std::any SIMPParser::GtTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::GtTermContext* SIMPParser::gtTerm() {
   GtTermContext *_localctx = _tracker.createInstance<GtTermContext>(_ctx, getState());
-  enterRule(_localctx, 60, SIMPParser::RuleGtTerm);
+  enterRule(_localctx, 62, SIMPParser::RuleGtTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2931,17 +3018,17 @@ SIMPParser::GtTermContext* SIMPParser::gtTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(285);
+    setState(292);
     neTerm();
-    setState(290);
+    setState(297);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpGt) {
-      setState(286);
+      setState(293);
       match(SIMPParser::BinOpGt);
-      setState(287);
+      setState(294);
       neTerm();
-      setState(292);
+      setState(299);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3005,7 +3092,7 @@ std::any SIMPParser::NeTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::NeTermContext* SIMPParser::neTerm() {
   NeTermContext *_localctx = _tracker.createInstance<NeTermContext>(_ctx, getState());
-  enterRule(_localctx, 62, SIMPParser::RuleNeTerm);
+  enterRule(_localctx, 64, SIMPParser::RuleNeTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3017,17 +3104,17 @@ SIMPParser::NeTermContext* SIMPParser::neTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(293);
+    setState(300);
     eqTerm();
-    setState(298);
+    setState(305);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpNeq) {
-      setState(294);
+      setState(301);
       match(SIMPParser::BinOpNeq);
-      setState(295);
+      setState(302);
       eqTerm();
-      setState(300);
+      setState(307);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3091,7 +3178,7 @@ std::any SIMPParser::EqTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::EqTermContext* SIMPParser::eqTerm() {
   EqTermContext *_localctx = _tracker.createInstance<EqTermContext>(_ctx, getState());
-  enterRule(_localctx, 64, SIMPParser::RuleEqTerm);
+  enterRule(_localctx, 66, SIMPParser::RuleEqTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3103,17 +3190,17 @@ SIMPParser::EqTermContext* SIMPParser::eqTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(301);
+    setState(308);
     subTerm();
-    setState(306);
+    setState(313);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpEq) {
-      setState(302);
+      setState(309);
       match(SIMPParser::BinOpEq);
-      setState(303);
+      setState(310);
       subTerm();
-      setState(308);
+      setState(315);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3177,7 +3264,7 @@ std::any SIMPParser::SubTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::SubTermContext* SIMPParser::subTerm() {
   SubTermContext *_localctx = _tracker.createInstance<SubTermContext>(_ctx, getState());
-  enterRule(_localctx, 66, SIMPParser::RuleSubTerm);
+  enterRule(_localctx, 68, SIMPParser::RuleSubTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3189,17 +3276,17 @@ SIMPParser::SubTermContext* SIMPParser::subTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(309);
+    setState(316);
     addTerm();
-    setState(314);
+    setState(321);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpMinus) {
-      setState(310);
+      setState(317);
       match(SIMPParser::BinOpMinus);
-      setState(311);
+      setState(318);
       addTerm();
-      setState(316);
+      setState(323);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3263,7 +3350,7 @@ std::any SIMPParser::AddTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::AddTermContext* SIMPParser::addTerm() {
   AddTermContext *_localctx = _tracker.createInstance<AddTermContext>(_ctx, getState());
-  enterRule(_localctx, 68, SIMPParser::RuleAddTerm);
+  enterRule(_localctx, 70, SIMPParser::RuleAddTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3275,17 +3362,17 @@ SIMPParser::AddTermContext* SIMPParser::addTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(317);
+    setState(324);
     divTerm();
-    setState(322);
+    setState(329);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpPlus) {
-      setState(318);
+      setState(325);
       match(SIMPParser::BinOpPlus);
-      setState(319);
+      setState(326);
       divTerm();
-      setState(324);
+      setState(331);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3349,7 +3436,7 @@ std::any SIMPParser::DivTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::DivTermContext* SIMPParser::divTerm() {
   DivTermContext *_localctx = _tracker.createInstance<DivTermContext>(_ctx, getState());
-  enterRule(_localctx, 70, SIMPParser::RuleDivTerm);
+  enterRule(_localctx, 72, SIMPParser::RuleDivTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3361,17 +3448,17 @@ SIMPParser::DivTermContext* SIMPParser::divTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(325);
+    setState(332);
     mulTerm();
-    setState(330);
+    setState(337);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpDivide) {
-      setState(326);
+      setState(333);
       match(SIMPParser::BinOpDivide);
-      setState(327);
+      setState(334);
       mulTerm();
-      setState(332);
+      setState(339);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3435,7 +3522,7 @@ std::any SIMPParser::MulTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::MulTermContext* SIMPParser::mulTerm() {
   MulTermContext *_localctx = _tracker.createInstance<MulTermContext>(_ctx, getState());
-  enterRule(_localctx, 72, SIMPParser::RuleMulTerm);
+  enterRule(_localctx, 74, SIMPParser::RuleMulTerm);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3447,17 +3534,17 @@ SIMPParser::MulTermContext* SIMPParser::mulTerm() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(333);
+    setState(340);
     parnTerm();
-    setState(338);
+    setState(345);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == SIMPParser::BinOpTimes) {
-      setState(334);
+      setState(341);
       match(SIMPParser::BinOpTimes);
-      setState(335);
+      setState(342);
       parnTerm();
-      setState(340);
+      setState(347);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3525,7 +3612,7 @@ std::any SIMPParser::ParnTermContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ParnTermContext* SIMPParser::parnTerm() {
   ParnTermContext *_localctx = _tracker.createInstance<ParnTermContext>(_ctx, getState());
-  enterRule(_localctx, 74, SIMPParser::RuleParnTerm);
+  enterRule(_localctx, 76, SIMPParser::RuleParnTerm);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3535,23 +3622,23 @@ SIMPParser::ParnTermContext* SIMPParser::parnTerm() {
     exitRule();
   });
   try {
-    setState(347);
+    setState(354);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::LParen: {
         enterOuterAlt(_localctx, 1);
-        setState(341);
+        setState(348);
         match(SIMPParser::LParen);
-        setState(342);
+        setState(349);
         expr();
-        setState(343);
+        setState(350);
         match(SIMPParser::RParen);
         break;
       }
 
       case SIMPParser::ID: {
         enterOuterAlt(_localctx, 2);
-        setState(345);
+        setState(352);
         lvalue();
         break;
       }
@@ -3559,7 +3646,7 @@ SIMPParser::ParnTermContext* SIMPParser::parnTerm() {
       case SIMPParser::IntLit:
       case SIMPParser::FloatLit: {
         enterOuterAlt(_localctx, 3);
-        setState(346);
+        setState(353);
         constant();
         break;
       }
@@ -3619,7 +3706,7 @@ std::any SIMPParser::ConstantContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ConstantContext* SIMPParser::constant() {
   ConstantContext *_localctx = _tracker.createInstance<ConstantContext>(_ctx, getState());
-  enterRule(_localctx, 76, SIMPParser::RuleConstant);
+  enterRule(_localctx, 78, SIMPParser::RuleConstant);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3631,7 +3718,7 @@ SIMPParser::ConstantContext* SIMPParser::constant() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(349);
+    setState(356);
     _la = _input->LA(1);
     if (!(_la == SIMPParser::IntLit
 
@@ -3702,7 +3789,7 @@ std::any SIMPParser::ExprListContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::ExprListContext* SIMPParser::exprList() {
   ExprListContext *_localctx = _tracker.createInstance<ExprListContext>(_ctx, getState());
-  enterRule(_localctx, 78, SIMPParser::RuleExprList);
+  enterRule(_localctx, 80, SIMPParser::RuleExprList);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3713,7 +3800,7 @@ SIMPParser::ExprListContext* SIMPParser::exprList() {
     exitRule();
   });
   try {
-    setState(360);
+    setState(367);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case SIMPParser::RParen: {
@@ -3727,17 +3814,17 @@ SIMPParser::ExprListContext* SIMPParser::exprList() {
       case SIMPParser::IntLit:
       case SIMPParser::FloatLit: {
         enterOuterAlt(_localctx, 2);
-        setState(352);
+        setState(359);
         expr();
-        setState(357);
+        setState(364);
         _errHandler->sync(this);
         _la = _input->LA(1);
         while (_la == SIMPParser::Comma) {
-          setState(353);
+          setState(360);
           match(SIMPParser::Comma);
-          setState(354);
+          setState(361);
           expr();
-          setState(359);
+          setState(366);
           _errHandler->sync(this);
           _la = _input->LA(1);
         }
@@ -3807,7 +3894,7 @@ std::any SIMPParser::LvalueContext::accept(tree::ParseTreeVisitor *visitor) {
 
 SIMPParser::LvalueContext* SIMPParser::lvalue() {
   LvalueContext *_localctx = _tracker.createInstance<LvalueContext>(_ctx, getState());
-  enterRule(_localctx, 80, SIMPParser::RuleLvalue);
+  enterRule(_localctx, 82, SIMPParser::RuleLvalue);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3819,18 +3906,18 @@ SIMPParser::LvalueContext* SIMPParser::lvalue() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(362);
+    setState(369);
     match(SIMPParser::ID);
-    setState(367);
+    setState(374);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == SIMPParser::LBracket) {
-      setState(363);
+      setState(370);
       match(SIMPParser::LBracket);
-      setState(364);
+      setState(371);
       expr();
-      setState(365);
+      setState(372);
       match(SIMPParser::RBracket);
     }
    

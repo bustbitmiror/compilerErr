@@ -121,6 +121,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitWriteStmt(SIMPParser::WriteStmtContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitExpr(SIMPParser::ExprContext *ctx) override {
     return visitChildren(ctx);
   }

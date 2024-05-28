@@ -72,6 +72,8 @@ public:
 
     virtual std::any visitIfStmtTail(SIMPParser::IfStmtTailContext *context) = 0;
 
+    virtual std::any visitWriteStmt(SIMPParser::WriteStmtContext *context) = 0;
+
     virtual std::any visitExpr(SIMPParser::ExprContext *context) = 0;
 
     virtual std::any visitLeTerm(SIMPParser::LeTermContext *context) = 0;

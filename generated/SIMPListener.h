@@ -94,6 +94,9 @@ public:
   virtual void enterIfStmtTail(SIMPParser::IfStmtTailContext *ctx) = 0;
   virtual void exitIfStmtTail(SIMPParser::IfStmtTailContext *ctx) = 0;
 
+  virtual void enterWriteStmt(SIMPParser::WriteStmtContext *ctx) = 0;
+  virtual void exitWriteStmt(SIMPParser::WriteStmtContext *ctx) = 0;
+
   virtual void enterExpr(SIMPParser::ExprContext *ctx) = 0;
   virtual void exitExpr(SIMPParser::ExprContext *ctx) = 0;
 

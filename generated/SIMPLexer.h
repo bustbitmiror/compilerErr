@@ -18,12 +18,12 @@ public:
     KeywordOf = 11, KeywordThen = 12, KeywordTo = 13, KeywordDownto = 14, 
     KeywordType = 15, KeywordVar = 16, KeywordWhile = 17, KeywordEndif = 18, 
     KeywordBegin = 19, KeywordEnddo = 20, KeywordReturn = 21, KeywordInt = 22, 
-    KeywordFloat = 23, BinOpPlus = 24, BinOpMinus = 25, BinOpTimes = 26, 
-    BinOpDivide = 27, BinOpEq = 28, BinOpNeq = 29, BinOpLt = 30, BinOpGt = 31, 
-    BinOpLeq = 32, BinOpGeq = 33, BinOpAnd = 34, BinOpOr = 35, OpAssign = 36, 
-    Equals = 37, Colon = 38, Semicolon = 39, Comma = 40, LParen = 41, RParen = 42, 
-    LBracket = 43, RBracket = 44, ID = 45, IntLit = 46, FloatLit = 47, Comment = 48, 
-    Whitespace = 49
+    KeywordFloat = 23, KeywordWrite = 24, BinOpPlus = 25, BinOpMinus = 26, 
+    BinOpTimes = 27, BinOpDivide = 28, BinOpEq = 29, BinOpNeq = 30, BinOpLt = 31, 
+    BinOpGt = 32, BinOpLeq = 33, BinOpGeq = 34, BinOpAnd = 35, BinOpOr = 36, 
+    OpAssign = 37, Equals = 38, Colon = 39, Semicolon = 40, Comma = 41, 
+    LParen = 42, RParen = 43, LBracket = 44, RBracket = 45, ID = 46, IntLit = 47, 
+    FloatLit = 48, Comment = 49, Whitespace = 50
   };
 
   explicit SIMPLexer(antlr4::CharStream *input);

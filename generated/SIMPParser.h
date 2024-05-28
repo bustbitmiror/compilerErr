@@ -18,12 +18,12 @@ public:
     KeywordOf = 11, KeywordThen = 12, KeywordTo = 13, KeywordDownto = 14, 
     KeywordType = 15, KeywordVar = 16, KeywordWhile = 17, KeywordEndif = 18, 
     KeywordBegin = 19, KeywordEnddo = 20, KeywordReturn = 21, KeywordInt = 22, 
-    KeywordFloat = 23, BinOpPlus = 24, BinOpMinus = 25, BinOpTimes = 26, 
-    BinOpDivide = 27, BinOpEq = 28, BinOpNeq = 29, BinOpLt = 30, BinOpGt = 31, 
-    BinOpLeq = 32, BinOpGeq = 33, BinOpAnd = 34, BinOpOr = 35, OpAssign = 36, 
-    Equals = 37, Colon = 38, Semicolon = 39, Comma = 40, LParen = 41, RParen = 42, 
-    LBracket = 43, RBracket = 44, ID = 45, IntLit = 46, FloatLit = 47, Comment = 48, 
-    Whitespace = 49
+    KeywordFloat = 23, KeywordWrite = 24, BinOpPlus = 25, BinOpMinus = 26, 
+    BinOpTimes = 27, BinOpDivide = 28, BinOpEq = 29, BinOpNeq = 30, BinOpLt = 31, 
+    BinOpGt = 32, BinOpLeq = 33, BinOpGeq = 34, BinOpAnd = 35, BinOpOr = 36, 
+    OpAssign = 37, Equals = 38, Colon = 39, Semicolon = 40, Comma = 41, 
+    LParen = 42, RParen = 43, LBracket = 44, RBracket = 45, ID = 46, IntLit = 47, 
+    FloatLit = 48, Comment = 49, Whitespace = 50
   };
 
   enum {
@@ -33,10 +33,11 @@ public:
     RuleStmtList = 13, RuleStmt = 14, RuleLetStmt = 15, RuleReturnStmt = 16, 
     RuleBreakStmt = 17, RuleForStmt = 18, RuleWhileStmt = 19, RuleAssignStmt = 20, 
     RuleRValue = 21, RuleRcallStmt = 22, RuleCallStmt = 23, RuleIfStmt = 24, 
-    RuleIfStmtTail = 25, RuleExpr = 26, RuleLeTerm = 27, RuleGeTerm = 28, 
-    RuleLtTerm = 29, RuleGtTerm = 30, RuleNeTerm = 31, RuleEqTerm = 32, 
-    RuleSubTerm = 33, RuleAddTerm = 34, RuleDivTerm = 35, RuleMulTerm = 36, 
-    RuleParnTerm = 37, RuleConstant = 38, RuleExprList = 39, RuleLvalue = 40
+    RuleIfStmtTail = 25, RuleWriteStmt = 26, RuleExpr = 27, RuleLeTerm = 28, 
+    RuleGeTerm = 29, RuleLtTerm = 30, RuleGtTerm = 31, RuleNeTerm = 32, 
+    RuleEqTerm = 33, RuleSubTerm = 34, RuleAddTerm = 35, RuleDivTerm = 36, 
+    RuleMulTerm = 37, RuleParnTerm = 38, RuleConstant = 39, RuleExprList = 40, 
+    RuleLvalue = 41
   };
 
   explicit SIMPParser(antlr4::TokenStream *input);
@@ -82,6 +83,7 @@ public:
   class CallStmtContext;
   class IfStmtContext;
   class IfStmtTailContext;
+  class WriteStmtContext;
   class ExprContext;
   class LeTermContext;
   class GeTermContext;
@@ -357,6 +359,7 @@ public:
     BreakStmtContext *breakStmt();
     ReturnStmtContext *returnStmt();
     LetStmtContext *letStmt();
+    WriteStmtContext *writeStmt();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -574,6 +577,23 @@ public:
   };
 
   IfStmtTailContext* ifStmtTail();
+
+  class  WriteStmtContext : public antlr4::ParserRuleContext {
+  public:
+    WriteStmtContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *KeywordWrite();
+    ExprContext *expr();
+    antlr4::tree::TerminalNode *Semicolon();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  WriteStmtContext* writeStmt();
 
   class  ExprContext : public antlr4::ParserRuleContext {
   public:

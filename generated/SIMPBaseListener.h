@@ -96,6 +96,9 @@ public:
   virtual void enterIfStmtTail(SIMPParser::IfStmtTailContext * /*ctx*/) override { }
   virtual void exitIfStmtTail(SIMPParser::IfStmtTailContext * /*ctx*/) override { }
 
+  virtual void enterWriteStmt(SIMPParser::WriteStmtContext * /*ctx*/) override { }
+  virtual void exitWriteStmt(SIMPParser::WriteStmtContext * /*ctx*/) override { }
+
   virtual void enterExpr(SIMPParser::ExprContext * /*ctx*/) override { }
   virtual void exitExpr(SIMPParser::ExprContext * /*ctx*/) override { }
 
