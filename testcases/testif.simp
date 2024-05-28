@@ -1,0 +1,17 @@
+main
+let
+    var a, b : int;
+in
+begin
+    a := 0;
+    b := 0;
+    
+    if(a == b) then
+        a := b + 2;
+	else
+		a := 2;
+    endif;
+
+    write(a);
+    
+end

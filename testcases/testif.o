@@ -1,0 +1,15 @@
+LAB _main
+ASS n_0, v_a_0124BCC0
+ASS n_0, v_b_0124C618
+CMP v_a_0124BCC0, v_b_0124C618
+JNE condition_else_label_1
+ADD v_b_0124C618, n_2, t_1
+ASS t_1, v_a_0124BCC0
+JMP condition_end_label_2
+LAB condition_else_label_1
+ASS n_2, v_a_0124BCC0
+LAB condition_end_label_2
+WI v_a_0124BCC0
+NL 
+LAB main_end
+RTN 

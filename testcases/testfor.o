@@ -1,0 +1,19 @@
+LAB _main
+ASS n_10, v_X_010B9E88
+ASS n_10, v_Y_010BA090
+ASS n_0, v_sum_010B99A8
+ASS n_0, v_i_010B9FC0
+LAB loop_for_start_label_1
+CMP v_i_010B9FC0, n_99
+JG loop_for_end_label_2
+MUL v_Y_010BA090, v_X_010B9E88, t_1
+ADD v_sum_010B99A8, t_1, t_2
+ASS t_2, v_sum_010B99A8
+ADD v_i_010B9FC0, n_1, t_3
+ASS t_3, v_i_010B9FC0
+JMP loop_for_start_label_1
+LAB loop_for_end_label_2
+WI v_sum_010B99A8
+NL 
+LAB main_end
+RTN 

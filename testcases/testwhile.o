@@ -1,0 +1,15 @@
+LAB _main
+ASS n_1, v_i_0123F0D0
+ASS n_10, v_X_0123EDF8
+LAB loop_while_label_1
+MUL v_X_0123EDF8, v_i_0123F0D0, t_1
+CMP t_1, v_i_0123F0D0
+JE loop_while_end_label_2
+SUB v_X_0123EDF8, n_1, t_2
+ASS t_2, v_X_0123EDF8
+WI v_X_0123EDF8
+NL 
+JMP loop_while_label_1
+LAB loop_while_end_label_2
+LAB main_end
+RTN 

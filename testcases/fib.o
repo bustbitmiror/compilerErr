@@ -1,0 +1,36 @@
+LAB f_fib_00A6AD68
+CMP v_n_00A6AEA0, n_4
+JGE condition_else_label_1
+CMP v_n_00A6AEA0, n_1
+JNE condition_else_label_3
+FAS n_0, f_fib_00A6AD68
+JMP fib_end
+JMP condition_end_label_4
+LAB condition_else_label_3
+LAB condition_end_label_4
+FAS n_1, f_fib_00A6AD68
+JMP fib_end
+JMP condition_end_label_2
+LAB condition_else_label_1
+LAB condition_end_label_2
+SUB v_n_00A6AEA0, n_1, t_1
+PUSH t_1
+CALF f_fib_00A6AD68, t_2
+ASS t_2, v_r1_00A6B110
+SUB v_n_00A6AEA0, n_2, t_3
+PUSH t_3
+CALF f_fib_00A6AD68, t_4
+ASS t_4, v_r2_00A6B178
+ADD v_r1_00A6B110, v_r2_00A6B178, t_5
+FAS t_5, f_fib_00A6AD68
+JMP fib_end
+LAB fib_end
+RTN 
+LAB _main
+PUSH n_40
+CALF f_fib_00A6AD68, t_6
+ASS t_6, v_r_00A6AA90
+WI v_r_00A6AA90
+NL 
+LAB main_end
+RTN 

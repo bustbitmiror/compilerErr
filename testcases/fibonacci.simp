@@ -1,0 +1,32 @@
+main
+let
+  var r: int := 1;
+  function fib(n: int): int
+  begin
+    let
+        var r1 : int := 0;
+        var r2 : int := 0;
+    in
+    
+
+    if n < 4 then
+
+        if n == 1 then
+            return 0;
+        endif;
+
+        return 1;
+    endif;
+
+    r1 := fib(n-1);
+    r2 := fib(n-2);
+
+    return r1+r2;
+
+    end;
+  end;
+in
+begin
+    r := fib(40);
+    write(r);
+end
