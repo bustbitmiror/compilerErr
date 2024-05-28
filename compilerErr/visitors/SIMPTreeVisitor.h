@@ -18,6 +18,7 @@
 
 #include "..\SymbolTableManager.h"
 #include "..\SemanticAnalyzer.h"
+#include "..\ErrorHandler.h"
 
 using namespace antlrcpptest;
 using namespace antlr4;
@@ -52,7 +53,7 @@ class SIMPTreeVisitor{
 
 public:
 
-    SIMPTreeVisitor(SymbolTableManager&, SemanticAnalyzer&);
+    SIMPTreeVisitor(SymbolTableManager&, SemanticAnalyzer&, ErrorHandler&);
 
 
 
@@ -60,31 +61,15 @@ public:
 
     void visitDeclSegment(SIMPParser::DeclSegmentContext* ctx);
 
-    //void visitTypeDeclList(SIMPParser::TypeDeclListContext* ctx);
-
     void visitVarDeclList(SIMPParser::VarDeclListContext* ctx);
 
     void visitFuncDeclList(SIMPParser::FuncDeclListContext* ctx);
-
-    //void visitTypeDecl(SIMPParser::TypeDeclContext* ctx);
-
-    //virtual std::any visitType(SIMPParser::TypeContext* ctx) override;
 
     void visitTypeId(SIMPParser::TypeIdContext* ctx, BasicType& bType);
 
     void visitVarDecl(SIMPParser::VarDeclContext* ctx);
 
-    //virtual std::any visitIdList(SIMPParser::IdListContext* ctx);
-
-    //virtual std::any visitOptionalInit(SIMPParser::OptionalInitContext* ctx);
-
     void visitFuncDecl(SIMPParser::FuncDeclContext* ctx);
-
-    //virtual std::any visitParamList(SIMPParser::ParamListContext* ctx);
-
-    //virtual std::any visitRetType(SIMPParser::RetTypeContext* ctx);
-
-    //virtual std::any visitParam(SIMPParser::ParamContext* ctx);
 
     void visitStmtList(SIMPParser::StmtListContext* ctx);
 
@@ -110,13 +95,7 @@ public:
 
     void visitIfStmt(SIMPParser::IfStmtContext* ctx);
 
-    //virtual std::any visitIfStmtTail(SIMPParser::IfStmtTailContext* ctx);
-
     ASTExpr* visitExpr(SIMPParser::ExprContext* ctx);
-
-    //ASTExpr* visitOrTerm(SIMPParser::OrTermContext* ctx);
-
-    //ASTExpr* visitAndTerm(SIMPParser::AndTermContext* ctx);
 
     ASTExpr* visitLeTerm(SIMPParser::LeTermContext* ctx);
 
@@ -138,8 +117,6 @@ public:
 
     ASTExpr* visitMulTerm(SIMPParser::MulTermContext* ctx);
 
-    //ASTExpr* visitPowTerm(SIMPParser::PowTermContext* ctx);
-
     ASTExpr* visitParnTerm(SIMPParser::ParnTermContext* ctx);
 
     void visitConstant(SIMPParser::ConstantContext* ctx, int& value, BasicType& type);
@@ -150,7 +127,7 @@ public:
 
     ASTLvalue* visitLvalue(SIMPParser::LvalueContext* ctx);
 
-
+    void visitWriteStmt(SIMPParser::WriteStmtContext* ctx);
 
 
 
@@ -173,6 +150,7 @@ private:
 
     SemanticAnalyzer& semanticAnalyzer;
     SymbolTableManager& table;
+    ErrorHandler& errHnd;
     
     struct retLab {
         std::string nameFunc;

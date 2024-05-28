@@ -1,8 +1,8 @@
 #include "SIMPTreeVisitor.h"
 
 
-SIMPTreeVisitor::SIMPTreeVisitor(SymbolTableManager& stm, SemanticAnalyzer& sa)
-	: table(stm), semanticAnalyzer(sa)
+SIMPTreeVisitor::SIMPTreeVisitor(SymbolTableManager& stm, SemanticAnalyzer& sa, ErrorHandler& err)
+	: table(stm), semanticAnalyzer(sa), errHnd(err)
 {
 }
 
@@ -93,16 +93,12 @@ void SIMPTreeVisitor::visitVarDeclList(SIMPParser::VarDeclListContext* ctx)
 		return;
 	}
 
-	std::vector<ASTVarDecl*>* decls = new std::vector<ASTVarDecl*>;
+	//std::vector<ASTVarDecl*>* decls = new std::vector<ASTVarDecl*>;
 	for (auto& decl : ctx->varDecl()) {
 		visitVarDecl(decl);
 	}
 	
-	/*return new ASTVarDeclList(
-		0,
-		0,
-		decls
-	);*/
+
 }
 
 void SIMPTreeVisitor::visitFuncDeclList(SIMPParser::FuncDeclListContext* ctx)
@@ -111,7 +107,7 @@ void SIMPTreeVisitor::visitFuncDeclList(SIMPParser::FuncDeclListContext* ctx)
 		return;
 	}
 
-	std::vector<ASTFuncDecl*>* decls = new std::vector<ASTFuncDecl*>;
+	//std::vector<ASTFuncDecl*>* decls = new std::vector<ASTFuncDecl*>;
 	for (auto& decl : ctx->funcDecl()) {
 		visitFuncDecl(decl);
 	}
@@ -151,11 +147,12 @@ void SIMPTreeVisitor::visitTypeId(SIMPParser::TypeIdContext* ctx, BasicType& bTy
 		bType = BasicType::INTEGER;
 		//return SIMPType::INT;
 	}
-	else if (ctx->KeywordFloat() != nullptr) {
+	//else if (ctx->KeywordFloat() != nullptr) {
 
-		//return SIMPType::FLOAT;
-	}
+	//	//return SIMPType::FLOAT;
+	//}
 	else {
+		errHnd.printError("unknown data type (function visitTypeId)");
 		throw new IllegalArgumentException("unknown data type (function visitTypeId)");
 	}
 }
@@ -174,7 +171,8 @@ void SIMPTreeVisitor::visitVarDecl(SIMPParser::VarDeclContext* ctx)
 		for (auto& t : ctx->idList()->ID()) {
 
 			if (table.isHere(t->getText())) {
-				throw new IllegalStateException("redefined var (" + t->getText() + ")");
+				errHnd.printError("redefined var (" + t->getText() + ")");
+				throw IllegalStateException("redefined var (" + t->getText() + ")");
 			}
 			else {
 
@@ -203,6 +201,7 @@ void SIMPTreeVisitor::visitVarDecl(SIMPParser::VarDeclContext* ctx)
 		for (auto& t : ctx->idList()->ID()) {
 
 			if (table.isHere(t->getText())) {
+				errHnd.printError("A variable with that name already exists (" + t->getText() + ")");
 				throw new IllegalStateException("A variable with that name already exists (" + t->getText() + ")");
 			}
 			else {
@@ -236,7 +235,8 @@ void SIMPTreeVisitor::visitFuncDecl(SIMPParser::FuncDeclContext* ctx)
 	if (ctx->retType()->type()->getText() == "void") {
 
 		if (table.isHere(ctx->ID()->getText())) {
-			// REDEFINE throw new 
+			errHnd.printError("Redefined function (" + ctx->ID()->getText() + ")");
+			throw new IllegalStateException("Redefined function (" + ctx->ID()->getText() + ")");
 		}
 
 		for (auto& param : ctx->paramList()->param()) {
@@ -262,7 +262,8 @@ void SIMPTreeVisitor::visitFuncDecl(SIMPParser::FuncDeclContext* ctx)
 		BasicType returnType;
 
 		if (table.isHere(ctx->ID()->getText())) {
-			// REDEFINE throw new 
+			errHnd.printError("Redefined function (" + ctx->ID()->getText() + ")");
+			throw new IllegalStateException("Redefined function (" + ctx->ID()->getText() + ")");
 		}
 		
 		for (auto& param : ctx->paramList()->param()) {
@@ -347,11 +348,6 @@ void SIMPTreeVisitor::visitStmtList(SIMPParser::StmtListContext* ctx)
 	}
 
 
-	/*return new ASTBlock(
-		0,
-		0,
-		stmts
-	);*/
 }
 
 void SIMPTreeVisitor::visitStmt(SIMPParser::StmtContext* ctx)
@@ -383,7 +379,11 @@ void SIMPTreeVisitor::visitStmt(SIMPParser::StmtContext* ctx)
 	else if (ctx->letStmt() != nullptr) {
 		//return visitLetStmt(ctx->letStmt());
 	}
+	else if (ctx->writeStmt() != nullptr) {
+		visitWriteStmt(ctx->writeStmt());
+	}
 	else {
+		errHnd.printError("Unreachable STMT");
 		throw new IllegalStateException("Unreachable STMT");
 	}
 
@@ -423,13 +423,15 @@ void SIMPTreeVisitor::visitReturnStmt(SIMPParser::ReturnStmtContext* ctx)
 		throw new IllegalStateException("The functions do not match");
 	}
 
+	std::string nameFunc = table.encodeKey();
+
 	switch (table.ste->type)
 	{
 	case IdentifierType::FUNCTION: {
 		functype = table.ste->valueType;
 
 		onExpr(visitExpr(ctx->expr()), value, valuetype, variable);
-		semanticAnalyzer.functionAssign(func.nameFunc, value, functype, valuetype);
+		semanticAnalyzer.functionAssign(nameFunc, value, functype, valuetype);
 		semanticAnalyzer.jumpAnyway(func.lab);
 		break;
 	}
@@ -475,10 +477,12 @@ void SIMPTreeVisitor::visitForStmt(SIMPParser::ForStmtContext* ctx)
 	table.find(assignID->getText());
 	
 	if (table.ste == NULL) {
-		throw new IllegalStateException("Undefined ID in stmt for");
+		errHnd.printError("Undefined ID " + assignID->getText() + " in stmt for");
+		throw new IllegalStateException("Undefined ID " + assignID->getText() + " in stmt for");
 	}
 	else if (table.ste->type != IdentifierType::VAR) {
-		throw new IllegalStateException("Unvariable ID in stmt for");
+		errHnd.printError("Undefined ID " + assignID->getText() + " in stmt for");
+		throw new IllegalStateException("Undefined ID " + assignID->getText() + " in stmt for");
 	}
 	else {
 		forvar = table.encodeKey();
@@ -499,6 +503,7 @@ void SIMPTreeVisitor::visitForStmt(SIMPParser::ForStmtContext* ctx)
 		condition = SymbolType::GREATER_EQUAL;
 	}
 	else {
+		errHnd.printError("the absence of the to|downto keyword");
 		throw new IllegalStateException("the absence of the to|downto keyword");
 	}
 
@@ -552,14 +557,16 @@ void SIMPTreeVisitor::visitAssignStmt(SIMPParser::AssignStmtContext* ctx)
 	bool nameAddr;
 
 	if (ctx->lvalue() == nullptr) {
-		throw new IllegalStateException("lvalue empty");
+		errHnd.printError("lvalue empty");
+		throw IllegalStateException("lvalue empty");
 	}
 
 	std::string ID = ctx->lvalue()->ID()->getText();
 
 	table.find(ID);
 	if (table.ste == NULL) {
-		throw new IllegalStateException("UNDEFINED var (" + ID + ")");
+		errHnd.printError("UNDEFINED var (" + ID + ")");
+		throw IllegalStateException("UNDEFINED var (" + ID + ")");
 	}
 
 	name = table.encodeKey();
@@ -585,12 +592,6 @@ void SIMPTreeVisitor::visitAssignStmt(SIMPParser::AssignStmtContext* ctx)
 		
 	}
 	
-
-	/*return new ASTAssignStmt(
-		opAssign,
-		visitLvalue(ctx->lvalue()),
-		visitRValue(ctx->rValue())
-	);*/
 }
 
 void SIMPTreeVisitor::visitRValue(SIMPParser::RValueContext* ctx)
@@ -617,7 +618,8 @@ void SIMPTreeVisitor::visitRcallStmt(SIMPParser::RcallStmtContext* ctx)
 	
 	table.find(lvalueID->getText());
 	if (table.ste == NULL) {
-		throw new IllegalStateException("Undefined id (" + lvalueID->getText() + ")");
+		errHnd.printError("Undefined id (" + lvalueID->getText() + ")");
+		throw IllegalStateException("Undefined id (" + lvalueID->getText() + ")");
 	}
 
 	name = table.encodeKey();
@@ -657,48 +659,54 @@ void SIMPTreeVisitor::visitRcallStmt(SIMPParser::RcallStmtContext* ctx)
 	BasicType typePar;
 	bool variablePar;
 
-	if (args == NULL) {
-		throw new IllegalStateException("there should not be real parameters function (" + functionNameID->getText() + ")");
-	}
-
-	argit = args->begin();
-
-	if (argit == args->end()) {
-		throw new IllegalStateException("too many arg");
-	}
-	
 	std::vector<ASTExpr*> argsList = visitExprList(ctx->exprList());
 
-	for (int i = 0; i < argsList.size(); i++) {
-		onExpr(argsList[i], valuePar, typePar, variablePar);
+	if (args == NULL && argsList.size() != 0) {
+		throw new IllegalStateException("there should not be real parameters function (" + functionNameID->getText() + ")");
+	}
+	else if (args != NULL && argsList.size() == 0) {
+		throw new IllegalStateException("there should not be real parameters function (" + functionNameID->getText() + ")");
+	}
+	else if (args != NULL && argsList.size() != 0) {
+		argit = args->begin();
 
-		if (argit->vary == true && variablePar == false) {
-			throw new IllegalStateException("Unvariable");
+		if (argit == args->end()) {
+			throw new IllegalStateException("too many arg");
 		}
 
-		if (argit->vary) {
-			semanticAnalyzer.passAddress(valuePar, argit->type, typePar);
-		}
-		else {
-			semanticAnalyzer.passParameter(valuePar, argit->type, typePar);
+
+		for (int i = 0; i < argsList.size(); i++) {
+			onExpr(argsList[i], valuePar, typePar, variablePar);
+
+			if (argit->vary == true && variablePar == false) {
+				throw new IllegalStateException("Unvariable");
+			}
+
+			if (argit->vary) {
+				semanticAnalyzer.passAddress(valuePar, argit->type, typePar);
+			}
+			else {
+				semanticAnalyzer.passParameter(valuePar, argit->type, typePar);
+			}
+
+			argit++;
 		}
 
-		argit++;
+		if (argit != args->end()) {
+			throw new IllegalStateException("too less arg");
+		}
 	}
 
-	if (argit != args->end()) {
-		throw new IllegalStateException("too less arg");
-	}
+	
 
 	if (hasValue) {
 		semanticAnalyzer.callFunction(nameFunc, value);
+		semanticAnalyzer.assign(name, value, nameType, valueType);
 	}
 	else {
 		semanticAnalyzer.callProcedure(nameFunc);
 	}
 
-
-	semanticAnalyzer.assign(name, value, nameType, valueType);
 
 }
 
@@ -1293,6 +1301,27 @@ ASTLvalue* SIMPTreeVisitor::visitLvalue(SIMPParser::LvalueContext* ctx)
 	return value;
 }
 
+void SIMPTreeVisitor::visitWriteStmt(SIMPParser::WriteStmtContext* ctx)
+{
+	if (ctx->expr() == nullptr) {
+		semanticAnalyzer.newline();
+		return;
+	}
+
+	std::string name;
+	BasicType type;
+	bool v;
+
+	onExpr(visitExpr(ctx->expr()), name, type, v);
+
+	if (type == BasicType::INTEGER) {
+		semanticAnalyzer.writeInteger(name);
+	}
+	semanticAnalyzer.newline();
+
+
+}
+
 void SIMPTreeVisitor::onExprCondition(ASTExpr* expr, bool& operExists, SymbolType& condition)
 {
 
@@ -1346,7 +1375,8 @@ void SIMPTreeVisitor::onConstExpr(ASTConstExpr* constExpr, std::string& value, B
 	case INT: {
 		type = BasicType::INTEGER;
 		int val = constExpr->getAsInt();
-		value = std::to_string(val);
+		//value = std::to_string(val);
+		semanticAnalyzer.intToString(val, value);
 		variable = false;
 		break;
 	}
@@ -1791,7 +1821,7 @@ void SIMPTreeVisitor::onBinOpExprCond(ASTBinOpExpr* binop, bool& operExists, std
 		}
 
 		semanticAnalyzer.compare(value2, value1);
-		condition = SymbolType::LESS_EQUAL;
+		condition = SymbolType::LESS;
 		break;
 	}
 	case Gt: {
@@ -1820,7 +1850,7 @@ void SIMPTreeVisitor::onBinOpExprCond(ASTBinOpExpr* binop, bool& operExists, std
 		}
 
 		semanticAnalyzer.compare(value2, value1);
-		condition = SymbolType::GREATER_EQUAL;
+		condition = SymbolType::GREATER;
 		break;
 	}
 	case Le: {
@@ -1849,7 +1879,7 @@ void SIMPTreeVisitor::onBinOpExprCond(ASTBinOpExpr* binop, bool& operExists, std
 		}
 
 		semanticAnalyzer.compare(value2, value1);
-		condition = SymbolType::LESS;
+		condition = SymbolType::LESS_EQUAL;
 		break;
 	}
 	case Ge: {
@@ -1878,7 +1908,7 @@ void SIMPTreeVisitor::onBinOpExprCond(ASTBinOpExpr* binop, bool& operExists, std
 		}
 
 		semanticAnalyzer.compare(value2, value1);
-		condition = SymbolType::GREATER;
+		condition = SymbolType::GREATER_EQUAL;
 		break;
 	}
 	}
