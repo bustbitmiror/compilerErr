@@ -5,13 +5,10 @@ simpProgram: KeywordMain KeywordLet declSegment KeywordIn KeywordBegin stmtList 
 
 declSegment: varDeclList funcDeclList;
 
-//typeDeclList: typeDecl*;
-
 varDeclList: varDecl*;
 
 funcDeclList: funcDecl*;
 
-//typeDecl: KeywordType ID Equals type Semicolon;
 type: typeId
     | ID;
 typeId: KeywordInt | KeywordFloat;
@@ -35,7 +32,8 @@ stmt: ifStmt
     | forStmt
     | breakStmt
     | returnStmt
-    | letStmt;
+    | letStmt
+    | writeStmt;
 
 letStmt: KeywordLet declSegment KeywordIn stmtList KeywordEnd Semicolon;
 returnStmt: KeywordReturn expr Semicolon;
@@ -51,12 +49,11 @@ callStmt: ID LParen exprList RParen Semicolon;
 ifStmt: KeywordIf expr KeywordThen stmtList ifStmtTail;
 ifStmtTail: KeywordEndif Semicolon
     | KeywordElse stmtList KeywordEndif Semicolon;
+writeStmt: KeywordWrite expr Semicolon;
 
-//expr: orTerm;
 expr: leTerm;
 
-//orTerm: andTerm (BinOpOr andTerm)*;
-//andTerm: leTerm (BinOpAnd leTerm)*;
+
 leTerm: geTerm (BinOpLeq geTerm)*;
 geTerm: ltTerm (BinOpGeq ltTerm)*;
 ltTerm: gtTerm (BinOpLt gtTerm)*;
@@ -67,7 +64,6 @@ subTerm: addTerm (BinOpMinus addTerm)*;
 addTerm: divTerm(BinOpPlus divTerm)*;
 divTerm: mulTerm (BinOpDivide mulTerm)*;
 mulTerm: parnTerm (BinOpTimes parnTerm)*;
-//powTerm: parnTerm (BinOpPower parnTerm)*;
 
 
 parnTerm: (LParen expr RParen) | lvalue | constant;
@@ -92,7 +88,6 @@ KeywordOf : 'of' ;
 KeywordThen : 'then' ;
 KeywordTo : 'to' ;
 KeywordDownto : 'downto';
-KeywordType : 'type' ;
 KeywordVar : 'var' ;
 KeywordWhile : 'while' ;
 KeywordEndif : 'endif' ;
@@ -101,12 +96,12 @@ KeywordEnddo : 'enddo' ;
 KeywordReturn : 'return' ;
 KeywordInt : 'int';
 KeywordFloat : 'float';
+KeywordWrite : 'write';
 
 BinOpPlus : '+';
 BinOpMinus : '-';
 BinOpTimes : '*';
 BinOpDivide : '/';
-//BinOpPower : '**';
 BinOpEq : '==';
 BinOpNeq : '!=';
 BinOpLt : '<';
