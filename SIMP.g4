@@ -72,7 +72,7 @@ constant: IntLit | FloatLit;
 
 exprList: | expr (Comma expr)*;
 
-lvalue: ID (LBracket expr RBracket)?;
+lvalue: ID;
 
 KeywordMain : 'main' ;
 KeywordBreak : 'break' ;
@@ -84,7 +84,6 @@ KeywordFunction : 'function' ;
 KeywordIf : 'if' ;
 KeywordIn : 'in' ;
 KeywordLet : 'let' ;
-KeywordOf : 'of' ;
 KeywordThen : 'then' ;
 KeywordTo : 'to' ;
 KeywordDownto : 'downto';
@@ -108,8 +107,6 @@ BinOpLt : '<';
 BinOpGt : '>';
 BinOpLeq : '<=';
 BinOpGeq : '>=';
-BinOpAnd : '&';
-BinOpOr : '|';
 
 OpAssign : ':=' ;
 Equals : '=' ;
